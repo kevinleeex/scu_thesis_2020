@@ -134,4 +134,3 @@
 % 设定各处标题的内容。
 \AtEndOfClass{\input{pkuthss.def}}
 \endinput
-

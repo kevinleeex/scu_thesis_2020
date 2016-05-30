@@ -1,0 +1,17 @@
+\def\label@university{四\hspace{1em}川\hspace{1em}大\hspace{1em}学}
+\def\label@title{题\hspace{1em}目}
+\def\label@author{作\hspace{1em}者}
+\def\label@accomplishdate{完成日期}
+\def\label@school{培\hspace{1em}养\hspace{1em}单\hspace{1em}位}
+\def\label@advisor{指\hspace{1em}导\hspace{1em}教\hspace{1em}师}
+\def\label@major{专\hspace{5em}业}
+\def\label@direction{研\hspace{1em}究\hspace{1em}方\hspace{1em}向}
+\def\label@defensedate{授予学位日期}
+
+\def\doctorthesisname{博士学位论文}
+\def\masterthesisname{硕士学位论文}
+\def\chsabstractname{摘要}
+\def\engabstractname{Abstract}
+
+
+\endinput
