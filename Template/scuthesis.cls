@@ -69,7 +69,7 @@
     % 校名和论文类别
     {
       \ \\[1.5cm]
-      \includegraphics[width=8cm]{Components/Images/SCU_TITLE}\\[1.5cm]
+      \includegraphics[width=8cm]{../Template/Components/Images/SCU_TITLE}\\[1.5cm]
   		{\makebox[10.5cm][s]{\zihao{-0}\heiti\thesisname}}
 
     }
@@ -77,5 +77,5 @@
   \end{titlepage}
 }
 
-\AtEndOfClass{\input{scuthesis.def}}
+\AtEndOfClass{\input{../Template/scuthesis.def}}
 \endinput
