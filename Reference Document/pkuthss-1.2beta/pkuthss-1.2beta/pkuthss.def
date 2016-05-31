@@ -11,9 +11,8 @@
 \def\label@mentor{导师姓名：}
 \def\label@keywords{关键词：}
 
-\def\thesisname{博士研究生学位论文}
+
 \def\cabstractname{摘要}
 \def\eabstractname{Abstract}
 
 \endinput
-

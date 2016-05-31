@@ -2,16 +2,21 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{pkuthss}
 	[2010/07/23 v1.2beta Peking University dissertation document class]
-
 % 将文档类参数全部传递给 ctexbook 文档类。
+%\def{\thesistype}{0}
+\DeclareOption{doctor}{\def\thesistype{0}}
+\DeclareOption{master}{\def\thesistype{1}}
+\DeclareOption{undergraduate}{\def\thesistype{2}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
 % 此文档类以 ctexbook 为基础，设定页面尺寸为 A4，默认字号为小四号。
 % CJKfntef 宏包提供了 \maketitle 中用到的 \CJKunderline 命令。
 % fancyhdr 宏包提供了方便使用的命令用于设置页眉、页脚。
 \LoadClass[fntef,a4paper,fancyhdr,cs4size]{ctexbook}[2010/01/22]
+\RequirePackage{ifthen}
 % 此宏包提供图形支持。
 \RequirePackage{graphicx}[1999/02/16]
+%\RequirePackage{xifthen}
 % 此宏包提供了方便使用的命令用于设置页面布局。
 \RequirePackage{geometry}
 
@@ -38,6 +43,14 @@
 \newcommand\ementor[1]{\def\@ementor{#1}}
 \newcommand\keywords[1]{\def\@keywords{#1}}
 \newcommand\ekeywords[1]{\def\@ekeywords{#1}}
+
+
+
+\ifthenelse{\equal{\thesistype}{0}}{\def\thesisname{博士学位论文}}{}
+\ifthenelse{\equal{\thesistype}{1}}{\def\thesisname{硕士学位论文}}{}
+\ifthenelse{\equal{\thesistype}{2}}{\def\thesisname{学士学位论文}}{}
+
+
 
 % 此命令用下划线填充指定的空间。
 \newcommand{\fillinblank}[2]{\CJKunderline{\makebox[#1]{#2}}}
@@ -131,6 +144,6 @@
 	\vskip 0.5em%
 }{\putonbottom{\textbf{Keywords:} \@ekeywords}}
 
-% 设定各处标题的内容。
+% 设定各处标题的内容
 \AtEndOfClass{\input{pkuthss.def}}
 \endinput
