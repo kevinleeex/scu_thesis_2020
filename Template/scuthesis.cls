@@ -32,7 +32,8 @@
 %\geometry{a4paper,twoside,inner=2.5cm,outer=2cm,top=3.35cm,bottom=3.35cm}
 %\geometry{a4paper,left=2.5cm,right=2cm,top=2.5cm,bottom=2.5cm,includeheadfoot,headheight=1.5cm}
 % 设定页眉、页脚样式。
-\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
+%\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
+\fancypagestyle{plain}{\pagestyle{fancy}}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[RE]{\zihao{-5}\songti\@title}
@@ -58,6 +59,26 @@
 \newcommand\ENGuniversity[1]{\def\@ENGuniversity{#1}}
 % 此命令用于开始不标号的一章。
 % 通过 \matkboth 命令设置相应的页眉内容（尽管可能不显示）。
+
+\setcounter{secnumdepth}{4}
+
+\CTEXsetup[format+={\zihao{-3}\rm\heiti\flushleft}]{chapter}
+\CTEXsetup[beforeskip={-1cm}]{chapter}
+\CTEXsetup[afterskip={10pt}]{chapter}
+
+\CTEXsetup[format+={\zihao{4}\rm\heiti\flushleft}]{section}
+\CTEXsetup[beforeskip={10pt}]{section}
+\CTEXsetup[afterskip={10pt}]{section}
+
+\CTEXsetup[format+={\zihao{-4}\rm\heiti\flushleft}]{subsection}
+\CTEXsetup[beforeskip={10pt}]{subsection}
+\CTEXsetup[afterskip={10pt}]{subsection}
+
+\CTEXsetup[format+={\zihao{-4}\rm\kaishu\flushleft}]{subsubsection}
+\CTEXsetup[beforeskip={10pt}]{subsubsection}
+\CTEXsetup[afterskip={10pt}]{subsubsection}
+
+
 
 % 判断论文类别，定义不同论文名称
 \ifthenelse{\equal{\thesistype}{0}}{

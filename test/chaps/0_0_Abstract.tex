@@ -1,0 +1,45 @@
+
+\begin{CHSabstract}
+	基于阵列的信号处理技术广泛地应用于声呐、无线通信、雷达等领域，但在传统的阵列信号处理中，所涉及到的阵元往往较多，而稀/微阵列是由较少的阵元构成或具有较小尺寸的阵列，其规模小，同时又具备阵列所特有的技术优点，因此可以灵活应用于手持移动终端、家庭信息设备、传感器网络及空间装备等功耗、成本或体积受限的领域。此外，宽带信号是诸多领域的重要处理对象，因此基于稀/微阵列的宽带信号处理有着重要的理论研究和应用推广价值。
+
+
+	本论文以稀/微阵列条件下的宽带信号处理作为主要研究对象，重点针对“一般矩阵的正交子空间构造”、“虚拟阵列波达方向估计”、“分布式传感器网络测向定位”、“宽带信号增强”等关键技术开展了较为深入的研究，主要工作和主要贡献总结如下：
+
+
+	（1）研究了常规子空间类空间谱估计算法的原理，从理论推导和仿真两方面分析了协方差矩阵的非共轭对称性对空间谱估计的影响，利用子空间主角理论，提出了适用于一般矩阵的正交子空间及准正交子空间分解方法，也为稀/微阵列的空间谱估计奠定了理论基础。
+
+
+	（2）研究了典型的虚拟阵列DOA（Direction Of Arrival）估计方法，提出了两种基于虚拟扩展阵列的宽带DOA估计算法。与传统方法相比，所提算法均仅要求双阵元的稀/微阵列，且具备其他技术优点。其中，多重虚拟扩展阵列算法结合了外扩空间重采样与四阶累积量的思想，在实现对多个宽带源DOA估计的同时，也可有效地抑制高斯噪声；PAF-MUSIC（Principal Angles Free MUSIC）算法则利用构建的Toeplitz协方差矩阵进行解相干，并采用新的正交子空间，可实现多个宽带相干信号的DOA估计，且相比传统子空间有更高的分辨力。
+
+
+	（3）在分析了基于传感器网络的典型测向定位方法的基础上，提出了两类利用源间信号特征的测向定位方法，与传统定位方法要求较多的传感器节点相比，所提方法均仅需一个双节点传感器网络，且每个节点是仅由两个传感器组成的稀/微阵列，就可实现对多个目标源的定位。第一类方法利用了源间的先验几何信息，它又包括了两种具体算法，第一种算法为模式匹配交叉定位算法，利用了模式匹配的思想，可实现多个宽带源的二维定位。更进一步，考虑目标源的高度估计，又提出了一种旋转投影算法，可实现多个宽带源的三维定位。第二类方法利用了源间的相关性特征，结合目标源的DOA和TDOA（Time Difference Of Arrival）估计，提出了一种相关交叉点关联及定位算法，可实现对多个相干宽带源的定位。
+
+
+	（4）针对宽带信号的增强，考虑传统的阵列信号增强方法无法应用于较少阵元或较小孔径的稀/微阵列，提出了两种双阵元条件下基于DOA引导的宽带信号增强方法。第一种方法为SS-DG（Spectral Subtraction-DOA Guiding）方法，该方法利用双麦克风组成的稀/微阵列，将双通道的DOA估计与谱减法相结合，可抑制空间噪声及干扰，实现对期望语音信号的增强。第二种方法为一种适用于 MISO（Multiple-Input Single-Output）系统的基于DOA的空间信息聚焦方法，该方法利用双天线组成的稀/微阵列，可对多个用户的上行OFDM（Orthogonal Frequency Division Multiplexing）信号进行DOA估计，再结合下行发射的UWB（Ultra Wide Band）信号实现对移动用户的信息聚焦。
+
+
+	综上所述，本论文立足于国内外在子空间类空间谱估计、虚拟阵列扩展、传感器网络定位、宽带信号增强等方面的现状，以宽带稀/微阵列所涉及到的理论、方法及推广应用作为主要研究内容，相应地开展了从理论、方法再到应用的较为系统的研究，可为稀/微阵列相关理论的推进及工程应用提供一定参考。
+
+\end{CHSabstract}
+\begin{ENGabstract}
+	Array signal processing technologies have been widely applied in many fields such as sonar, wireless communication, radar, etc. Conventionally, array with many elements is required to perform array signal processing. Sparse-mini array is with small number of elements or is small size. However, the sparse-mini array still holds the merits and advantages of array, so the sparse-mini array can be flexibly applied in the fields such as mobile phone, home network devices, sensor networks, space equipments, etc, where the power consumption, cost or size are sensitive. In addition, wideband signals have become the important processed objects in many fields, therefore the research on theories, methods and applications of signal processing based on sparse-mini array is very significative.
+
+
+	This thesis is focused on the wideband signal processing based on sparse-mini array, and deeply researches into ‘the orthogonal subspaces construction of general matrix’, ‘DOA estimation of virtual array’, ‘bearing localization of distributed sensor network’, and ‘widbeband signal enhancement’. The main works and contributions are as follows.
+
+
+	(1) Studied on the principles of typical subspace-based spatial spectrum estimation methods, and analyzed the affection of non-Hermitian matrix on spatial spectrum estimation. An orthogonal subspace decomposition method and a quasi-orthogonal subspace decomposition method which can be applied to general matrix are proposed in this thesis, and they are also the theoretical basis for spatial spectrum estimaton based on sparse-mini array.
+
+
+	(2) Studied on the typical DOA estimation methods based on virtual array, two wideband DOA estimation algorithms utilizing virtual expansion array are proposed. Constrasting to conventional methods, a sparse-mini array with only two elements is required in the two algorithms proposed, and other advantages can also be obtained. The first one is multiple virtual expansion array (MVEA) algorithm, and the algorithm combins external expansion spatial resampling and forth-order cumulant. Ultilizing the MVEA, not only DOAs of multiple wideband sources can be estimated, but also better performance of noise suppression can be obtained. The second one is Principal Angles Free MUSIC (PAF-MUSIC) algorithm. A Toeplitz matrix is constructed by employing the output of a tow-sensor sparse-mini array to achieve de-correlation, and the DOAs of multiple wideband coherent signals can be estimated. Since a new subspace decomposition is applied, a better resolution performance than that of conventional subspace can be obtained.
+
+
+	(3) Based on the analysis of typical bearing localization methods using sensor network, two types of localization methods ultilizing the relationship between sources are proposed. Generally, many sensor-nodes are required in conventional methods, but only a two-node sensor network is used in the new types of methods proposed, and each node of the network is a two-sensor sparse-mini array, then localization of multiple sources can be achieved. The first type method ultilizs the prior geometrical information between sources, and there are two algorithms are included in this type method. The first one is named Intersections pattern matching algorithm (IPMA), and pattern matching idea is employed in the new algorithm, and the localization of multiple 2D wideband coherent sources can be achieved. Based on the same sensor network and considering the estimation of height, the second algorithm is proposed and named rotational projection algorithm (RPA), by which multiple 3D wideband coherent sources can be localized. Other type method ultilizes the coherence between sources. Jointly applying DOA and time difference of arrival (TDOA), a intersection association and localization algorithm is proposed, and localization of multiple coherent sources can be achieved.
+
+
+	(4) Considering the conventional wideband enhancement methods can not be applied on sparse-mini array with small number elements or small aperture, two DOA-based wideband enhancement methods are proposed using sparse-mini array with two elements. The first method is spectral subtraction-DOA guiding (SS-DG). A sparese-mini array with two microphones is used in the method, and by combining DOA and spectral subtraction idea, the spatial noise and interference can be suppressed, and voice enhancement can be achieved. The second enhancement method is a DOA-based information focusing scheme, which can be applied in   MISO system. Using a two-antenna sparse-mini array, the DOA of OFDM (Orthogonal Frequency Division Multiplexing) signals of multiple users can be estimated at uplinks. Combining the DOA and ultra wide band (UWB) signals at downlinks, the information focusing to mobile users can be achieved.
+
+
+	In summary, this thesis is based on the related research at home and abroad in subspace-based spatial spectrum estimation, virtual expansion of array, localization based on sensor network, wideband signal enhancement, etc. The theories, algorithm and application become the main research contents and are studied systemically, which can provide some reference for the promotion of related theories and engineering applications of sparse-mimi array.
+
+\end{ENGabstract}
