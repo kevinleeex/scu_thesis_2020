@@ -2,6 +2,7 @@
 % 文件描述：以 ctexbook 文档类为基础，定义四川大学学位论文文档类
 % 作者：LegendaryLeo
 % 参考：pkuthss-1.2beta
+% 修改日期：2016年6月2日
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{scuthesis}[2016/05/30 v0.1]
 % 声明传入参数，定义对应的论文类别，分别对应博士、硕士和学士学位论文。这里由于tex对中文支持不够，因此不能在此定义论文名称。
@@ -25,15 +26,6 @@
 % 左边距 1.95cm，右边距 1.95cm，上边距 2.25cm，下边距 2.25cm，版心 215×145mm
 \marginsize{1.95cm}{1.95cm}{2.25cm}{2.25cm}
 
-
-\RequirePackage[outdir=./]{epstopdf}
-
-% 此宏包提供了方便使用的命令用于设置页面布局。
-%\RequirePackage{geometry}
-% 设定页面布局。左边距 2.5cm，右边距 2cm，上边距 2.5cm，下边距 2.5cm，版心 200×135mm
-%\geometry{a4paper,twoside,inner=2.5cm,outer=2cm,height=215mm,width=145mm,headheight=0.5cm,headsep=1.5cm,footskip=1.5cm}
-%\geometry{a4paper,twoside,inner=2.5cm,outer=2cm,top=3.35cm,bottom=3.35cm}
-%\geometry{a4paper,left=2.5cm,right=2cm,top=2.5cm,bottom=2.5cm,includeheadfoot,headheight=1.5cm}
 % 设定页眉、页脚样式。
 %\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
 \fancypagestyle{plain}{\pagestyle{fancy}}
@@ -43,6 +35,12 @@
 \fancyhead[RO]{\zihao{-5}\songti\@title}
 \fancyhead[LO,LE]{\zihao{-5}\songti\universityname\thesisname}
 \fancyfoot[CO,CE]{\zihao{-5}\thepage}
+
+% 使用glossaries宏包支持生成缩略词表和符号表，nonumberlist代表不需编号，toc代表将其加入目录，acronym使用自带缩写表的功能
+%\RequirePackage[nonumberlist, toc, acronym]{glossaries}
+
+% 使用epstopdf宏包重定向eps输出路径，避免图片错误
+\RequirePackage[outdir=./]{epstopdf}
 
 % 这些命令用于设定各项文档信息的具体内容。
 \newcommand\ENGtitle[1]{\def\@ENGtitle{#1}}
@@ -60,42 +58,44 @@
 \newcommand\ENGkeywords[1]{\def\@ENGkeywords{#1}}
 \newcommand\university[1]{\def\@university{#1}}
 \newcommand\ENGuniversity[1]{\def\@ENGuniversity{#1}}
-% 此命令用于开始不标号的一章。
-% 通过 \matkboth 命令设置相应的页眉内容（尽管可能不显示）。
 
+% 设置标题深度为4
 \setcounter{secnumdepth}{4}
+% CTEX设置各级标题对齐方式，字号，字体及前后段间距
+% “章节”标题，小三号黑体，左对齐，前后段间距为10pt
 \CTEXsetup[
 					format+={\zihao{-3}\rm\heiti\flushleft},
 					beforeskip={-1cm},
 					afterskip={10pt}
 					]{chapter}
-
+% “节”标题，四号黑体，左对齐，前后段间距为10pt
 \CTEXsetup[
 					format+={\zihao{4}\rm\heiti\flushleft},
 					beforeskip={10pt},
 					afterskip={10pt}
 					]{section}
-
+% “小节”标题，小四号黑体，左对齐，前后段间距为10pt
 \CTEXsetup[
 					format+={\zihao{-4}\rm\heiti\flushleft},
 					beforeskip={10pt},
 					afterskip={10pt}
 					]{subsection}
-
+% “次小节”标题，小四号楷体，左对齐，前后段间距为10pt
 \CTEXsetup[
 					format+={\zihao{-4}\rm\kaishu\flushleft},
 					beforeskip={10pt},
 					afterskip={10pt},
 					]{subsubsection}
-
+% “段”标题，小四号楷体，左对齐，前后段间距为0pt
 \renewcommand{\theparagraph}{(\arabic{paragraph})}
 \CTEXsetup[
 					name={,},
 					number={\theparagraph},
 					format+={\zihao{-4}\rm\kaishu\flushleft}
 					]{paragraph}
-
+% 定义\makechaptertitlecenter命令，可使命令后章节标题居中
 \newcommand{\makechaptertitlecenter}{\CTEXsetup[format+={\center}]{chapter}}
+% 定义\makechaptertitleleft命令，可使命令后章节标题居左
 \newcommand{\makechaptertitleleft}{\CTEXsetup[format+={\flushleft}]{chapter}}
 % 判断论文类别，定义不同论文名称
 \ifthenelse{\equal{\thesistype}{0}}{
@@ -115,13 +115,24 @@
 																		}{}
 
 
-% 此命令用下划线填充指定的空间。
-\newcommand{\fillinblank}[2]{\CJKunderline{\makebox[#1]{#2}}}
-% 此命令将对象放到页面底部。
-\newcommand{\putonbottom}[1]{\begin{figure}[b!]%
-	\begin{minipage}{\textwidth}{#1}\end{minipage}\end{figure}}
-
-\newcommand{\maketoc}{\thispagestyle{empty}\tableofcontents\pagenumbering{roman}\thispagestyle{fancy}\addcontentsline{toc}{chapter}{目录}}
+% 定义\fillinblank命令，用下划线填充指定的空间。
+\newcommand{\fillinblank}[2]{
+														\CJKunderline{\makebox[#1]{#2}}
+														}
+% 定义\putonbottom命令，将对象放到页面底部。
+\newcommand{\putonbottom}[1]{
+														\begin{figure}[b!]%
+															\begin{minipage}{\textwidth}
+																{#1}
+															\end{minipage}
+														\end{figure}
+														}
+% 定义\maketoc命令，将自动生成符合要求的目录。
+\newcommand{\maketoc}{
+											\thispagestyle{empty}
+											\tableofcontents\pagenumbering{roman}
+											\thispagestyle{fancy}\addcontentsline{toc}{chapter}{目录}
+											}
 
 
 % 设定标题页格式。
@@ -167,11 +178,13 @@
 	\thispagestyle{empty}
 }
 
+% 定义\specialchap命令，生成没有编号的章节。从pkuthss-1.2beta保留，本模版中未使用。
 \newcommand{\specialchap}[1]{
 														\chapter*{#1}\markboth{#1}{}
 														\addcontentsline{toc}{chapter}{#1}\phantomsection
 														}
 
+% 定义\autograph命令，生成版权授权书等的签名栏。
 \newcommand{\autograph}{
 												\begin{center}
 													\begin{tabular}{ll}
@@ -200,7 +213,7 @@
 {
 	\putonbottom{\textbf{关键词：}\@keywords}
 }
-
+% 定义英文摘要环境
 \newenvironment{ENGabstract}
 {
 	\cleardoublepage
@@ -219,7 +232,7 @@
 {
 	\putonbottom{\textbf{Keywords:} \@ENGkeywords}
 }
-
+% 定义参考文献环境
 \newenvironment{reference}
 {
 	\zihao{-5}
@@ -229,7 +242,8 @@
 	\addcontentsline{toc}{chapter}{参考文献}
 	\phantomsection
 }
-
+% 设置文档默认行距为20pt
 \setlength{\baselineskip}{20pt}
+% 加载配置文件
 \AtEndOfClass{\input{../Template/scuthesis.def}}
 \endinput
