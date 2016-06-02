@@ -36,12 +36,15 @@
 \fancyhead[LO,LE]{\zihao{-5}\songti\universityname\thesisname}
 \fancyfoot[CO,CE]{\zihao{-5}\thepage}
 
-% 使用glossaries宏包支持生成缩略词表和符号表，nonumberlist代表不需编号，toc代表将其加入目录，acronym使用自带缩写表的功能
-%\RequirePackage[nonumberlist, toc, acronym]{glossaries}
-
 % 使用epstopdf宏包重定向eps输出路径，避免图片错误
 \RequirePackage[outdir=./]{epstopdf}
-
+% 使用cite宏包修改引文符号的样式为上标，中括号包含
+\RequirePackage[superscript]{cite}
+\renewcommand\citeform[1]{[#1]}
+% 使用hyperref宏包去除索引上的颜色标记
+\RequirePackage{hyperref}
+\hypersetup{pdfborder=0 0 0}
+%\renewcommand\@citess[1]{\textsuperscript{[#1]}}
 % 这些命令用于设定各项文档信息的具体内容。
 \newcommand\ENGtitle[1]{\def\@ENGtitle{#1}}
 \newcommand\ENGauthor[1]{\def\@ENGauthor{#1}}

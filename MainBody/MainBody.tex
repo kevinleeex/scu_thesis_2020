@@ -1,0 +1,59 @@
+% 文件名：Mainbody.tex
+% 文件描述：以 ctexbook 文档类为基础，定义四川大学学位论文文档类
+% 作者：LegendaryLeo
+% 参考：pkuthss-1.2beta
+% 修改日期：2016年6月3日
+
+% 选用scuthesis文档类，参数master为硕士论文，可选doctor和bachelor，分别对应博士和学士
+\documentclass[master,UTF8,hyperref]{../Template/scuthesis}
+%\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
+\begin{document}
+% 设置文档信息
+\title{论文标题}
+\ENGtitle{The Dissertation Title}
+\author{作者}
+\ENGauthor{Author Name}
+\accomplishdate{论文完成日期}
+\school{学院名称}
+\supervisor{指导教师\quad教授/副教授}
+\ENGsupervisor{Prof. Supervisor}
+\major{专业名称}
+\ENGmajor{Major Name}
+\direction{方向名称}
+\ENGdirection{Direction Name}
+\defensedate{答辩日期}
+\keywords{关键词1，关键词2，关键词3，关键词4，关键词5}
+\ENGkeywords{Keyword1, Keyword2, Keyword3, Keyword4, Keyword5}
+% 设置论文正文前的页码、页眉等
+\frontmatter\pagenumbering{Roman}\pagestyle{fancy}\makechaptertitlecenter
+% 自动制作标题
+\maketitle
+% 包含摘要
+\include{chaps/0_0_Abstract}
+% 包含缩略词表
+\include{chaps/0_1_Abbreviations}
+% 包含符号表
+\include{chaps/0_2_Symbols}
+% 自动制作目录
+\maketoc
+% 设置论文正文部分的页码、页眉等
+\mainmatter\pagenumbering{arabic}\pagestyle{fancy}\makechaptertitleleft
+% 包含第一章、第二章等等
+\include{chaps/1_Introduction}
+\include{chaps/2_Chapter2}
+% 设置论文正文后的式样
+\backmatter\makechaptertitlecenter
+% 按国标自动制作参考文献
+\begin{reference}
+	% 参考文献数据文件为本目录下的sample.bib
+	\bibliographystyle{../Template/chinesebst}\bibliography{sample}
+\end{reference}
+% 包含在读期间科研成果
+\include{chaps/Achievements}
+% 包含论文原创性声明
+\include{chaps/OriginalStatement}
+% 包含论文版权授权书
+\include{chaps/CopyrightAuthorization}
+% 包含致谢
+\include{chaps/Thanks}
+\end{document}
