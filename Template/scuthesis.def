@@ -16,6 +16,7 @@
 \def\ENGabstractname{Abstract}
 \def\university{四\hspace{0.5em}川\hspace{0.5em}大\hspace{0.5em}学}
 \def\universitynormal{四川大学}
+\def\universityname{四川大学}
 \def\ENGuniversity{Sichuan University}
 
 

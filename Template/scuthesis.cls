@@ -25,6 +25,9 @@
 % 左边距 1.95cm，右边距 1.95cm，上边距 2.25cm，下边距 2.25cm，版心 215×145mm
 \marginsize{1.95cm}{1.95cm}{2.25cm}{2.25cm}
 
+
+\RequirePackage[outdir=./]{epstopdf}
+
 % 此宏包提供了方便使用的命令用于设置页面布局。
 %\RequirePackage{geometry}
 % 设定页面布局。左边距 2.5cm，右边距 2cm，上边距 2.5cm，下边距 2.5cm，版心 200×135mm
@@ -38,7 +41,7 @@
 \fancyhf{}
 \fancyhead[RE]{\zihao{-5}\songti\@title}
 \fancyhead[RO]{\zihao{-5}\songti\@title}
-\fancyhead[LO,LE]{\zihao{-5}\songti\universitynormal\thesisname}
+\fancyhead[LO,LE]{\zihao{-5}\songti\universityname\thesisname}
 \fancyfoot[CO,CE]{\zihao{-5}\thepage}
 
 % 这些命令用于设定各项文档信息的具体内容。
@@ -61,25 +64,39 @@
 % 通过 \matkboth 命令设置相应的页眉内容（尽管可能不显示）。
 
 \setcounter{secnumdepth}{4}
+\CTEXsetup[
+					format+={\zihao{-3}\rm\heiti\flushleft},
+					beforeskip={-1cm},
+					afterskip={10pt}
+					]{chapter}
 
-\CTEXsetup[format+={\zihao{-3}\rm\heiti\flushleft}]{chapter}
-\CTEXsetup[beforeskip={-1cm}]{chapter}
-\CTEXsetup[afterskip={10pt}]{chapter}
+\CTEXsetup[
+					format+={\zihao{4}\rm\heiti\flushleft},
+					beforeskip={10pt},
+					afterskip={10pt}
+					]{section}
 
-\CTEXsetup[format+={\zihao{4}\rm\heiti\flushleft}]{section}
-\CTEXsetup[beforeskip={10pt}]{section}
-\CTEXsetup[afterskip={10pt}]{section}
+\CTEXsetup[
+					format+={\zihao{-4}\rm\heiti\flushleft},
+					beforeskip={10pt},
+					afterskip={10pt}
+					]{subsection}
 
-\CTEXsetup[format+={\zihao{-4}\rm\heiti\flushleft}]{subsection}
-\CTEXsetup[beforeskip={10pt}]{subsection}
-\CTEXsetup[afterskip={10pt}]{subsection}
+\CTEXsetup[
+					format+={\zihao{-4}\rm\kaishu\flushleft},
+					beforeskip={10pt},
+					afterskip={10pt},
+					]{subsubsection}
 
-\CTEXsetup[format+={\zihao{-4}\rm\kaishu\flushleft}]{subsubsection}
-\CTEXsetup[beforeskip={10pt}]{subsubsection}
-\CTEXsetup[afterskip={10pt}]{subsubsection}
+\renewcommand{\theparagraph}{(\arabic{paragraph})}
+\CTEXsetup[
+					name={,},
+					number={\theparagraph},
+					format+={\zihao{-4}\rm\kaishu\flushleft}
+					]{paragraph}
 
-
-
+\newcommand{\makechaptertitlecenter}{\CTEXsetup[format+={\center}]{chapter}}
+\newcommand{\makechaptertitleleft}{\CTEXsetup[format+={\flushleft}]{chapter}}
 % 判断论文类别，定义不同论文名称
 \ifthenelse{\equal{\thesistype}{0}}{
 																		\def\thesisname{博士学位论文}
@@ -103,6 +120,8 @@
 % 此命令将对象放到页面底部。
 \newcommand{\putonbottom}[1]{\begin{figure}[b!]%
 	\begin{minipage}{\textwidth}{#1}\end{minipage}\end{figure}}
+
+\newcommand{\maketoc}{\thispagestyle{empty}\tableofcontents\pagenumbering{roman}\thispagestyle{fancy}\addcontentsline{toc}{chapter}{目录}}
 
 
 % 设定标题页格式。
@@ -148,11 +167,20 @@
 	\thispagestyle{empty}
 }
 
-\newcommand{\specialchap}[1]
-	{
-	\chapter*{#1}\markboth{#1}{}
-	\addcontentsline{toc}{chapter}{#1}\phantomsection
-	}
+\newcommand{\specialchap}[1]{
+														\chapter*{#1}\markboth{#1}{}
+														\addcontentsline{toc}{chapter}{#1}\phantomsection
+														}
+
+\newcommand{\autograph}{
+												\begin{center}
+													\begin{tabular}{ll}
+													学位论文作者签名：\hspace{5cm}                          & 导师签名：\hspace{5cm}                                      \\[1cm]
+													签字日期：\hspace{1cm}年\hspace{0.5cm}月\hspace{0.5cm}日 & 签字日期：\hspace{1cm}年\hspace{0.5cm}月\hspace{0.5cm}日
+													\end{tabular}
+												\end{center}
+												}
+
 % 定义中文摘要环境
 \newenvironment{CHSabstract}
 {
@@ -168,6 +196,9 @@
 	\end{center}
 	\ \vspace{0cm}\par
 	%\ \\[-0.5cm]
+}
+{
+	\putonbottom{\textbf{关键词：}\@keywords}
 }
 
 \newenvironment{ENGabstract}
@@ -185,6 +216,20 @@
 	\ \vspace{0cm}\par
 	%\ \\[-0.5cm]\setlength\parindent{2em}
 }
+{
+	\putonbottom{\textbf{Keywords:} \@ENGkeywords}
+}
 
+\newenvironment{reference}
+{
+	\zihao{-5}
+	\setlength{\baselineskip}{12pt}
+}
+{
+	\addcontentsline{toc}{chapter}{参考文献}
+	\phantomsection
+}
+
+\setlength{\baselineskip}{20pt}
 \AtEndOfClass{\input{../Template/scuthesis.def}}
 \endinput
