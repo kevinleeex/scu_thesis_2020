@@ -226,7 +226,8 @@
 	%\ \\[-0.5cm]
 }
 {
-	\putonbottom{\textbf{关键词：}\@keywords}
+	\vspace{1em}\par
+	\noindent\textbf{关键词：}\@keywords%\putonbottom{\textbf{关键词：}\@keywords}
 }
 % 定义英文摘要环境
 \newenvironment{ENGabstract}
@@ -245,7 +246,8 @@
 	%\ \\[-0.5cm]\setlength\parindent{2em}
 }
 {
-	\putonbottom{\textbf{Keywords:} \@ENGkeywords}
+	\vspace{1em}\par
+	\noindent\textbf{Keywords:} \@ENGkeywords%\putonbottom{\textbf{Keywords:} \@ENGkeywords}
 }
 % 定义参考文献环境
 \newenvironment{reference}
