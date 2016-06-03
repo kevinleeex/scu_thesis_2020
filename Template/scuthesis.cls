@@ -44,7 +44,8 @@
 % 使用hyperref宏包去除索引上的颜色标记
 \RequirePackage{hyperref}
 \hypersetup{pdfborder=0 0 0}
-%\renewcommand\@citess[1]{\textsuperscript{[#1]}}
+% 使用tocloft宏包修改目录样式
+\RequirePackage{tocloft}
 % 这些命令用于设定各项文档信息的具体内容。
 \newcommand\ENGtitle[1]{\def\@ENGtitle{#1}}
 \newcommand\ENGauthor[1]{\def\@ENGauthor{#1}}
@@ -130,14 +131,25 @@
 															\end{minipage}
 														\end{figure}
 														}
+
+% 定义目录标题格式，小三号黑体居中，段前后距10pt
+\renewcommand{\cfttoctitlefont}{\hfill\zihao{-3}\rm\heiti}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftbeforetoctitleskip}{10pt}
+\renewcommand{\cftaftertoctitleskip}{10pt}
+% 定义引导线格式，为点，点距0.5，章节标题也使用引导线
+\renewcommand{\cftdot}{.}
+\renewcommand{\cftdotsep}{0.5}
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+% 定义章节目录项前后距
+\setlength{\cftbeforechapskip}{0pt}
+
 % 定义\maketoc命令，将自动生成符合要求的目录。
 \newcommand{\maketoc}{
 											\thispagestyle{empty}
 											\tableofcontents\pagenumbering{roman}
 											\thispagestyle{fancy}\addcontentsline{toc}{chapter}{目录}
 											}
-
-
 % 设定标题页格式。
 \renewcommand\maketitle
 {
