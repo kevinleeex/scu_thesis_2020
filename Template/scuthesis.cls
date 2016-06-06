@@ -38,9 +38,7 @@
 
 % 使用epstopdf宏包重定向eps输出路径，避免图片错误
 \RequirePackage[outdir=./]{epstopdf}
-% 使用cite宏包修改引文符号的样式为上标，中括号包含
-\RequirePackage[superscript]{cite}
-\renewcommand\citeform[1]{[#1]}
+
 % 使用hyperref宏包去除索引上的颜色标记
 \RequirePackage{hyperref}
 \hypersetup{pdfborder=0 0 0}
@@ -48,12 +46,14 @@
 \RequirePackage{tocloft}
 % 使用caption2宏包修改题注样式
 \RequirePackage{caption2}
-%\RequirePackage{caption}
 % 修改题注样式
-%\captionsetup[]{font={zihao{5},rm,heiti}}
-%\captionsetup[table]{font={zihao{1},rm,heiti}}
 \renewcommand{\captionfont}{\zihao{5}\rm\heiti}
 \renewcommand{\captionlabeldelim}{~}
+% 使用natbib宏包修改参考文献行距和参考标记样式
+%               上标	方括号	逗号分隔	自动排序分类
+\RequirePackage[super,square,comma,sort&compress]{natbib}
+\setlength{\bibsep}{0.5ex}
+
 % 这些命令用于设定各项文档信息的具体内容。
 \newcommand\ENGtitle[1]{\def\@ENGtitle{#1}}
 \newcommand\ENGauthor[1]{\def\@ENGauthor{#1}}
