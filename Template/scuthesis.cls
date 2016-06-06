@@ -46,6 +46,14 @@
 \hypersetup{pdfborder=0 0 0}
 % 使用tocloft宏包修改目录样式
 \RequirePackage{tocloft}
+% 使用caption2宏包修改题注样式
+\RequirePackage{caption2}
+%\RequirePackage{caption}
+% 修改题注样式
+%\captionsetup[]{font={zihao{5},rm,heiti}}
+%\captionsetup[table]{font={zihao{1},rm,heiti}}
+\renewcommand{\captionfont}{\zihao{5}\rm\heiti}
+\renewcommand{\captionlabeldelim}{~}
 % 这些命令用于设定各项文档信息的具体内容。
 \newcommand\ENGtitle[1]{\def\@ENGtitle{#1}}
 \newcommand\ENGauthor[1]{\def\@ENGauthor{#1}}
@@ -150,6 +158,7 @@
 											\tableofcontents\pagenumbering{roman}
 											\thispagestyle{fancy}\addcontentsline{toc}{chapter}{目录}
 											}
+
 % 设定标题页格式。
 \renewcommand\maketitle
 {
