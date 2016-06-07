@@ -53,7 +53,8 @@
 %               上标	方括号	逗号分隔	自动排序分类
 \RequirePackage[super,square,comma,sort&compress]{natbib}
 \setlength{\bibsep}{0.5ex}
-
+%
+\RequirePackage{enumitem}
 % 这些命令用于设定各项文档信息的具体内容。
 \newcommand\ENGtitle[1]{\def\@ENGtitle{#1}}
 \newcommand\ENGauthor[1]{\def\@ENGauthor{#1}}
@@ -96,14 +97,16 @@
 \CTEXsetup[
 					format+={\zihao{-4}\rm\kaishu\flushleft},
 					beforeskip={10pt},
-					afterskip={10pt},
+					afterskip={10pt}
 					]{subsubsection}
 % “段”标题，小四号楷体，左对齐，前后段间距为0pt
 \renewcommand{\theparagraph}{(\arabic{paragraph})}
 \CTEXsetup[
 					name={,},
 					number={\theparagraph},
-					format+={\zihao{-4}\rm\kaishu\flushleft}
+					format+={\zihao{-4}\rm\kaishu\flushleft},
+					beforeskip={0pt},
+					afterskip={0pt}
 					]{paragraph}
 % 定义\makechaptertitlecenter命令，可使命令后章节标题居中
 \newcommand{\makechaptertitlecenter}{\CTEXsetup[format+={\center}]{chapter}}
