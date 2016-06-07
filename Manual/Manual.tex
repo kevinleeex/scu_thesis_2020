@@ -3,6 +3,9 @@
 % 作者：LegendaryLeo
 % 修改日期：2016年6月3日
 \documentclass[master,UTF8,hyperref]{../Template/scuthesis}
+\usepackage{xcolor}
+\usepackage{dirtree}
+\renewcommand*{\DTstylecomment}{\color{blue}\kaishu}
 \begin{document}
 \title{四川大学学位论文~\LaTeX~模版 Ver. 0.1}
 \ENGtitle{The SCU Dissertation \LaTeX ~ Class Ver. 0.1}
@@ -23,26 +26,26 @@
 
 \maketitle
 \frontmatter\pagenumbering{Roman}\pagestyle{fancy}\makechaptertitlecenter
-\include{chaps/CopyrightStatement}
-\include{chaps/0_0_Abstract}
-\include{chaps/0_1_Abbreviations}
-\include{chaps/0_2_Symbols}
+\include{Chapters/CopyrightStatement}
+\include{Chapters/0_0_Abstract}
+\include{Chapters/0_1_Abbreviations}
+\include{Chapters/0_2_Symbols}
 
 \maketoc
 
 \mainmatter\pagenumbering{arabic}\pagestyle{fancy}\makechaptertitleleft
 
-\include{chaps/1_Introduction}
-\include{chaps/2_Chapter2}
-
+\include{Chapters/1_Introduction}
+\include{Chapters/2_Using}
+\include{Chapters/3_Realization}
 
 \backmatter\makechaptertitlecenter
 \begin{reference}
 	\bibliographystyle{../Template/chinesebst}\bibliography{Manualbib}
 \end{reference}
 
-\include{chaps/Achievements}
-\include{chaps/OriginalStatement}
-\include{chaps/CopyrightAuthorization}
-\include{chaps/Thanks}
+\include{Chapters/Achievements}
+\include{Chapters/OriginalStatement}
+\include{Chapters/CopyrightAuthorization}
+\include{Chapters/Thanks}
 \end{document}

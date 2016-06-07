@@ -1,0 +1,87 @@
+%!TEX root = ../Manual.tex
+\chapter{前言}
+\label{Chap_Intro}
+本文档是《四川大学学位论文~\LaTeX~模版》的说明文档。
+
+
+四川大学学位论文的工作以前由~dahakawang\footnote{\url{https://github.com/dahakawang/scu_thesis_template}}~、~tan\footnote{\url{http://www.codeforge.com/article/382397}}~等人做过。本模版是在参考~Casper Ti. Vector\footnote{\url{CasperVector@gmail.com}}~~\emph{pkuthss}~模版\cite{pkuthss}的基础上，根据《四川大学硕士、博士学位论文格式》\cite{SCUDissertationFormat}完成的。
+
+
+Legendary L.\footnote{Legendary Leo \url{https://github.com/cuiao}}是本文档的创建者和维护者。
+
+\section{推荐配置}
+本模版的使用和正确编译依赖以下几项：
+\begin{description}[style=nextline,labelindent=2em,labelwidth=!]
+	\item[中文字体] 本模版需要中文字体的支持。
+	\item[\TeX~发行版] 一个支持中文的~\TeX~发行版，推荐使用~\TeX Live\footnote{\url{https://www.tug.org/texlive/}}~，本模版即是使用~\TeX Live~构建的。
+	\item[文本编辑器] 一个好用的文本编辑器有利于你的写作，推荐使用~Atom\footnote{\url{https://atom.io/}}~，必备插件为~atom-latex\footnote{\url{https://github.com/thomasjo/atom-latex}}~和~language-latex\footnote{\url{https://github.com/area/language-latex}}~。
+	\item[PDF~阅读器] 一个轻量级的~PDF~阅读器有利于提升效率，推荐使用~SumatraPDF\footnote{\url{http://www.sumatrapdfreader.org/free-pdf-reader.html}}~与~atom-latex~插件联用。
+\end{description}
+
+
+\section{模版文件}
+本模版根目录\verb|./|下文件夹或文件如下：
+\dirtree{%
+	.1 ../.
+	.2 README.md\DTcomment{自述文件}.
+	.2 Template\DTcomment{模版文件夹}.
+	.2 MainBody\DTcomment{论文主体文件夹}.
+	.2 Manual\DTcomment{手册（本文档）文件夹}.
+	.2 Reference Document\DTcomment{参考文档文件夹}.
+}
+其中，\verb|Template|（模版文件夹）较为重要，一般情况下请勿修改！以下按上述文件夹分类介绍本模版中的文件。
+
+\subsection{模版文件夹}
+\verb|Template|为本模版最重要的文件夹，用于存放本模版的样式、宏定义、资源等文件，一般情况下请勿修改！详细的文件目录如下：
+\dirtree{%
+	.1 Template.
+	.2 scuthesis.cls\DTcomment{模版样式文件}.
+	.2 scuthesis.def\DTcomment{模版宏定义文件}.
+	.2 chinesebst.bst\DTcomment{中文参考文献样式文件}.
+	.2 Components.
+	.3 Images.
+	.4 SCU{\_}TITLE.eps\DTcomment{四川大学~LOGO}.
+}
+
+\subsection{论文主体文件夹}
+\verb|MainBody|~文件夹主要用于填写论文内容，用户可以方便地将自己的论文按照章节填写到此文件夹中。详细的文件目录如下：
+\dirtree{%
+	.1 MainBody.
+	.2 MainBody.tex\DTcomment{主\TeX文件}.
+	.2 ReferenceBase.bib\DTcomment{参考文献库文件}.
+	.2 Chapters\DTcomment{章节文件夹}.
+	.3 0{\_}0{\_}Abstract.tex\DTcomment{中英文摘要}.
+	.3 0{\_}1{\_}Abbreviations.tex\DTcomment{缩略词表}.
+	.3 0{\_}2{\_}Symbols.tex\DTcomment{符号表}.
+	.3 Introduction.tex\DTcomment{引言}.
+	.3 Chapter2.tex\DTcomment{第二章}.
+	.3 Thanks.tex\DTcomment{致谢}.
+	.3 Achievements.tex\DTcomment{科研成果}.
+	.3 CopyrightAuthorization.tex\DTcomment{版权授权（请勿修改）}.
+	.3 OriginalStatement.tex\DTcomment{原创声明（请勿修改）}.
+}
+以上文件除~\verb|CopyrightAuthorization.tex|~和~\verb|OriginalStatement.tex|~按照学校统一的内容和格式规定禁止修改外，其他均可按照用户的需要进行修改。~\verb|ReferenceBase.bib|~可使用~\emph{EndNote\textsuperscript{\texttrademark}}~这类文献管理工具导出。
+
+
+若~\verb|Chapters|~文件夹有改动，请使用~\verb|\include{Chapters/<文件名>}|~命令在~\verb|MainBody.tex|~做相应的修改（即若在~\verb|Chapters|~中增加了文件~\verb|Chapter3.tex|~，对应在~\verb|MainBody.tex|~的命令为~\verb|\include{Chapters/Chapter3}|~）。更多的使用方法请详见第\ref{Chap_using}章。
+
+\subsection{手册文件夹}
+\verb|Manual|~是本手册的文件夹，其内容与~\verb|MainBody|~较为类似，在此不做赘述。详细的文件目录如下：
+\dirtree{%
+	.1 Manual.
+	.2 Manual.tex\DTcomment{本手册主\TeX文件}.
+	.2 Manualbib.bib\DTcomment{本手册参考文献库文件}.
+	.2 Manual.pdf\DTcomment{本手册}.
+	.2 Chapters\DTcomment{章节文件夹}.
+	.3 0{\_}0{\_}Abstract.tex\DTcomment{中英文摘要}.
+	.3 0{\_}1{\_}Abbreviations.tex\DTcomment{缩略词表}.
+	.3 0{\_}2{\_}Symbols.tex\DTcomment{符号表}.
+	.3 1{\_}Introduction.tex\DTcomment{前言（本章）}.
+	.3 2{\_}Using.tex\DTcomment{模版的使用}.
+	.3 3{\_}Realization.tex\DTcomment{部分功能实现}.
+	.3 Thanks.tex\DTcomment{致谢}.
+	.3 Achievements.tex\DTcomment{科研成果}.
+	.3 CopyrightAuthorization.tex\DTcomment{版权授权（请勿修改）}.
+	.3 OriginalStatement.tex\DTcomment{原创声明（请勿修改）}.
+	.3 CopyrightStatement.tex\DTcomment{版权声明（请勿修改）}.
+}

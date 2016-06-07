@@ -28,31 +28,31 @@
 % 自动制作标题
 \maketitle
 % 包含摘要
-\include{chaps/0_0_Abstract}
+\include{Chapters/0_0_Abstract}
 % 包含缩略词表
-\include{chaps/0_1_Abbreviations}
+\include{Chapters/0_1_Abbreviations}
 % 包含符号表
-\include{chaps/0_2_Symbols}
+\include{Chapters/0_2_Symbols}
 % 自动制作目录
 \maketoc
 % 设置论文正文部分的页码、页眉等
 \mainmatter\pagenumbering{arabic}\pagestyle{fancy}\makechaptertitleleft
 % 包含第一章、第二章等等
-\include{chaps/1_Introduction}
-\include{chaps/2_Chapter2}
+\include{Chapters/Introduction}
+\include{Chapters/Chapter2}
 % 设置论文正文后的式样
 \backmatter\makechaptertitlecenter
 % 按国标自动制作参考文献
 \begin{reference}
 	% 参考文献数据文件为本目录下的sample.bib
-	\bibliographystyle{../Template/chinesebst}\bibliography{sample}
+	\bibliographystyle{../Template/chinesebst}\bibliography{ReferenceBase}
 \end{reference}
 % 包含在读期间科研成果
-\include{chaps/Achievements}
-% 包含论文原创性声明
-\include{chaps/OriginalStatement}
-% 包含论文版权授权书
-\include{chaps/CopyrightAuthorization}
+\include{Chapters/Achievements}
+% 包含论文原创性声明(请勿修改)
+\include{Chapters/OriginalStatement}
+% 包含论文版权授权书(请勿修改)
+\include{Chapters/CopyrightAuthorization}
 % 包含致谢
-\include{chaps/Thanks}
+\include{Chapters/Thanks}
 \end{document}
