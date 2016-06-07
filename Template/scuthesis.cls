@@ -44,6 +44,8 @@
 \hypersetup{pdfborder=0 0 0}
 % 使用tocloft宏包修改目录样式
 \RequirePackage{tocloft}
+% 目录中显示目录项和参考文献项
+\RequirePackage{tocbibind}
 % 使用caption2宏包修改题注样式
 \RequirePackage{caption2}
 % 修改题注样式
@@ -157,9 +159,9 @@
 
 % 定义\maketoc命令，将自动生成符合要求的目录。
 \newcommand{\maketoc}{
-											\thispagestyle{empty}
+											\thispagestyle{empty}\cleardoublepage
 											\tableofcontents\pagenumbering{roman}
-											\thispagestyle{fancy}\addcontentsline{toc}{chapter}{目录}
+											\thispagestyle{fancy}
 											}
 
 % 设定标题页格式。
@@ -264,13 +266,11 @@
 % 定义参考文献环境
 \newenvironment{reference}
 {
+	\cleardoublepage
 	\zihao{-5}
 	\setlength{\baselineskip}{12pt}
 }
-{
-	\addcontentsline{toc}{chapter}{参考文献}
-	\phantomsection
-}
+
 % 设置文档默认行距为20pt
 \setlength{\baselineskip}{20pt}
 % 加载配置文件
