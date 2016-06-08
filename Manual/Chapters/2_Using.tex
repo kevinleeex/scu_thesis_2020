@@ -1,3 +1,25 @@
 %!TEX root = ../Manual.tex
 \chapter{模版的使用}
 \label{Chap_using}
+\section{功能}
+本节主要介绍本模版所依赖的类库和提供的功能/命令。
+\subsection{依赖的类库}
+本模版依赖的类库/宏包如\autoref{table_packages}所示：
+\begin{table}[H]
+	\centering
+	\caption{本模版依赖的类库/宏包}
+	\label{table_packages}
+	\zihao{5}
+	\begin{tabular*}{\textwidth}{c@{\extracolsep{\fill}}p{0.6\textwidth}}
+		\toprule
+		\textbf{宏包名称} & \textbf{功能描述}     \\
+		\midrule
+		\verb|ctexbook|\cite{ctex-doc}    & \CTeX~书籍类，支持中文书籍类的~\LaTeX~框架。本模版是基于这个核心构建的。\\
+		\verb|ifthen| & 提供逻辑判断功能。 \\
+		\verb|graphicx| & 提供图片插入功能。 \\
+		\bottomrule
+	\end{tabular*}
+\end{table}
+\begin{description}[style=nextline,labelindent=2em,labelwidth=!]
+	\item[ctexbook] \CTeX Book~
+\end{description}

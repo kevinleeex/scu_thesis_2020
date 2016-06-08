@@ -55,8 +55,18 @@
 %               上标	方括号	逗号分隔	自动排序分类
 \RequirePackage[super,square,comma,sort&compress]{natbib}
 \setlength{\bibsep}{0.5ex}
-%
+% 支持自定义列表环境
 \RequirePackage{enumitem}
+% 支持ams数学宏包
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amsthm}
+\RequirePackage{mathtools}
+\RequirePackage{amssymb}
+% 支持float图片环境
+\RequirePackage{float}
+% 三线表支持
+\RequirePackage{booktabs}
 % 这些命令用于设定各项文档信息的具体内容。
 \newcommand\ENGtitle[1]{\def\@ENGtitle{#1}}
 \newcommand\ENGauthor[1]{\def\@ENGauthor{#1}}
@@ -207,6 +217,13 @@
 	\thispagestyle{empty}
 }
 
+% 重定义autoref标签
+\renewcommand{\partautorefname}{\part}
+\renewcommand{\figureautorefname}{\figurename}
+\renewcommand{\tableautorefname}{\tablename}
+\renewcommand{\appendixautorefname}{\appendixname}
+\renewcommand{\equationautorefname}{\equationname}
+\renewcommand{\Itemautorefname}{\Itemname}
 % 定义\specialchap命令，生成没有编号的章节。从pkuthss-1.2beta保留，本模版中未使用。
 \newcommand{\specialchap}[1]{
 														\chapter*{#1}\markboth{#1}{}
