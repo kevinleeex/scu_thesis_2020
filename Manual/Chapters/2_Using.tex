@@ -61,26 +61,26 @@
 其中，~\verb|<parameter>|~指输入的参数，用~\verb|{ }|~包含。
 
 
-如需设定论文的中英文标题，则在文章的一开始输入：
-\begin{Verbatim}[gobble=1,frame=single]
-	\title{四川大学学位论文~\LaTeX~模版 Ver. 0.1}
-	\ENGtitle{The SCU Dissertation \LaTeX ~ Class Ver. 0.1}
-\end{Verbatim}
-
-
-或需得到~3cm~下划线上的\fillinblank{3cm}{四川大学}，需输入：
-\begin{Verbatim}[gobble=1,frame=single]
-	\fillinblank{3cm}{四川大学}
-\end{Verbatim}
-
-\begin{table}[h]
-	\centering
-	\caption{\emph{scuthesis}~提供的带参数命令}
+\begin{center}
+	\topcaption{\emph{scuthesis}~提供的带参数命令}
 	\label{table_ProvidedCommandsWithPar}
-	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}p{0.7\textwidth}}
-		\toprule
-		\textbf{命令} & \textbf{功能描述}     \\
-		\midrule
+	\tablefirsthead{
+									\toprule
+									\multicolumn{1}{l}{\textbf{命令}} & \multicolumn{1}{l}{\textbf{功能描述}}\\
+									\midrule
+									}
+	\tablehead{
+						\multicolumn{2}{l}{\emph{续\autoref{table_ProvidedCommandsWithPar}：}}\\
+						\toprule
+						\multicolumn{1}{l}{\textbf{命令}} & \multicolumn{1}{l}{\textbf{功能描述}}\\
+						\midrule
+						}
+	\tabletail{
+						\bottomrule
+						\multicolumn{2}{r}{\emph{见下页}}\\
+						}
+	\tablelasttail{\bottomrule}
+	\begin{supertabular*}{\textwidth}{l@{\extracolsep{\fill}}p{0.7\textwidth}}
 		\verb|\title| & 设定论文中文标题\\
 		\verb|\ENGtitle| & 设定论文英文标题\\
 		\verb|\author| & 设定论文作者中文姓名\\
@@ -99,23 +99,64 @@
 		\verb|\university| & 设定大学中文名称\\
 		\verb|\ENGuniversity| & 设定大学英文名称\\
 		\verb|\fillinblank| & 双参数命令，用于在指定字段下加特定长度的下划线。第一个参数为下划线长度，第二个参数为输出字段\\
-		\bottomrule
-	\end{tabular*}
-\end{table}
 
+	\end{supertabular*}
+\end{center}
+
+
+如需设定论文的中英文标题，则在文章正式开始前输入：
+\begin{Verbatim}[gobble=1,frame=single]
+	\title{四川大学学位论文~\LaTeX~模版 Ver. 0.1}
+	\ENGtitle{The SCU Dissertation \LaTeX ~ Class Ver. 0.1}
+\end{Verbatim}
+
+
+如需设定论文的中英文作者姓名，则在文章正式开始前输入：
+\begin{Verbatim}[gobble=1,frame=single]
+	\author{Legendary L.}
+	\ENGauthor{Legendary L.}
+\end{Verbatim}
+
+
+或需得到~3cm~下划线上的\fillinblank{3cm}{四川大学}，需输入：
+\begin{Verbatim}[gobble=1,frame=single]
+	\fillinblank{3cm}{四川大学}
+\end{Verbatim}
+
+
+本模版提供的不带参数命令如\autoref{table_ProvidedCommandsWithoutPar}所示：
 \begin{table}[h]
-	\centering
 	\caption{\emph{scuthesis}~提供的不带参数命令}
 	\label{table_ProvidedCommandsWithoutPar}
-	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}p{0.65\textwidth}}
+	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}p{0.6\textwidth}}
 		\toprule
-		\textbf{命令} & \textbf{功能描述}     \\
+		\textbf{命令} & \textbf{功能描述} \\
 		\midrule
 		\verb|\maketitle| & 根据设置字段自动生成论文封面\\
 		\verb|\maketoc| & 根据章节信息自动生成目录\\
 		\verb|\makechaptertitlecenter| & 使章节标题居中\\
 		\verb|\makechaptertitleleft| & 使章节标题居左\\
 		\verb|\autograph| & 生成如学位论文版权使用授权书样式的签名栏\\
+		\bottomrule
+	\end{tabular*}
+\end{table}
+
+
+如需生成封面，则在输入完必要信息后，使用~\verb|\maketitle|~命令生成。
+
+
+\subsection{提供的环境}
+本模版提供的环境如\autoref{table_ProvidedEnvironment}所示。
+\begin{table}[h]
+	\caption{\emph{scuthesis}~提供的环境}
+	\label{table_ProvidedEnvironment}
+	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}p{0.6\textwidth}}
+		\toprule
+		\textbf{环境名称} & \textbf{功能描述} \\
+		\midrule
+		\verb|CHSabstract| & 中文摘要环境，用于填写中文摘要。\\
+		\verb|ENGabstract| & 英文摘要环境，用于填写英文摘要。\\
+		\verb|reference| & 参考文献环境，使自动生成的参考文献符合格式规范。\\
 		\bottomrule
 	\end{tabular*}
 \end{table}
