@@ -4,11 +4,11 @@
 \section{功能}
 本节主要介绍本模版所依赖的类库和提供的功能/命令。
 \subsection{依赖的类库}
-本模版依赖的类库/宏包如\autoref{table_packages}所示：
+本模版依赖的类库/宏包如\autoref{table_RequiredPackages}所示：
 \begin{table}[H]
 	\centering
 	\caption{本模版依赖的类库/宏包}
-	\label{table_packages}
+	\label{table_RequiredPackages}
 	\zihao{5}
 	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}p{0.7\textwidth}}
 		\toprule
@@ -36,5 +36,86 @@
 	\end{tabular*}
 \end{table}
 \subsection{提供的选项}
+本模版以~\verb|ctexbook|~文档类为基础，提供~\verb|<degree>|~选项用于选择学位论文类别，其余选项~\verb|<ctexbook_opt>|~均会被传递给~\verb|ctexbook|~文档类。
+
+
+加载本模版定义的文档类的命令为：
+\fvset{fontsize=\zihao{-5}}
+\begin{Verbatim}[gobble=1,frame=single]
+	\documentclass[<degree>,<ctexbook_opt1>,...,<ctexbook_optXX>]{../Template/scuthesis}
+\end{Verbatim}
+其中，~\verb|<degree>|~可用选项为~\verb|doctor|~、~\verb|master|~和~\verb|bachelor|\footnote{虽然此选项代表学士学位论文选项，但并未针对其论文格式要求作出适配。}~，分别代表博士、硕士和学士学位论文。值得注意的是，一般推荐使用~\verb|UTF-8|~编码撰写论文，因此建议设置~\verb|<ctexbook_opt1>|~为~\verb|UTF-8|~。其他有关~\verb|ctexbook|~文档类的选项请参考相关文档\cite{Packages_CTeX}。
+
+
+本手册加载~\emph{scuthesis}~文档类的命令为：
+\begin{Verbatim}[gobble=1,frame=single]
+	\documentclass[master,UTF8,hyperref]{../Template/scuthesis}
+\end{Verbatim}
 
 \subsection{提供的命令}
+本模版提供的带参数命令如\autoref{table_ProvidedCommandsWithPar}所示。这种带参数的命令一般用以下方式调用：
+\fvset{fontsize=\zihao{5}}
+\begin{Verbatim}[gobble=1,frame=single]
+	\command{<parameter1>}{<parameter2>}...{<parameterXX>}
+\end{Verbatim}
+其中，~\verb|<parameter>|~指输入的参数，用~\verb|{ }|~包含。
+
+
+如需设定论文的中英文标题，则在文章的一开始输入：
+\begin{Verbatim}[gobble=1,frame=single]
+	\title{四川大学学位论文~\LaTeX~模版 Ver. 0.1}
+	\ENGtitle{The SCU Dissertation \LaTeX ~ Class Ver. 0.1}
+\end{Verbatim}
+
+
+或需得到~3cm~下划线上的\fillinblank{3cm}{四川大学}，需输入：
+\begin{Verbatim}[gobble=1,frame=single]
+	\fillinblank{3cm}{四川大学}
+\end{Verbatim}
+
+\begin{table}[h]
+	\centering
+	\caption{\emph{scuthesis}~提供的带参数命令}
+	\label{table_ProvidedCommandsWithPar}
+	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}p{0.7\textwidth}}
+		\toprule
+		\textbf{命令} & \textbf{功能描述}     \\
+		\midrule
+		\verb|\title| & 设定论文中文标题\\
+		\verb|\ENGtitle| & 设定论文英文标题\\
+		\verb|\author| & 设定论文作者中文姓名\\
+		\verb|\ENGauthor| & 设定论文作者英文姓名\\
+		\verb|\accomplishdate| & 设定论文完成日期\\
+		\verb|\school| & 设定所属学院\\
+		\verb|\supervisor| & 设定导师中文姓名\\
+		\verb|\ENGsupervisor| & 设定导师英文姓名\\
+		\verb|\major| & 设定专业中文名\\
+		\verb|\ENGmajor| & 设定专业英文名\\
+		\verb|\direction| & 设定研究方向中文名\\
+		\verb|\ENGdirection| & 设定研究方向英文名\\
+		\verb|\defensedate| & 设定答辩日期\\
+		\verb|\keywords| & 设定中文关键词\\
+		\verb|\ENGkeywords| & 设定英文关键词\\
+		\verb|\university| & 设定大学中文名称\\
+		\verb|\ENGuniversity| & 设定大学英文名称\\
+		\verb|\fillinblank| & 双参数命令，用于在指定字段下加特定长度的下划线。第一个参数为下划线长度，第二个参数为输出字段\\
+		\bottomrule
+	\end{tabular*}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{\emph{scuthesis}~提供的不带参数命令}
+	\label{table_ProvidedCommandsWithoutPar}
+	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}p{0.65\textwidth}}
+		\toprule
+		\textbf{命令} & \textbf{功能描述}     \\
+		\midrule
+		\verb|\maketitle| & 根据设置字段自动生成论文封面\\
+		\verb|\maketoc| & 根据章节信息自动生成目录\\
+		\verb|\makechaptertitlecenter| & 使章节标题居中\\
+		\verb|\makechaptertitleleft| & 使章节标题居左\\
+		\verb|\autograph| & 生成如学位论文版权使用授权书样式的签名栏\\
+		\bottomrule
+	\end{tabular*}
+\end{table}
