@@ -89,71 +89,71 @@
 % CTEX设置各级标题对齐方式，字号，字体及前后段间距
 % “章节”标题，小三号黑体，左对齐，前后段间距为10pt
 \CTEXsetup[
-					format+={\zihao{-3}\rm\heiti\flushleft},
-					beforeskip={-1cm},
-					afterskip={10pt}
-					]{chapter}
+	format+={\zihao{-3}\rm\heiti\flushleft},
+	beforeskip={-1cm},
+	afterskip={10pt}
+]{chapter}
 % “节”标题，四号黑体，左对齐，前后段间距为10pt
 \CTEXsetup[
-					format+={\zihao{4}\rm\heiti\flushleft},
-					beforeskip={10pt},
-					afterskip={10pt}
-					]{section}
+	format+={\zihao{4}\rm\heiti\flushleft},
+	beforeskip={10pt},
+	afterskip={10pt}
+]{section}
 % “小节”标题，小四号黑体，左对齐，前后段间距为10pt
 \CTEXsetup[
-					format+={\zihao{-4}\rm\heiti\flushleft},
-					beforeskip={10pt},
-					afterskip={10pt}
-					]{subsection}
+	format+={\zihao{-4}\rm\heiti\flushleft},
+	beforeskip={10pt},
+	afterskip={10pt}
+]{subsection}
 % “次小节”标题，小四号楷体，左对齐，前后段间距为10pt
 \CTEXsetup[
-					format+={\zihao{-4}\rm\kaishu\flushleft},
-					beforeskip={10pt},
-					afterskip={10pt}
-					]{subsubsection}
+	format+={\zihao{-4}\rm\kaishu\flushleft},
+	beforeskip={10pt},
+	afterskip={10pt}
+]{subsubsection}
 % “段”标题，小四号楷体，左对齐，前后段间距为0pt
 \renewcommand{\theparagraph}{(\arabic{paragraph})}
 \CTEXsetup[
-					name={,},
-					number={\theparagraph},
-					format+={\zihao{-4}\rm\kaishu\flushleft},
-					beforeskip={0pt},
-					afterskip={0pt}
-					]{paragraph}
+	name={,},
+	number={\theparagraph},
+	format+={\zihao{-4}\rm\kaishu\flushleft},
+	beforeskip={0pt},
+	afterskip={0pt}
+]{paragraph}
 % 定义\makechaptertitlecenter命令，可使命令后章节标题居中
 \newcommand{\makechaptertitlecenter}{\CTEXsetup[format+={\center}]{chapter}}
 % 定义\makechaptertitleleft命令，可使命令后章节标题居左
 \newcommand{\makechaptertitleleft}{\CTEXsetup[format+={\flushleft}]{chapter}}
 % 判断论文类别，定义不同论文名称
 \ifthenelse{\equal{\thesistype}{0}}{
-																		\def\thesisname{博士学位论文}
-																		\def\CHSauthortype{研究生}
-																		\def\ENGauthortype{Postgraduate}
-																		}{}
+	\def\thesisname{博士学位论文}
+	\def\CHSauthortype{研究生}
+	\def\ENGauthortype{Postgraduate}
+	}{}
 \ifthenelse{\equal{\thesistype}{1}}{
-																		\def\thesisname{硕士学位论文}
-																		\def\CHSauthortype{研究生}
-																		\def\ENGauthortype{Postgraduate}
-																		}{}
+	\def\thesisname{硕士学位论文}
+	\def\CHSauthortype{研究生}
+	\def\ENGauthortype{Postgraduate}
+	}{}
 \ifthenelse{\equal{\thesistype}{2}}{
-																		\def\thesisname{学士学位论文}
-																		\def\CHSauthortype{本科生}
-																		\def\ENGauthortype{Undergraduate}
-																		}{}
+	\def\thesisname{学士学位论文}
+	\def\CHSauthortype{本科生}
+	\def\ENGauthortype{Undergraduate}
+	}{}
 
 
 % 定义\fillinblank命令，用下划线填充指定的空间。
 \newcommand{\fillinblank}[2]{
-														\CJKunderline{\makebox[#1]{#2}}
-														}
+	\CJKunderline{\makebox[#1]{#2}}
+}
 % 定义\putonbottom命令，将对象放到页面底部。
 \newcommand{\putonbottom}[1]{
-														\begin{figure}[b!]%
-															\begin{minipage}{\textwidth}
-																{#1}
-															\end{minipage}
-														\end{figure}
-														}
+	\begin{figure}[b!]%
+		\begin{minipage}{\textwidth}
+			{#1}
+		\end{minipage}
+	\end{figure}
+}
 
 % 定义目录标题格式，小三号黑体居中，段前后距10pt
 \renewcommand{\cfttoctitlefont}{\hfill\zihao{-3}\rm\heiti}
@@ -169,127 +169,132 @@
 
 % 定义\maketoc命令，将自动生成符合要求的目录。
 \newcommand{\maketoc}{
-											\thispagestyle{empty}\cleardoublepage
-											\tableofcontents\pagenumbering{roman}
-											\thispagestyle{fancy}
-											}
+	\thispagestyle{empty}\cleardoublepage
+	\tableofcontents\pagenumbering{roman}
+	\thispagestyle{fancy}
+}
 
 % 设定标题页格式。
 \renewcommand\maketitle
 {
-  \cleardoublepage
-  \begin{titlepage}
-    \begin{center}
-    % 校名和论文类别、“四川大学”字样
-    {
-      \ \\[-1cm]
-      \includegraphics[width=8cm]{../Template/Components/Images/SCU_TITLE}\\[1.5cm]
-  		{\makebox[10.5cm][s]{\zihao{-0}\heiti\thesisname}}
-    }
-		\\[2cm]
-		% 论文标题，作者，完成日期
-		{
-			\zihao{-3}\kaishu
-			\begin{tabular}{cc}
-			{\makebox[1.5cm][s]{\textbf{\label@title}}} &\fillinblank{12cm}{\textbf{\@title}} \\[0.7cm]
-			{\makebox[1.5cm][s]{\textbf{\label@author}}} &\fillinblank{4cm}{\textbf{\@author}}
-			{\makebox[2cm][s]{\textbf{\label@accomplishdate}}} \fillinblank{5.8cm}{\textbf{\@accomplishdate}}
+	\cleardoublepage
+	\begin{titlepage}
+		\begin{center}
+			% 校名和论文类别、“四川大学”字样
+			{
+				\ \\[-1cm]
+				\includegraphics[width=8cm]{../Template/Components/Images/SCU_TITLE}\\[1.5cm]
+					{\makebox[10.5cm][s]{\zihao{-0}\heiti\thesisname}}
+				}
+				\\[2cm]
+				% 论文标题，作者，完成日期
+				{
+					\zihao{-3}\kaishu
+					\begin{tabular}{cc}
+						{\makebox[1.5cm][s]{\textbf{\label@title}}}  & \fillinblank{12cm}{\textbf{\@title}} \\[0.7cm]
+						{\makebox[1.5cm][s]{\textbf{\label@author}}} & \fillinblank{4cm}{\textbf{\@author}}
+						{\makebox[2cm][s]{\textbf{\label@accomplishdate}}} \fillinblank{5.8cm}{\textbf{\@accomplishdate}}
+					\end{tabular}
+				}
+				\\[2.6cm]
+				% 培养单位，指导教师，专业等信息
+				{
+					\zihao{-3}\kaishu
+					\begin{tabular}{cc}
+						{\makebox[3.2cm][s]{\textbf{\label@university}}}  & \fillinblank{6.2cm}{\textbf{\university}}
+						\\[0.8cm]
+						{\makebox[3.2cm][s]{\textbf{\label@supervisor}}}  & \fillinblank{6.2cm}{\textbf{\@supervisor}}
+						\\[0.8cm]
+						{\makebox[3.2cm][s]{\textbf{\label@major}}}       & \fillinblank{6.2cm}{\textbf{\@major}}
+						\\[0.8cm]
+						{\makebox[3.2cm][s]{\textbf{\label@direction}}}   & \fillinblank{6.2cm}{\textbf{\@direction}}
+						\\[0.8cm]
+						{\makebox[3.2cm][s]{\textbf{\label@defensedate}}} & \fillinblank{6.2cm}{\textbf{\@defensedate}}
+					\end{tabular}
+				}
+			\end{center}
+		\end{titlepage}
+		\thispagestyle{empty}
+	}
+
+	% 重定义autoref标签
+	\renewcommand{\partautorefname}{\part}
+	\renewcommand{\figureautorefname}{\figurename}
+	\renewcommand{\tableautorefname}{\tablename}
+	\renewcommand{\appendixautorefname}{\appendixname}
+	\renewcommand{\equationautorefname}{\equationname}
+	\renewcommand{\Itemautorefname}{\Itemname}
+
+	\newcommand{\equationname}{式}
+	\renewcommand{\equationautorefname}{\equationname}
+
+	% 定义\specialchap命令，生成没有编号的章节。从pkuthss-1.2beta保留，本模版中未使用。
+	\newcommand{\specialchap}[1]{
+		\chapter*{#1}\markboth{#1}{}
+		\addcontentsline{toc}{chapter}{#1}\phantomsection
+	}
+
+	% 定义\autograph命令，生成版权授权书等的签名栏。
+	\newcommand{\autograph}{
+		\begin{center}
+			\begin{tabular}{ll}
+				学位论文作者签名：\hspace{5cm}                          & 导师签名：\hspace{5cm}                                      \\[1cm]
+				签字日期：\hspace{1cm}年\hspace{0.5cm}月\hspace{0.5cm}日 & 签字日期：\hspace{1cm}年\hspace{0.5cm}月\hspace{0.5cm}日
 			\end{tabular}
-		}
-		\\[2.6cm]
-		% 培养单位，指导教师，专业等信息
-		{
-			\zihao{-3}\kaishu
-			\begin{tabular}{cc}
-			{\makebox[3.2cm][s]{\textbf{\label@university}}} &\fillinblank{6.2cm}{\textbf{\university}}
-			\\[0.8cm]
-			{\makebox[3.2cm][s]{\textbf{\label@supervisor}}} &\fillinblank{6.2cm}{\textbf{\@supervisor}}
-			\\[0.8cm]
-			{\makebox[3.2cm][s]{\textbf{\label@major}}} &\fillinblank{6.2cm}{\textbf{\@major}}
-			\\[0.8cm]
-			{\makebox[3.2cm][s]{\textbf{\label@direction}}} &\fillinblank{6.2cm}{\textbf{\@direction}}
-			\\[0.8cm]
-			{\makebox[3.2cm][s]{\textbf{\label@defensedate}}} &\fillinblank{6.2cm}{\textbf{\@defensedate}}
-			\end{tabular}
-		}
-    \end{center}
-  \end{titlepage}
-	\thispagestyle{empty}
-}
+		\end{center}
+	}
 
-% 重定义autoref标签
-\renewcommand{\partautorefname}{\part}
-\renewcommand{\figureautorefname}{\figurename}
-\renewcommand{\tableautorefname}{\tablename}
-\renewcommand{\appendixautorefname}{\appendixname}
-\renewcommand{\equationautorefname}{\equationname}
-\renewcommand{\Itemautorefname}{\Itemname}
-% 定义\specialchap命令，生成没有编号的章节。从pkuthss-1.2beta保留，本模版中未使用。
-\newcommand{\specialchap}[1]{
-														\chapter*{#1}\markboth{#1}{}
-														\addcontentsline{toc}{chapter}{#1}\phantomsection
-														}
+	% 定义中文摘要环境
+	\newenvironment{CHSabstract}
+	{
+		\cleardoublepage
+		\ \vspace{0cm}\par
+		\begin{center}
+			\zihao{-2}\songti{\@title} \\[0.5cm]
+			\zihao{-4}
+			{\heiti{{\label@major}{：}}}{\kaishu{\@major}} \\[0.5cm]
+			{\heiti{{\CHSauthortype}{：}}}{\kaishu{\@author}}
+			\quad
+			{\heiti{{\label@supervisor}{：}}}{\kaishu{\@supervisor}}
+		\end{center}
+		\ \vspace{0cm}\par
+		%\ \\[-0.5cm]
+	}
+	{
+		\vspace{1em}\par
+		\noindent\textbf{关键词：}\@keywords
+		%\putonbottom{\textbf{关键词：}\@keywords}
+	}
+	% 定义英文摘要环境
+	\newenvironment{ENGabstract}
+	{
+		\cleardoublepage
+		\ \vspace{0cm}\par
+		\begin{center}
+			\zihao{-2}{\@ENGtitle} \\[0.5cm]
+			\zihao{-4}
+			{\textbf{{\label@ENGmajor}{: }}}{{\@ENGmajor}} \\[0.5cm]
+			{\textbf{{\ENGauthortype}{: }}}{{\@ENGauthor}}
+			\quad
+			{\textbf{{\label@ENGsupervisor}{: }}}{{\@ENGsupervisor}}
+		\end{center}
+		\ \vspace{0cm}\par
+		%\ \\[-0.5cm]\setlength\parindent{2em}
+	}
+	{
+		\vspace{1em}\par
+		\noindent\textbf{Keywords:} \@ENGkeywords%\putonbottom{\textbf{Keywords:} \@ENGkeywords}
+	}
+	% 定义参考文献环境
+	\newenvironment{reference}
+	{
+		\cleardoublepage
+		\zihao{-5}
+		\setlength{\baselineskip}{12pt}
+	}
 
-% 定义\autograph命令，生成版权授权书等的签名栏。
-\newcommand{\autograph}{
-												\begin{center}
-													\begin{tabular}{ll}
-													学位论文作者签名：\hspace{5cm}                          & 导师签名：\hspace{5cm}                                      \\[1cm]
-													签字日期：\hspace{1cm}年\hspace{0.5cm}月\hspace{0.5cm}日 & 签字日期：\hspace{1cm}年\hspace{0.5cm}月\hspace{0.5cm}日
-													\end{tabular}
-												\end{center}
-												}
-
-% 定义中文摘要环境
-\newenvironment{CHSabstract}
-{
-	\cleardoublepage
-	\ \vspace{0cm}\par
-	\begin{center}
-		\zihao{-2}\songti{\@title} \\[0.5cm]
-		\zihao{-4}
-		{\heiti{{\label@major}{：}}}{\kaishu{\@major}} \\[0.5cm]
-		{\heiti{{\CHSauthortype}{：}}}{\kaishu{\@author}}
-		\quad
-		{\heiti{{\label@supervisor}{：}}}{\kaishu{\@supervisor}}
-	\end{center}
-	\ \vspace{0cm}\par
-	%\ \\[-0.5cm]
-}
-{
-	\vspace{1em}\par
-	\noindent\textbf{关键词：}\@keywords%\putonbottom{\textbf{关键词：}\@keywords}
-}
-% 定义英文摘要环境
-\newenvironment{ENGabstract}
-{
-	\cleardoublepage
-	\ \vspace{0cm}\par
-	\begin{center}
-		\zihao{-2}{\@ENGtitle} \\[0.5cm]
-		\zihao{-4}
-		{\textbf{{\label@ENGmajor}{: }}}{{\@ENGmajor}} \\[0.5cm]
-		{\textbf{{\ENGauthortype}{: }}}{{\@ENGauthor}}
-		\quad
-		{\textbf{{\label@ENGsupervisor}{: }}}{{\@ENGsupervisor}}
-	\end{center}
-	\ \vspace{0cm}\par
-	%\ \\[-0.5cm]\setlength\parindent{2em}
-}
-{
-	\vspace{1em}\par
-	\noindent\textbf{Keywords:} \@ENGkeywords%\putonbottom{\textbf{Keywords:} \@ENGkeywords}
-}
-% 定义参考文献环境
-\newenvironment{reference}
-{
-	\cleardoublepage
-	\zihao{-5}
-	\setlength{\baselineskip}{12pt}
-}
-
-% 设置文档默认行距为20pt
-\setlength{\baselineskip}{20pt}
-% 加载配置文件
-\AtEndOfClass{\input{../Template/scuthesis.def}}
-\endinput
+	% 设置文档默认行距为20pt
+	\setlength{\baselineskip}{20pt}
+	% 加载配置文件
+	\AtEndOfClass{\input{../Template/scuthesis.def}}
+	\endinput

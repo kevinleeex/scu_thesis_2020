@@ -65,20 +65,20 @@
 	\topcaption{\emph{scuthesis}~提供的带参数命令}
 	\label{table_ProvidedCommandsWithPar}
 	\tablefirsthead{
-									\toprule
-									\multicolumn{1}{l}{\textbf{命令}} & \multicolumn{1}{l}{\textbf{功能描述}}\\
-									\midrule
-									}
+		\toprule
+		\multicolumn{1}{l}{\textbf{命令}} & \multicolumn{1}{l}{\textbf{功能描述}}\\
+		\midrule
+	}
 	\tablehead{
-						\multicolumn{2}{l}{\emph{续\autoref{table_ProvidedCommandsWithPar}：}}\\
-						\toprule
-						\multicolumn{1}{l}{\textbf{命令}} & \multicolumn{1}{l}{\textbf{功能描述}}\\
-						\midrule
-						}
+		\multicolumn{2}{l}{\emph{续\autoref{table_ProvidedCommandsWithPar}：}}\\
+		\toprule
+		\multicolumn{1}{l}{\textbf{命令}} & \multicolumn{1}{l}{\textbf{功能描述}}\\
+		\midrule
+	}
 	\tabletail{
-						\bottomrule
-						\multicolumn{2}{r}{\emph{见下页}}\\
-						}
+		\bottomrule
+		\multicolumn{2}{r}{\emph{见下页}}\\
+	}
 	\tablelasttail{\bottomrule}
 	\begin{supertabular*}{\textwidth}{l@{\extracolsep{\fill}}p{0.7\textwidth}}
 		\verb|\title| & 设定论文中文标题\\
@@ -142,7 +142,14 @@
 \end{table}
 
 
-如需生成封面，则在输入完必要信息后，使用~\verb|\maketitle|~命令生成。
+如需生成封面，则在输入完必要信息后，使用~\verb|\maketitle|~命令生成。或若需将章节标题居左，就只需要在需要居左的章节前加~\verb|\makechaptertitleleft|~，如：
+\begin{Verbatim}
+	\makechaptertitleleft	% 章节标题居左
+	\chapter{绪论}	% “绪论”章节
+	..............
+	\chapter{问题模型的建立}	% “问题模型的建立”章节
+	..............
+\end{Verbatim}
 
 
 \subsection{提供的环境}
@@ -160,3 +167,9 @@
 		\bottomrule
 	\end{tabular*}
 \end{table}
+
+
+\begin{equation}
+	\label{eqn_ola}
+	e^{j\omega\phi}=\cos(\omega\phi)+j\sin(\omega\phi)
+\end{equation}
