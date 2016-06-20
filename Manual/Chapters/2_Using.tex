@@ -51,7 +51,7 @@
 其中，~\verb|<degree>|~可用选项为~\verb|doctor|~、~\verb|master|~和~\verb|bachelor|\footnote{虽然此选项代表学士学位论文选项，但并未针对其论文格式要求作出适配。}~，分别代表博士、硕士和学士学位论文。值得注意的是，一般推荐使用~\verb|UTF-8|~编码撰写论文，因此建议设置~\verb|<ctexbook_opt1>|~为~\verb|UTF-8|~。其他有关~\verb|ctexbook|~文档类的选项请参考相关文档\cite{Packages_CTeX}。
 
 
-本手册加载~\emph{scuthesis}~文档类的命令为\footnote{在需要生成阅读版论文时，即不需要在章节非奇数页时在前插入空白页是，可在~UTF8~选项前加入~oneside~选项。}：
+本手册加载~\emph{scuthesis}~文档类的命令为\footnote{在需要生成阅读版论文时，即不需要在章节非奇数页时在前插入空白页是，可在~UTF8~选项前加入~oneside~选项。本手册即采用这个选项。}：
 \begin{Verbatim}[gobble=1,frame=single]
 	\documentclass[master,UTF8,hyperref]{../Template/scuthesis}
 \end{Verbatim}
@@ -75,14 +75,14 @@
 		\midrule
 	}
 	\tablehead{
-		\multicolumn{2}{l}{\emph{续\cref{table_ProvidedCommandsWithPar}：}}\\
+		\multicolumn{2}{l}{\emph{——~续\cref{table_ProvidedCommandsWithPar}~——}}\\
 		\toprule
 		\multicolumn{1}{l}{\textbf{命令}} & \multicolumn{1}{l}{\textbf{功能描述}}\\
 		\midrule
 	}
 	\tabletail{
 		\bottomrule
-		\multicolumn{2}{r}{\emph{见下页}}\\
+		\multicolumn{2}{r}{\emph{——~续表见下页~——}}\\
 	}
 	\tablelasttail{\bottomrule}
 	\begin{supertabular*}{\textwidth}{l@{\extracolsep{\fill}}p{0.7\textwidth}}
