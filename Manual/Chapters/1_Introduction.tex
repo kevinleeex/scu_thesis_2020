@@ -10,6 +10,7 @@
 Legendary L.\footnote{Legendary Leo \url{https://github.com/cuiao}}是本文档的创建者和维护者。
 
 \section{特点}
+\label{Sect_KeyFeatures}
 本模版是严格按照《四川大学硕士、博士学位论文格式》\cite{SCUDissertationFormat}中的要求编写的，有以下几个特点：
 \begin{itemize}
 	\item 使用简单：本模版在编写之初就考虑到~\LaTeX~初学者的情况，按照本手册的说明，不需要高深的~\LaTeX~知识便可使用本模版进行论文写作。
@@ -18,6 +19,7 @@ Legendary L.\footnote{Legendary Leo \url{https://github.com/cuiao}}是本文档�
 \end{itemize}
 
 \section{推荐配置}
+\label{Sect_RecommandedConfiguration}
 本模版的使用和正确编译依赖以下几项：
 \begin{description}[style=nextline,labelindent=2em,labelwidth=!]
 	\item[中文字体] 本模版需要中文字体的支持。
@@ -28,6 +30,7 @@ Legendary L.\footnote{Legendary Leo \url{https://github.com/cuiao}}是本文档�
 
 
 \section{模版文件}
+\label{Sect_Files}
 本模版根目录\verb|./|下文件夹或文件如下：
 \dirtree{%
 	.1 ../.
@@ -39,6 +42,7 @@ Legendary L.\footnote{Legendary Leo \url{https://github.com/cuiao}}是本文档�
 其中，\verb|Template|（模版文件夹）较为重要，一般情况下请勿修改！以下按上述文件夹分类介绍本模版中的文件。
 
 \subsection{模版文件夹}
+\label{Subsect_TemplateFolder}
 \verb|Template|为本模版最重要的文件夹，用于存放本模版的样式、宏定义、资源等文件，一般情况下请勿修改！详细的文件目录如下：
 \dirtree{%
 	.1 Template.
@@ -51,6 +55,7 @@ Legendary L.\footnote{Legendary Leo \url{https://github.com/cuiao}}是本文档�
 }
 
 \subsection{论文主体文件夹}
+\label{Subsect_MainbodyFolder}
 \verb|MainBody|~文件夹主要用于填写论文内容，用户可以方便地将自己的论文按照章节填写到此文件夹中。详细的文件目录如下：
 \dirtree{%
 	.1 MainBody.
@@ -73,6 +78,7 @@ Legendary L.\footnote{Legendary Leo \url{https://github.com/cuiao}}是本文档�
 若~\verb|Chapters|~文件夹有改动，请使用~\verb|\include{Chapters/<文件名>}|~命令在~\verb|MainBody.tex|~做相应的修改（即若在~\verb|Chapters|~中增加了文件~\verb|Chapter3.tex|~，对应在~\verb|MainBody.tex|~的命令为~\verb|\include{Chapters/Chapter3}|~）。更多的使用方法请详见第\ref{Chap_using}章。
 
 \subsection{手册文件夹}
+\label{Subsect_ManualFolder}
 \verb|Manual|~是本手册的文件夹，其内容与~\verb|MainBody|~较为类似，在此不做赘述。详细的文件目录如下：
 \dirtree{%
 	.1 Manual.

@@ -218,15 +218,15 @@
 	}
 
 	% 重定义autoref标签
-	\renewcommand{\partautorefname}{\part}
-	\renewcommand{\figureautorefname}{\figurename}
-	\renewcommand{\tableautorefname}{\tablename}
-	\renewcommand{\appendixautorefname}{\appendixname}
-	\renewcommand{\equationautorefname}{\equationname}
-	\renewcommand{\Itemautorefname}{\Itemname}
+	%\renewcommand{\partautorefname}{\part}
+	%\renewcommand{\figureautorefname}{\figurename}
+	%\renewcommand{\tableautorefname}{\tablename}
+	%\renewcommand{\appendixautorefname}{\appendixname}
+	%\renewcommand{\equationautorefname}{\equationname}
+	%\renewcommand{\Itemautorefname}{\Itemname}
 
-	\newcommand{\equationname}{式}
-	\renewcommand{\equationautorefname}{\equationname}
+	%\newcommand{\equationname}{式}
+	%\renewcommand{\equationautorefname}{\equationname}
 
 	% 定义\specialchap命令，生成没有编号的章节。从pkuthss-1.2beta保留，本模版中未使用。
 	\newcommand{\specialchap}[1]{
@@ -295,6 +295,26 @@
 
 	% 设置文档默认行距为20pt
 	\setlength{\baselineskip}{20pt}
+	% 加载cleveref宏，支持智能化引用
+	\RequirePackage{cleveref}
+	\crefformat{chapter}{第~#2#1#3~章}
+	\crefformat{section}{第~#2#1#3~节}
+	\crefformat{subsection}{第~#2#1#3~小节}
+	\crefformat{subsubsection}{第~#2#1#3~项}
+	\creflabelformat{table}{#2#1#3~}
+	\crefrangelabelformat{table}{#3#1#4~-~#5#2#6~}
+	\creflabelformat{figure}{#2#1#3~}
+	\crefrangelabelformat{figure}{#3#1#4~-~#5#2#6~}
+	\creflabelformat{equation}{(#2#1#3)~}
+	\crefrangelabelformat{equation}{(#3#1#4)~-~(#5#2#6)~}
+	\crefname{equation}{式}{式}
+	\crefname{table}{表}{表}
+	\crefname{figure}{图}{图}
+
+	\newcommand{\crefpairconjunction}{,}
+	\newcommand{\crefmiddleconjunction}{,}
+	\newcommand{\creflastconjunction}{,}
+	\newcommand{\crefrangeconjunction}{-}
 	% 加载配置文件
 	\AtEndOfClass{\input{../Template/scuthesis.def}}
 	\endinput

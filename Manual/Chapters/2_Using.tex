@@ -2,9 +2,11 @@
 \chapter{模版的使用}
 \label{Chap_using}
 \section{功能}
+\label{Sect_Features}
 本节主要介绍本模版所依赖的类库和提供的功能/命令。
 \subsection{依赖的类库}
-本模版依赖的类库/宏包如\autoref{table_RequiredPackages}所示：
+\label{Subsect_RequiredPackages}
+本模版依赖的类库/宏包如\cref{table_RequiredPackages}所示：
 \begin{table}[H]
 	\centering
 	\caption{本模版依赖的类库/宏包}
@@ -20,6 +22,7 @@
 		\verb|anysize|\cite{Packages_anysize} & 支持自定义纸张大小，本模版的16开页面需此宏支持。 \\
 		\verb|epstopdf|\cite{Packages_epstopdf} & 支持将~eps~转换为~pdf~，并能够跨目录访问。 \\
 		\verb|hyperref|\cite{Packages_hyperref} & 支持文档导航标签及超链接功能。 \\
+		\verb|cleveref|\cite{Packages_cleveref} & 支持更易使用和更灵活的交叉引用。 \\
 		\verb|tocloft|\cite{Packages_tocloft} & 支持自定义目录样式。 \\
 		\verb|tocbibind|\cite{Packages_tocbibind} & 支持在目录中显示参考文献、附录等项目。 \\
 		\verb|caption2|\cite{Packages_caption2} & 支持自定义题注样式。 \\
@@ -36,6 +39,7 @@
 	\end{tabular*}
 \end{table}
 \subsection{提供的选项}
+\label{table_ProvidedOptions}
 本模版以~\verb|ctexbook|~文档类为基础，提供~\verb|<degree>|~选项用于选择学位论文类别，其余选项~\verb|<ctexbook_opt>|~均会被传递给~\verb|ctexbook|~文档类。
 
 
@@ -47,13 +51,14 @@
 其中，~\verb|<degree>|~可用选项为~\verb|doctor|~、~\verb|master|~和~\verb|bachelor|\footnote{虽然此选项代表学士学位论文选项，但并未针对其论文格式要求作出适配。}~，分别代表博士、硕士和学士学位论文。值得注意的是，一般推荐使用~\verb|UTF-8|~编码撰写论文，因此建议设置~\verb|<ctexbook_opt1>|~为~\verb|UTF-8|~。其他有关~\verb|ctexbook|~文档类的选项请参考相关文档\cite{Packages_CTeX}。
 
 
-本手册加载~\emph{scuthesis}~文档类的命令为：
+本手册加载~\emph{scuthesis}~文档类的命令为\footnote{在需要生成阅读版论文时，即不需要在章节非奇数页时在前插入空白页是，可在~UTF8~选项前加入~oneside~选项。}：
 \begin{Verbatim}[gobble=1,frame=single]
 	\documentclass[master,UTF8,hyperref]{../Template/scuthesis}
 \end{Verbatim}
 
 \subsection{提供的命令}
-本模版提供的带参数命令如\autoref{table_ProvidedCommandsWithPar}所示。这种带参数的命令一般用以下方式调用：
+\label{table_ProvidedCommands}
+本模版提供的带参数命令如\cref{table_ProvidedCommandsWithPar}所示。这种带参数的命令一般用以下方式调用：
 \fvset{fontsize=\zihao{5}}
 \begin{Verbatim}[gobble=1,frame=single]
 	\command{<parameter1>}{<parameter2>}...{<parameterXX>}
@@ -70,7 +75,7 @@
 		\midrule
 	}
 	\tablehead{
-		\multicolumn{2}{l}{\emph{续\autoref{table_ProvidedCommandsWithPar}：}}\\
+		\multicolumn{2}{l}{\emph{续\cref{table_ProvidedCommandsWithPar}：}}\\
 		\toprule
 		\multicolumn{1}{l}{\textbf{命令}} & \multicolumn{1}{l}{\textbf{功能描述}}\\
 		\midrule
@@ -124,7 +129,7 @@
 \end{Verbatim}
 
 
-本模版提供的不带参数命令如\autoref{table_ProvidedCommandsWithoutPar}所示：
+本模版提供的不带参数命令如\cref{table_ProvidedCommandsWithoutPar}所示：
 \begin{table}[h]
 	\caption{\emph{scuthesis}~提供的不带参数命令}
 	\label{table_ProvidedCommandsWithoutPar}
@@ -145,15 +150,15 @@
 如需生成封面，则在输入完必要信息后，使用~\verb|\maketitle|~命令生成。或若需将章节标题居左，就只需要在需要居左的章节前加~\verb|\makechaptertitleleft|~，如：
 \begin{Verbatim}
 	\makechaptertitleleft	% 章节标题居左
-	\chapter{绪论}	% “绪论”章节
+	\chapter{绪论}		% “绪论”章节
 	..............
 	\chapter{问题模型的建立}	% “问题模型的建立”章节
 	..............
 \end{Verbatim}
 
-
 \subsection{提供的环境}
-本模版提供的环境如\autoref{table_ProvidedEnvironment}所示。
+\label{table_ProvidedEnvironments}
+本模版提供的环境如\cref{table_ProvidedEnvironment}所示。
 \begin{table}[h]
 	\caption{\emph{scuthesis}~提供的环境}
 	\label{table_ProvidedEnvironment}
@@ -167,9 +172,3 @@
 		\bottomrule
 	\end{tabular*}
 \end{table}
-
-
-\begin{equation}
-	\label{eqn_ola}
-	e^{j\omega\phi}=\cos(\omega\phi)+j\sin(\omega\phi)
-\end{equation}
