@@ -1,6 +1,6 @@
 %!TEX root = ../Manual.tex
 \chapter{模版的使用}
-\label{Chap_using}
+\label{Chap_UsingOfThisTemplate}
 \section{功能}
 \label{Sect_Features}
 本节主要介绍本模版所依赖的类库和提供的功能/命令。
@@ -147,7 +147,7 @@
 \end{table}
 
 
-如需生成封面，则在输入完必要信息后，使用~\verb|\maketitle|~命令生成。或若需将章节标题居左，就只需要在需要居左的章节前加~\verb|\makechaptertitleleft|~，如：
+如需生成封面，则在输入完必要信息后，使用~\verb|\maketitle|~命令生成。或若需将章节标题居左，就只需要在需要居左的章节前加~\verb|\makechaptertitleleft|，如：
 \begin{Verbatim}
 	\makechaptertitleleft	% 章节标题居左
 	\chapter{绪论}		% “绪论”章节
@@ -172,3 +172,31 @@
 		\bottomrule
 	\end{tabular*}
 \end{table}
+
+
+以上环境用以下语法在正文区使用：
+\begin{Verbatim}[gobble=1,frame=single]
+	\begin{<EnvironmentName>}
+		Some text goes here...
+	\end{<EnvironmentName>}
+\end{Verbatim}
+
+
+又比如，当需填写英文摘要时，以本手册为例：
+\begin{Verbatim}[gobble=1,frame=single]
+	\begin{ENGabstract}
+		As a postgraduate of Sichuan University, the author of this
+		document often needs to write academically in daily study
+		and research. However, traditional word processing softwares
+		(e.g. \emph{Microsoft\textsuperscript{\textregistered} Word}
+		et. al.)
+		...........................................................
+		please leave a message to me, creat an new \emph{ISSUSE} in
+		the repo. or \emph{FORK} a new branch to modify.
+	\end{ENGabstract}
+\end{Verbatim}
+
+
+\section{使用}
+\label{Sect_Using}
+\cite{Book_LaTeXIntro}
