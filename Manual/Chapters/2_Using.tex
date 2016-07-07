@@ -148,7 +148,7 @@
 
 
 如需生成封面，则在输入完必要信息后，使用~\verb|\maketitle|~命令生成。或若需将章节标题居左，就只需要在需要居左的章节前加~\verb|\makechaptertitleleft|，如：
-\begin{Verbatim}
+\begin{Verbatim}[gobble=1,frame=single]
 	\makechaptertitleleft	% 章节标题居左
 	\chapter{绪论}		% “绪论”章节
 	..............
@@ -199,4 +199,29 @@
 
 \section{使用}
 \label{Sect_Using}
-\cite{Book_LaTeXIntro}
+如果您是初学者，若要正确使用本模版，需要了解一些有关~\LaTeX~的基础知识，请见\cref{Subsect_LaTeXBasics}。如果您能够熟练使用或对~\LaTeX~有所了解，请移步至\cref{Subsect_UsingInDetail}。
+\subsection{\LaTeX~文档的基础知识}
+\label{Subsect_LaTeXBasics}
+一般来说，一份完整的~\LaTeX~文档可分为\emph{导言区}和\emph{正文区}两大部分。其中\emph{导言区}位于\emph{正文区}之前，用于加载、描述、定义或重定义文档的类型、所用到的宏包、命令、环境等。
+\begin{Verbatim}[gobble=1,frame=single]
+	% 导言区
+	\documentclass[<Opt1>,<Opt2>,...,<OptN>]{<DocumentClass>}
+	\usepackage[<Opt1>,<Opt2>,...,<OptN>]{<PackageName1>}
+	\usepackage[<Opt1>,<Opt2>,...,<OptN>]{<PackageName2>}
+	......
+	% 正文区
+	\begin{document}
+	Your text goes here......
+	\begin{<Environment1>}
+		Something in <Environment>.
+	\end{<Environment1>}
+
+	\begin{figure}[H]
+		\includegraphic[scale=0.5]{<GraphicPath>}
+		\caption{This is a test picture.}
+		\label{fig_TestPic}
+	\end{figure}
+\end{document}
+\end{Verbatim}
+\subsection{Bulabula}
+\label{Subsect_UsingInDetail}
