@@ -157,11 +157,11 @@
 \end{Verbatim}
 
 \subsection{提供的环境}
-\label{table_ProvidedEnvironments}
+\label{Subsect_ProvidedEnvironments}
 本模版提供的环境如\cref{table_ProvidedEnvironment}所示。
 \begin{table}[h]
 	\caption{\emph{scuthesis}~提供的环境}
-	\label{table_ProvidedEnvironment}
+	\label{table_ProvidedEnvironments}
 	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}p{0.6\textwidth}}
 		\toprule
 		\textbf{环境名称} & \textbf{功能描述} \\
@@ -199,7 +199,7 @@
 
 \section{使用}
 \label{Sect_Using}
-如果您是初学者，若要正确使用本模版，需要了解一些有关~\LaTeX~的基础知识，请见\cref{Subsect_LaTeXBasics,Subsect_InsertFormula,Subsect_InsertFigureTable}。如果您能够熟练使用或对~\LaTeX~有所了解，请移步至\cref{Subsect_UsingInDetail}。
+如果您是初学者，若要正确使用本模版，需要了解一些有关~\LaTeX~的基础知识，请见\cref{Subsect_LaTeXBasics,Subsect_InsertFormula,Subsect_InsertFigureTable}。如果您能够熟练使用或对~\LaTeX~有所了解，请移步至\cref{Subsect_OtherFunctions}。
 \subsection{\LaTeX~文档的基础知识}
 \label{Subsect_LaTeXBasics}
 一般来说，一份完整的~\LaTeX~文档可分为\emph{导言区}和\emph{正文区}两大部分，缺一不可。其中\emph{导言区}位于\emph{正文区}之前，用于加载、描述、定义或重定义文档的类型、所用到的宏包、命令、环境等。
@@ -213,7 +213,7 @@
 	\begin{document}
 	Your text goes here......
 	\begin{<Environment1>}
-		Something in <Environment>.
+		Something in <Environment1>.
 	\end{<Environment1>}
 
 	\begin{figure}[H]
@@ -228,13 +228,18 @@
 其中，导言区中的~\verb|\documentclass|~用于加载对应我文档类，要加载本模版请参见\cref{Subsect_RequiredPackages}中的描述。而~\verb|\usepackage|~用于加载特定的宏包。上文代码框中的~\verb|<Opt>|~、~\verb|<DocumentClass>|~和~\verb|<PackageName>|~分别代表\emph{选项~(Option)~}、\emph{文档类名~(Document Class Name)~}和\emph{宏包名称~(Package Name)~}。~\LaTeX~提供了很多有用的宏包，涵盖到文档排版、内容表述和文档美化等方方面面，需要的用户可以访问~\url{https://www.ctan.org/pkg}~进行浏览，或\emph{~Google LaTeX~和相应的关键字}查找。一般来说，使用默认选项对~\emph{TeX Live}~进行了安装后，会自动拥有所有的宏包。若需查看宏包的帮助文档，只需打开命令行输入~\verb|texdoc|~命令并附加所需宏包名称即可。
 
 
-此外，
+此外，正文区中~\verb|<Environment>|~代表文中的一个\emph{环境}，使用~\verb|\begin|~和~\verb|\end|~命令包含。可以看出，整个正文区~\verb|document|~也是一个大的\emph{环境}并囊括了很多子\emph{环境}。一般来说，一个~\LaTeX~文档会至少包含\emph{正文}、\emph{公式}、\emph{图}和\emph{表}等\emph{环境}。本模版除了这些基础外，还提供了如\cref{table_ProvidedEnvironments}所示的其他环境。另外，本模版集成了很多宏包，用户可以根据\cref{table_RequiredPackages}自行查阅帮助文件使用宏包提供的环境。
+
+
+若想要更进一步学习~\LaTeX~的使用，推荐参考\emph{刘海洋所著《~\LaTeX~入门》}一书\cite{Book_LaTeXIntro}。
 
 \subsection{公式}
 \label{Subsect_InsertFormula}
+对于理工科同学而言，~\LaTeX~能够
+
 
 \subsection{图表}
 \label{Subsect_InsertFigureTable}
 
-\subsection{Bulabula}
-\label{Subsect_UsingInDetail}
+\subsection{其他功能的使用}
+\label{Subsect_OtherFunctions}
