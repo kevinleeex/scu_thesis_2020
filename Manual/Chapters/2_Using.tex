@@ -235,8 +235,24 @@
 
 \subsection{公式}
 \label{Subsect_InsertFormula}
-对于理工科同学而言，~\LaTeX~能够
+对于理工科同学而言，~\LaTeX~的一大优势在于能够很方便地输入各种数学符号和公式。对于学位论文，一般公式按照其所在文中的位置分为\emph{行内公式}和\emph{编号公式}两种。\emph{行内公式}如~$e^{j\omega t}=\cos(\omega t)+\sin(\omega t)$~所示，位于文本行之内。而\emph{编号公式}如\cref{eqn_FourierTransform}，位于文本行间或段间，且右侧有编号。
+\begin{equation}
+	\label{eqn_FourierTransform}
+	X(j\omega)=\int_{-\infty}^{\infty}{x(t)e^{-j\omega t}}dt
+\end{equation}
 
+
+对于\emph{行内公式}，只需在正文行中用两个~\verb|$|~将所要输入的公式内容包含即可。例如~\verb|$e^{j\omega t}=\cos(\omega t)+\sin(\omega t)$|~即为上文行内的欧拉公式。而对于\emph{编号公式}，则需要在~\verb|equation|~环境中输入公式内容。\cref{eqn_FourierTransform}就是在~\verb|equation|~环境中输入的，具体内容如下所示：
+\begin{Verbatim}[gobble=1,frame=single]
+	\begin{equation}
+		\label{eqn_FourierTransform}
+		X(j\omega)=\int_{-\infty}^{\infty}{x(t)e^{-j\omega t}}dt
+	\end{equation}
+\end{Verbatim}
+其中，~\verb|\begin|~和~\verb|\end|~用于界定~\verb|equation|~环境的范围，~\verb|\label|~命令用于给这个公式起一个“名字”用于交叉引用，~\verb|\omega|~为小写希腊字母~$\omega$~，~\verb|\int|~为积分号$\int$，~\verb|_{}|~和~\verb|^{}|~代表大括号中的内容分别为下标和上标，~\verb|\infty|~为符号$\infty$。
+
+
+此外，对于公式的输入还有很多内容，推荐访问~\url{https://en.wikibooks.org/wiki/LaTeX/Mathematics}~获得更多信息。
 
 \subsection{图表}
 \label{Subsect_InsertFigureTable}
