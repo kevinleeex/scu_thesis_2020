@@ -55,6 +55,16 @@
 %               上标	方括号	逗号分隔	自动排序分类
 \RequirePackage[super,square,comma,sort&compress]{natbib}
 \setlength{\bibsep}{0.5ex}
+% 定义 \incite 命令，用于如“文献[1]”这样的引用
+\newcommand*{\incite}{}
+\DeclareRobustCommand*{\incite}[1]{
+  \begingroup
+    % \romannumeral-`\x
+    \setcitestyle{numbers}
+    \hspace{-1em}文献~\cite{#1}\hspace{-0.3em}
+  \endgroup
+}
+
 % 支持自定义列表环境
 \RequirePackage{enumitem}
 % 支持ams数学宏包
