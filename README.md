@@ -8,3 +8,5 @@
 
 
 本文主要对*scuthesis*文档模版的使用、功能和实现和进行了简要介绍和说明，并以自身为例进行演示。本模版在GitHub的链接为：https://github.com/cuiao/SCU_ThesisDissertation_LaTeXTemplate.
+
+![Manual Preview](https://github.com/cuiao/SCU_ThesisDissertation_LaTeXTemplate/blob/master/Manual/preview.PNG "Manual Preview")
