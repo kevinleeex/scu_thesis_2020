@@ -6,7 +6,7 @@
 本节主要介绍本模版所依赖的类库和提供的功能/命令。
 \subsection{依赖的类库}
 \label{Subsect_RequiredPackages}
-本模版依赖的类库/宏包~(Packages)~如\cref{table_RequiredPackages}所示：
+本模版依赖的类库/宏包（~Packages~）如\cref{table_RequiredPackages}所示：
 \begin{table}[H]
 	\centering
 	\caption{本模版依赖的类库/宏包}
@@ -45,22 +45,23 @@
 
 加载本模版定义的文档类的命令为：
 \fvset{fontsize=\zihao{-5}}
-\begin{Verbatim}[gobble=1,frame=single]
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
 	\documentclass[<degree>,<ctexbook_opt1>,...,<ctexbook_optXX>]{../Template/scuthesis}
 \end{Verbatim}
 其中，~\verb|<degree>|~可用选项为~\verb|doctor|~、~\verb|master|~和~\verb|bachelor|\footnote{虽然此选项代表学士学位论文选项，但并未针对其论文格式要求作出适配。}~，分别代表博士、硕士和学士学位论文。值得注意的是，一般推荐使用~\verb|UTF-8|~编码撰写论文，因此建议设置~\verb|<ctexbook_opt1>|~为~\verb|UTF-8|~。其他有关~\verb|ctexbook|~文档类的选项请参考相关文档\cite{Packages_CTeX}。
 
 
 本手册加载~\emph{scuthesis}~文档类的命令为\footnote{在需要生成阅读版论文时，即不需要在章节非奇数页时在前插入空白页是，可在~UTF8~选项前加入~oneside~选项。本手册即采用这个选项。}：
-\begin{Verbatim}[gobble=1,frame=single]
-	\documentclass[master,UTF8,hyperref]{../Template/scuthesis}
+
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
+	\documentclass[master,oneside,UTF8,hyperref]{../Template/scuthesis}
 \end{Verbatim}
 
 \subsection{提供的命令}
 \label{table_ProvidedCommands}
 本模版提供的带参数命令如\cref{table_ProvidedCommandsWithPar}所示。这种带参数的命令一般用以下方式调用：
 \fvset{fontsize=\zihao{5}}
-\begin{Verbatim}[gobble=1,frame=single]
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
 	\command{<parameter1>}{<parameter2>}...{<parameterXX>}
 \end{Verbatim}
 其中，~\verb|<parameter>|~指输入的参数，用~\verb|{ }|~包含。
@@ -110,21 +111,21 @@
 
 
 如需设定论文的中英文标题，则在文章正式开始前输入：
-\begin{Verbatim}[gobble=1,frame=single]
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
 	\title{四川大学学位论文~\LaTeX~模版 Ver. 0.1}
 	\ENGtitle{The SCU Dissertation \LaTeX ~ Class Ver. 0.1}
 \end{Verbatim}
 
 
 如需设定论文的中英文作者姓名，则在文章正式开始前输入：
-\begin{Verbatim}[gobble=1,frame=single]
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
 	\author{Legendary L.}
 	\ENGauthor{Legendary L.}
 \end{Verbatim}
 
 
 或需得到~3cm~下划线上的\fillinblank{3cm}{四川大学}，需输入：
-\begin{Verbatim}[gobble=1,frame=single]
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
 	\fillinblank{3cm}{四川大学}
 \end{Verbatim}
 
@@ -148,7 +149,7 @@
 
 
 如需生成封面，则在输入完必要信息后，使用~\verb|\maketitle|~命令生成。或若需将章节标题居左，就只需要在需要居左的章节前加~\verb|\makechaptertitleleft|，如：
-\begin{Verbatim}[gobble=1,frame=single]
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
 	\makechaptertitleleft	% 章节标题居左
 	\chapter{绪论}		% “绪论”章节
 	..............
@@ -158,7 +159,7 @@
 
 \subsection{提供的环境}
 \label{Subsect_ProvidedEnvironments}
-本模版提供的环境如\cref{table_ProvidedEnvironment}所示。
+本模版提供的环境如\cref{table_ProvidedEnvironments}所示。
 \begin{table}[h]
 	\caption{\emph{scuthesis}~提供的环境}
 	\label{table_ProvidedEnvironments}
@@ -175,7 +176,7 @@
 
 
 以上环境用以下语法在正文区使用：
-\begin{Verbatim}[gobble=1,frame=single]
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
 	\begin{<EnvironmentName>}
 		Some text goes here...
 	\end{<EnvironmentName>}
@@ -183,7 +184,7 @@
 
 
 又比如，当需填写英文摘要时，以本手册为例：
-\begin{Verbatim}[gobble=1,frame=single]
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
 	\begin{ENGabstract}
 		As a postgraduate of Sichuan University, the author of this
 		document often needs to write academical materials in daily
@@ -201,7 +202,7 @@
 \subsection{\LaTeX~文档的基础知识}
 \label{Subsect_LaTeXBasics}
 一般来说，一份完整的~\LaTeX~文档可分为\emph{导言区}和\emph{正文区}两大部分，缺一不可。其中\emph{导言区}位于\emph{正文区}之前，用于加载、描述、定义或重定义文档的类型、所用到的宏包、命令、环境等。
-\begin{Verbatim}[gobble=1,frame=single]
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
 	% 导言区
 	\documentclass[<Opt1>,<Opt2>,...,<OptN>]{<DocumentClass>}
 	\usepackage[<Opt1>,<Opt2>,...,<OptN>]{<PackageName1>}
@@ -223,7 +224,7 @@
 \end{Verbatim}
 
 
-其中，导言区中的~\verb|\documentclass|~用于加载对应我文档类，要加载本模版请参见\cref{Subsect_RequiredPackages}中的描述。而~\verb|\usepackage|~用于加载特定的宏包。上文代码框中的~\verb|<Opt>|~、~\verb|<DocumentClass>|~和~\verb|<PackageName>|~分别代表\emph{选项~(Option)~}、\emph{文档类名~(Document Class Name)~}和\emph{宏包名称~(Package Name)~}。~\LaTeX~提供了很多有用的宏包，涵盖到文档排版、内容表述和文档美化等方方面面，需要的用户可以访问~\url{https://www.ctan.org/pkg}~进行浏览，或\emph{~Google LaTeX~和相应的关键字}查找。一般来说，使用默认选项对~\emph{TeX Live}~进行了安装后，会自动拥有所有的宏包。若需查看宏包的帮助文档，只需打开命令行输入~\verb|texdoc|~命令并附加所需宏包名称即可。
+其中，导言区中的~\verb|\documentclass|~用于加载对应我文档类，要加载本模版请参见\cref{Subsect_RequiredPackages}中的描述。而~\verb|\usepackage|~用于加载特定的宏包。上文代码框中的~\verb|<Opt>|~、~\verb|<DocumentClass>|~和~\verb|<PackageName>|~分别代表\emph{选项（~Option~）}、\emph{文档类名（~Document Class Name~）}和\emph{宏包名称（~Package Name~）}。~\LaTeX~提供了很多有用的宏包，涵盖到文档排版、内容表述和文档美化等方方面面，需要的用户可以访问~\url{https://www.ctan.org/pkg}~进行浏览，或\emph{~Google LaTeX~和相应的关键字}查找。一般来说，使用默认选项对~\emph{TeX Live}~进行了安装后，会自动拥有所有的宏包。若需查看宏包的帮助文档，只需打开命令行输入~\verb|texdoc|~命令并附加所需宏包名称即可。
 
 
 此外，正文区中~\verb|<Environment>|~代表文中的一个\emph{环境}，使用~\verb|\begin|~和~\verb|\end|~命令包含。可以看出，整个正文区~\verb|document|~也是一个大的\emph{环境}并囊括了很多子\emph{环境}。一般来说，一个~\LaTeX~文档会至少包含\emph{正文}、\emph{公式}、\emph{图}和\emph{表}等\emph{环境}。本模版除了这些基础外，还提供了如\cref{table_ProvidedEnvironments}所示的其他环境。另外，本模版集成了很多宏包，用户可以根据\cref{table_RequiredPackages}自行查阅帮助文件使用宏包提供的环境。
@@ -241,7 +242,7 @@
 
 
 对于\emph{行内公式}，只需在正文行中用两个~\verb|$|~将所要输入的公式内容包含即可。例如~\verb|$e^{j\omega t}=\cos(\omega t)+\sin(\omega t)$|~即为上文行内的欧拉公式。而对于\emph{编号公式}，则需要在~\verb|equation|~环境中输入公式内容。\cref{eqn_FourierTransform}就是在~\verb|equation|~环境中输入的，具体内容如下所示：
-\begin{Verbatim}[gobble=1,frame=single]
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
 	\begin{equation}
 		\label{eqn_FourierTransform}
 		X(j\omega)=\int_{-\infty}^{\infty}{x(t)e^{-j\omega t}}dt
@@ -250,17 +251,71 @@
 其中，~\verb|\begin|~和~\verb|\end|~用于界定~\verb|equation|~环境的范围，~\verb|\label|~命令用于给这个公式起一个“名字”用于交叉引用，~\verb|\omega|~为小写希腊字母~$\omega$~，~\verb|\int|~为积分号$\int$，~\verb|_{}|~和~\verb|^{}|~代表大括号中的内容分别为下标和上标，~\verb|\infty|~为符号$\infty$。
 
 
-此外，对于公式的输入还有很多内容，推荐访问~\url{https://en.wikibooks.org/wiki/LaTeX/Mathematics}~以及\incite{Book_LaTeXIntro}，获得更多信息。
+此外，对于公式的输入还有很多内容，推荐访问~\url{https://en.wikibooks.org/wiki/LaTeX/Mathematics}~以及参考\incite{Book_LaTeXIntro}，获得更多信息。
 
 \subsection{图表}
 \label{Subsect_InsertFigureTable}
-本模版默认加载了~\verb|graphicx|~宏包以提供在文中插入图片的功能。
+本模版默认加载了~\verb|graphicx|~宏包以提供在文中插入图片的功能，支持矢量（~EPS, PS, PDF~等~）和像素（~PNG, JPEG~等~）格式。使用~\verb|\includegraphics|~命令即可进行插入图片的操作。
+
+
+以~\verb|..\Template\Components\Images\SCU_TITLE.eps|~为例插入图片的代码如下所示，效果如\cref{fig_SCUlogo}所示。
+
+\fvset{fontsize=\zihao{-5}}
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=0.3]{../Template/Components/Images/SCU_TITLE}
+		\caption{“四川大学”字样（邓小平题）}
+		\label{fig_SCUlogo}
+	\end{figure}
+\end{Verbatim}
+\fvset{fontsize=\zihao{5}}
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{../Template/Components/Images/SCU_TITLE}
+	\includegraphics[scale=0.3]{../Template/Components/Images/SCU_TITLE}
 	\caption{“四川大学”字样（邓小平题）}
 	\label{fig_SCUlogo}
 \end{figure}
 
+
+其中，第一行~\verb|{figure}|~环境后的参数~\verb|[ht]|~用于指定这个浮动体环境的参数。表示浮动体可以出现在环境周围的文本所在处（~here~）和一页的顶部（~top~）；第二行用~\verb|\centering|~表示后面的内容居中；第三行插入图片，~\verb|[scale=0.3]|~用于设置图片的尺寸；第四行使用~\verb|\caption|~给图片自动编号和设置标题；第五行的~\verb|\label|~命令给图片定义一个标签\cite{Book_LaTeXIntro}，可在文中其他地方使用~\verb|\cref{}|~命令交叉引用，要引用\cref{fig_SCUlogo}只需在文中输入~\verb|\cref{fig_SCUlogo}|~即可。
+
+\begin{table}[h]
+	\centering
+	\caption{傅里叶变换对}
+	\label{table_FourierTransformPair}
+	\begin{tabular}{ccc}
+		\toprule
+		\textbf{变换}    & \textbf{公式}                                                              & \textbf{备注} \\
+		\midrule
+		傅里叶变换    & $X(j\omega)=\int_{-\infty}^{\infty}{x(t)e^{-j\omega t}}dt$                   & 无             \\
+		傅里叶反变换 & $x(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}{X(j\omega)e^{j\omega t}}d\omega$ & 无             \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+表也是利用浮动环境~\verb|table|~插入的。
+
+\fvset{fontsize=\zihao{-6}}
+\begin{Verbatim}[gobble=1,frame=single,numbers=left]
+	\begin{table}[h]
+		\centering
+		\caption{傅里叶变换对}
+		\label{table_FourierTransformPair}
+		\begin{tabular}{ccc}
+			\toprule
+			\textbf{变换} & \textbf{公式} & \textbf{备注} \\
+			\midrule
+			傅里叶变换 & $X(j\omega)=\int_{-\infty}^{\infty}{x(t)e^{-j\omega t}}dt$ & 无 \\
+			傅里叶反变换 & $x(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}{X(j\omega)e^{j\omega t}}d\omega$ & 无 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{Verbatim}
+\fvset{fontsize=\zihao{5}}
+
+本模版还默认
 \subsection{其他功能的使用}
 \label{Subsect_OtherFunctions}
