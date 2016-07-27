@@ -279,7 +279,7 @@
 \end{figure}
 
 
-其中，第一行~\verb|{figure}|~环境后的参数~\verb|[ht]|~用于指定这个浮动体环境的参数。表示浮动体可以出现在环境周围的文本所在处（~here~）和一页的顶部（~top~）；第二行用~\verb|\centering|~表示后面的内容居中；第三行插入图片，~\verb|[scale=0.3]|~用于设置图片的尺寸；第四行使用~\verb|\caption|~给图片自动编号和设置标题；第五行的~\verb|\label|~命令给图片定义一个标签\cite{Book_LaTeXIntro}，可在文中其他地方使用~\verb|\cref{}|~命令交叉引用，要引用\cref{fig_SCUlogo}只需在文中输入~\verb|\cref{fig_SCUlogo}|~即可。
+其中，第1行~\verb|{figure}|~环境后的参数~\verb|[ht]|~用于指定这个浮动体环境的参数。表示浮动体可以出现在环境周围的文本所在处（~here~）和一页的顶部（~top~）；第2行用~\verb|\centering|~表示后面的内容居中；第3行插入图片，~\verb|[scale=0.3]|~用于设置图片的尺寸；第4行使用~\verb|\caption|~给图片自动编号和设置标题；第5行的~\verb|\label|~命令给图片定义一个标签\cite{Book_LaTeXIntro}，可在文中其他地方使用~\verb|\cref{}|~命令交叉引用，要引用\cref{fig_SCUlogo}只需在文中输入~\verb|\cref{fig_SCUlogo}|~即可。
 
 \begin{table}[h]
 	\centering
@@ -295,8 +295,6 @@
 	\end{tabular}
 \end{table}
 
-
-表也是利用浮动环境~\verb|table|~插入的。
 
 \fvset{fontsize=\zihao{-6}}
 \begin{Verbatim}[gobble=1,frame=single,numbers=left]
@@ -316,6 +314,17 @@
 \end{Verbatim}
 \fvset{fontsize=\zihao{5}}
 
-本模版还默认
+
+表也是利用浮动环境~\verb|table|~插入的。~\LaTeX~可以自由绘制很多类型的表格，\cref{table_FourierTransformPair}即为常用的\emph{三线表}的一个例子，其代码如上所示。其环境参数~\verb|[h]|~与~\verb|figure|~中的定义类似。其中又嵌入了一个~\verb|tabular|~环境用于绘制表格，~\verb|tabular|~后的参数~\verb|{ccc}|~用于控制这个表格有三列且每列内容均居中。从第6行开始为表格的内容，其中~\verb|&|~用于表格列与列的分隔，~\verb|\\|~用于表格行与行之间的分隔。本模版还默认加载~\verb|booktabs|~宏包，而代码的第6、8和11行的~\verb|\toprule|~、~\verb|\midrule|~和~\verb|\bottomrule|~分别表示三线表中的顶线、中线和底线。
+
+
+以上是使用本模版绘制表格的一个小例子，在实际使用中还有更多的功能和需要注意的问题，大家可参考\incite{Book_LaTeXIntro}以及对应宏包的说明文档。
+
 \subsection{其他功能的使用}
 \label{Subsect_OtherFunctions}
+\subsubsection{交叉引用}
+\label{Subsubsect_CrossRef}
+\subsubsection{文献引用}
+\label{Subsubsect_Citations}
+\subsubsection{目录生成}
+\label{Subsubsect_CreatTOC}
