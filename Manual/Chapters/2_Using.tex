@@ -227,7 +227,7 @@
 其中，导言区中的~\verb|\documentclass|~用于加载对应我文档类，要加载本模版请参见\cref{Subsect_RequiredPackages}中的描述。而~\verb|\usepackage|~用于加载特定的宏包。上文代码框中的~\verb|<Opt>|~、~\verb|<DocumentClass>|~和~\verb|<PackageName>|~分别代表\emph{选项（~Option~）}、\emph{文档类名（~Document Class Name~）}和\emph{宏包名称（~Package Name~）}。~\LaTeX~提供了很多有用的宏包，涵盖到文档排版、内容表述和文档美化等方方面面，需要的用户可以访问~\url{https://www.ctan.org/pkg}~进行浏览，或\emph{~Google LaTeX~和相应的关键字}查找。一般来说，使用默认选项对~\emph{TeX Live}~进行了安装后，会自动拥有所有的宏包。若需查看宏包的帮助文档，只需打开命令行输入~\verb|texdoc|~命令并附加所需宏包名称即可。
 
 
-此外，正文区中~\verb|<Environment>|~代表文中的一个\emph{环境}，使用~\verb|\begin|~和~\verb|\end|~命令包含。可以看出，整个正文区~\verb|document|~也是一个大的\emph{环境}并囊括了很多子\emph{环境}。一般来说，一个~\LaTeX~文档会至少包含\emph{正文}、\emph{公式}、\emph{图}和\emph{表}等\emph{环境}。本模版除了这些基础外，还提供了如\cref{table_ProvidedEnvironments}所示的其他环境。另外，本模版集成了很多宏包，用户可以根据\cref{table_RequiredPackages}自行查阅帮助文件使用宏包提供的环境。
+此外，正文区中~\verb|<Environment>|~代表文中的一个\emph{环境}，使用~\verb|\begin|~和~\verb|\end|~命令包含。可以看出，整个正文区~\verb|document|~也是一个大的\emph{环境}并包括了很多子\emph{环境}。一般来说，一个~\LaTeX~文档会至少包含\emph{正文}、\emph{公式}、\emph{图}和\emph{表}等\emph{环境}。本模版除了这些基础外，还提供了如\cref{table_ProvidedEnvironments}所示的其他环境。另外，本模版集成了很多宏包，用户可以根据\cref{table_RequiredPackages}自行查阅帮助文件使用宏包提供的环境。
 
 
 若想要更进一步学习~\LaTeX~的使用，推荐参考\emph{刘海洋所著《~\LaTeX~入门》}一书\cite{Book_LaTeXIntro}。
@@ -322,8 +322,15 @@
 
 \subsection{其他功能的使用}
 \label{Subsect_OtherFunctions}
+除了\cref{Subsect_LaTeXBasics,Subsect_InsertFormula,Subsect_InsertFigureTable}所述的基本使用方法和功能外，本模版还根据需要提供了一些经过定制后的功能，以下进行简述。
 \subsubsection{交叉引用}
 \label{Subsubsect_CrossRef}
+一篇规范的学术文章往往会包含大量的图、表、数据或公式等资料，并且会它们层次分明地安排在文章中以便在适当的时候进行引用。因此有序、分明、自动化地组织引用这些材料一方面能够满足学术文章的写作要求，另一方面也能够给作者带来方便。本模版使用了~cleveref\cite{Packages_cleveref}~，并且针对中文的使用习惯进行了定制化。因此不仅支持自动编号待引用内容、自动识别所引内容的类型（章、节、图、表、公式等），还可以自动分类组合多个引用内容。
+
+
+使用~\verb|cref|~进行交叉引用其实很简单。首先一定要确保被引用的内容被分配了一个标签（\verb|\label{<LabelName>}|，\verb|<LabelName>|为标签名，由用户自行确定），如\cref{fig_SCUlogo}代码第~5~行所示\footnote{一般使用中，在有题注~caption~时，为了避免交叉引用出现异常，需要将~label~置于~caption~之后}。
+
+
 \subsubsection{文献引用}
 \label{Subsubsect_Citations}
 \subsubsection{目录生成}
