@@ -39,7 +39,7 @@
 	\end{tabular*}
 \end{table}
 \subsection{提供的选项}
-\label{table_ProvidedOptions}
+\label{Subsect_ProvidedOptions}
 本模版以~\verb|ctexbook|~文档类为基础，提供~\verb|<degree>|~选项用于选择学位论文类别，其余选项~\verb|<ctexbook_opt>|~均会被传递给~\verb|ctexbook|~文档类。
 
 
@@ -58,7 +58,7 @@
 \end{Verbatim}
 
 \subsection{提供的命令}
-\label{table_ProvidedCommands}
+\label{Subsect_ProvidedCommands}
 本模版提供的带参数命令如\cref{table_ProvidedCommandsWithPar}所示。这种带参数的命令一般用以下方式调用：
 \fvset{fontsize=\zihao{5}}
 \begin{Verbatim}[gobble=1,frame=single,numbers=left]
@@ -328,7 +328,29 @@
 一篇规范的学术文章往往会包含大量的图、表、数据或公式等资料，并且会它们层次分明地安排在文章中以便在适当的时候进行引用。因此有序、分明、自动化地组织引用这些材料一方面能够满足学术文章的写作要求，另一方面也能够给作者带来方便。本模版使用了~cleveref\cite{Packages_cleveref}~，并且针对中文的使用习惯进行了定制化。因此不仅支持自动编号待引用内容、自动识别所引内容的类型（章、节、图、表、公式等），还可以自动分类组合多个引用内容。
 
 
-使用~\verb|cref|~进行交叉引用其实很简单。首先一定要确保被引用的内容被分配了一个标签（\verb|\label{<LabelName>}|，\verb|<LabelName>|为标签名，由用户自行确定），如\cref{fig_SCUlogo}代码第~5~行所示\footnote{一般使用中，在有题注~caption~时，为了避免交叉引用出现异常，需要将~label~置于~caption~之后}。
+使用~\verb|cref|~进行交叉引用其实很简单\cite{Journal_Leo}。首先一定要确保被引用的内容被分配了一个标签（\verb|\label{<LabelName>}|，\verb|<LabelName>|为标签名，由用户自行确定），如\cref{fig_SCUlogo}代码第~5~行所示\footnote{一般使用中，在有题注~caption~时，为了避免交叉引用出现异常，需要将~label~置于~caption~之后}。
+
+\begin{table}[ht]
+	\centering
+	\caption{cref~交叉引用的格式}
+	\label{table_CrefFormat}
+	\begin{tabular*}{\textwidth}{p{0.09\textwidth}p{0.17\textwidth}p{0.27\textwidth}p{0.47\textwidth}}
+		\toprule
+		\textbf{类型} & \textbf{单数格式} & \textbf{复数格式（连续）} & \textbf{复数格式（不连续）} \\
+		\midrule
+		章             & 第\textlangle\emph{编号}\textrangle章   & 第\textlangle\emph{编号}\textrangle~-~\textlangle\emph{编号}\textrangle章 & 第\textlangle\emph{编号}\textrangle, \textlangle\emph{编号}\textrangle~和~\textlangle\emph{编号}\textrangle章      \\
+		节             & 第\textlangle\emph{编号}\textrangle节   & 第\textlangle\emph{编号}\textrangle~-~\textlangle\emph{编号}\textrangle节 & 第\textlangle\emph{编号}\textrangle, \textlangle\emph{编号}\textrangle~和~\textlangle\emph{编号}\textrangle节      \\
+		小节             & 第\textlangle\emph{编号}\textrangle小节   & 第\textlangle\emph{编号}\textrangle~-~\textlangle\emph{编号}\textrangle小节 & 第\textlangle\emph{编号}\textrangle, \textlangle\emph{编号}\textrangle~和~\textlangle\emph{编号}\textrangle小节      \\
+		项             & 第\textlangle\emph{编号}\textrangle项   & 第\textlangle\emph{编号}\textrangle~-~\textlangle\emph{编号}\textrangle项 & 第\textlangle\emph{编号}\textrangle, \textlangle\emph{编号}\textrangle~和~\textlangle\emph{编号}\textrangle项      \\
+		页             & 第\textlangle\emph{编号}\textrangle页   & 第\textlangle\emph{编号}\textrangle~-~\textlangle\emph{编号}\textrangle页 & 第\textlangle\emph{编号}\textrangle, \textlangle\emph{编号}\textrangle~和~\textlangle\emph{编号}\textrangle页      \\
+		表             & 表\textlangle\emph{编号}\textrangle   & 表\textlangle\emph{编号}\textrangle~-~\textlangle\emph{编号}\textrangle & 表\textlangle\emph{编号}\textrangle, \textlangle\emph{编号}\textrangle~和~\textlangle\emph{编号}\textrangle      \\
+		图             & 图\textlangle\emph{编号}\textrangle   & 图\textlangle\emph{编号}\textrangle~-~\textlangle\emph{编号}\textrangle & 图\textlangle\emph{编号}\textrangle, \textlangle\emph{编号}\textrangle~和~\textlangle\emph{编号}\textrangle      \\
+		式             & 式(\textlangle\emph{编号}\textrangle)   & 式(\textlangle\emph{编号}\textrangle)~-~(\textlangle\emph{编号}\textrangle) & 式(\textlangle\emph{编号}\textrangle),( \textlangle\emph{编号}\textrangle)~和~(\textlangle\emph{编号}\textrangle)      \\
+		\bottomrule
+	\end{tabular*}
+\end{table}
+
+
 
 
 \subsubsection{文献引用}
