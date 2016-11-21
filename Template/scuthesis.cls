@@ -247,10 +247,10 @@
 	% 定义\autograph命令，生成版权授权书等的签名栏。
 	\newcommand{\autograph}{
 		\begin{center}
-			\begin{tabular}{ll}
-				学位论文作者签名：\hspace{5cm}                          & 导师签名：\hspace{5cm}                                      \\[1cm]
-				签字日期：\hspace{1cm}年\hspace{0.5cm}月\hspace{0.5cm}日 & 签字日期：\hspace{1cm}年\hspace{0.5cm}月\hspace{0.5cm}日
-			\end{tabular}
+			\begin{tabular*}{\textwidth}{p{0.5\textwidth}p{0.5\textwidth}}
+				学位论文作者签名：& 导师签名：\\[1cm]
+				签字日期：\quad年\quad月\quad日 & 签字日期：\quad年\quad月\quad日
+			\end{tabular*}
 		\end{center}
 	}
 
@@ -308,30 +308,76 @@
 	% 加载cleveref宏，支持智能化引用
 	\RequirePackage{cleveref}
 	\crefformat{chapter}{第~#2#1#3~章}
+  \Crefformat{chapter}{第~#2#1#3~章}
 	\crefrangeformat{chapter}{第~#3#1#4~-~#5#2#6~章}
+  \Crefrangeformat{chapter}{第~#3#1#4~-~#5#2#6~章}
+  \crefmultiformat{chapter}{第~#2#1#3~章}{和第~#2#1#3~章}{,~第~#2#1#3~章}{和第~#2#1#3~章}
+  \Crefmultiformat{chapter}{第~#2#1#3~章}{和第~#2#1#3~章}{,~第~#2#1#3~章}{和第~#2#1#3~章}
+  \crefrangemultiformat{chapter}{第~#3#1#4~-~#5#2#6~章}{和第~#3#1#4~-~#5#2#6~章}{,~ 第~#3#1#4~-~#5#2#6~章}{和第~#3#1#4~-~#5#2#6~章}
+  \Crefrangemultiformat{chapter}{第~#3#1#4~-~#5#2#6~章}{和第~#3#1#4~-~#5#2#6~章}{,~ 第~#3#1#4~-~#5#2#6~章}{和第~#3#1#4~-~#5#2#6~章}
 
 	\crefformat{section}{第~#2#1#3~节}
+  \Crefformat{section}{第~#2#1#3~节}
 	\crefrangeformat{section}{第~#3#1#4~-~#5#2#6~节}
+  \Crefrangeformat{section}{第~#3#1#4~-~#5#2#6~节}
+  \crefmultiformat{section}{第~#2#1#3~节}{和第~#2#1#3~节}{,~第~#2#1#3~节}{和第~#2#1#3~节}
+  \Crefmultiformat{section}{第~#2#1#3~节}{和第~#2#1#3~节}{,~第~#2#1#3~节}{和第~#2#1#3~节}
+  \crefrangemultiformat{section}{第~#3#1#4~-~#5#2#6~节}{和第~#3#1#4~-~#5#2#6~节}{,~ 第~#3#1#4~-~#5#2#6~节}{和第~#3#1#4~-~#5#2#6~节}
+  \Crefrangemultiformat{section}{第~#3#1#4~-~#5#2#6~节}{和第~#3#1#4~-~#5#2#6~节}{,~ 第~#3#1#4~-~#5#2#6~节}{和第~#3#1#4~-~#5#2#6~节}
 
 	\crefformat{subsection}{第~#2#1#3~小节}
+  \Crefformat{subsection}{第~#2#1#3~小节}
 	\crefrangeformat{subsection}{第~#3#1#4~-~#5#2#6~小节}
+  \Crefrangeformat{subsection}{第~#3#1#4~-~#5#2#6~小节}
+  \crefmultiformat{subsection}{第~#2#1#3~小节}{和第~#2#1#3~小节}{,~第~#2#1#3~小节}{和第~#2#1#3~小节}
+  \Crefmultiformat{subsection}{第~#2#1#3~小节}{和第~#2#1#3~小节}{,~第~#2#1#3~小节}{和第~#2#1#3~小节}
+  \crefrangemultiformat{subsection}{第~#3#1#4~-~#5#2#6~小节}{和第~#3#1#4~-~#5#2#6~小节}{,~ 第~#3#1#4~-~#5#2#6~小节}{和第~#3#1#4~-~#5#2#6~小节}
+  \Crefrangemultiformat{subsection}{第~#3#1#4~-~#5#2#6~小节}{和第~#3#1#4~-~#5#2#6~小节}{,~ 第~#3#1#4~-~#5#2#6~小节}{和第~#3#1#4~-~#5#2#6~小节}
 
 	\crefformat{subsubsection}{第~#2#1#3~项}
+  \Crefformat{subsubsection}{第~#2#1#3~项}
 	\crefrangeformat{subsubsection}{第~#3#1#4~-~#5#2#6~项}
+  \Crefrangeformat{subsubsection}{第~#3#1#4~-~#5#2#6~项}
+  \crefmultiformat{subsubsection}{第~#2#1#3~项}{和第~#2#1#3~项}{,~第~#2#1#3~项}{和第~#2#1#3~项}
+  \Crefmultiformat{subsubsection}{第~#2#1#3~项}{和第~#2#1#3~项}{,~第~#2#1#3~项}{和第~#2#1#3~项}
+  \crefrangemultiformat{subsubsection}{第~#3#1#4~-~#5#2#6~项}{和第~#3#1#4~-~#5#2#6~项}{,~ 第~#3#1#4~-~#5#2#6~项}{和第~#3#1#4~-~#5#2#6~项}
+  \Crefrangemultiformat{subsubsection}{第~#3#1#4~-~#5#2#6~项}{和第~#3#1#4~-~#5#2#6~项}{,~ 第~#3#1#4~-~#5#2#6~项}{和第~#3#1#4~-~#5#2#6~项}
 
 	\crefname{table}{表}{表}
+  \Crefname{table}{表}{表}
 	\creflabelformat{table}{#2#1#3~}
 	\crefrangelabelformat{table}{#3#1#4~-~#5#2#6~}
+  \crefmultiformat{table}{表~#2#1#3}{和表~#2#1#3}{,~表~#2#1#3}{和表~#2#1#3}
+  \Crefmultiformat{table}{表~#2#1#3}{和表~#2#1#3}{,~表~#2#1#3}{和表~#2#1#3}
+  \crefrangemultiformat{table}{表~#3#1#4~-~#5#2#6}{和表~#3#1#4~-~#5#2#6}{,~表~#3#1#4~-~#5#2#6}{和表~#3#1#4~-~#5#2#6}
+  \Crefrangemultiformat{table}{表~#3#1#4~-~#5#2#6}{和表~#3#1#4~-~#5#2#6}{,~表~#3#1#4~-~#5#2#6}{和表~#3#1#4~-~#5#2#6}
 
 	\crefname{figure}{图}{图}
+  \Crefname{figure}{图}{图}
 	\creflabelformat{figure}{#2#1#3~}
 	\crefrangelabelformat{figure}{#3#1#4~-~#5#2#6~}
+  \crefmultiformat{figure}{图~#2#1#3}{和图~#2#1#3}{,~图~#2#1#3}{和图~#2#1#3}
+  \Crefmultiformat{figure}{图~#2#1#3}{和图~#2#1#3}{,~图~#2#1#3}{和图~#2#1#3}
+  \crefrangemultiformat{figure}{图~#3#1#4~-~#5#2#6}{和图~#3#1#4~-~#5#2#6}{,~图~#3#1#4~-~#5#2#6}{和图~#3#1#4~-~#5#2#6}
+  \Crefrangemultiformat{figure}{图~#3#1#4~-~#5#2#6}{和图~#3#1#4~-~#5#2#6}{,~图~#3#1#4~-~#5#2#6}{和图~#3#1#4~-~#5#2#6}
 
 	\crefname{equation}{式}{式}
+  \Crefname{equation}{式}{式}
 	\creflabelformat{equation}{(#2#1#3)~}
 	\crefrangelabelformat{equation}{(#3#1#4)~-~(#5#2#6)~}
+  \crefmultiformat{equation}{式~(#2#1#3)}{和式~(#2#1#3)}{,~式~(#2#1#3)}{和式~(#2#1#3)}
+  \Crefmultiformat{equation}{式~(#2#1#3)}{和式~(#2#1#3)}{,~式~(#2#1#3)}{和式~(#2#1#3)}
+  \crefrangemultiformat{equation}{式~(#3#1#4)~-~(#5#2#6)}{和式~(#3#1#4)~-~(#5#2#6)}{,~式~(#3#1#4)~-~(#5#2#6)}{和式~(#3#1#4)~-~(#5#2#6)}
+  \Crefrangemultiformat{equation}{式~(#3#1#4)~-~(#5#2#6)}{和式~(#3#1#4)~-~(#5#2#6)}{,~式~(#3#1#4)~-~(#5#2#6)}{和式~(#3#1#4)~-~(#5#2#6)}
 
-
+  \crefformat{page}{第~#2#1#3~页}
+  \Crefformat{page}{第~#2#1#3~页}
+  \crefrangeformat{page}{第~#3#1#4~-~#5#2#6~页}
+  \Crefrangeformat{page}{第~#3#1#4~-~#5#2#6~页}
+  \crefmultiformat{page}{第~#2#1#3~页}{和第~#2#1#3~页}{,~第~#2#1#3~页}{和第~#2#1#3~页}
+  \Crefmultiformat{page}{第~#2#1#3~页}{和第~#2#1#3~页}{,~第~#2#1#3~页}{和第~#2#1#3~页}
+  \crefrangemultiformat{page}{第~#3#1#4~-~#5#2#6~页}{和第~#3#1#4~-~#5#2#6~页}{,~ 第~#3#1#4~-~#5#2#6~页}{和第~#3#1#4~-~#5#2#6~页}
+  \Crefrangemultiformat{page}{第~#3#1#4~-~#5#2#6~页}{和第~#3#1#4~-~#5#2#6~页}{,~ 第~#3#1#4~-~#5#2#6~页}{和第~#3#1#4~-~#5#2#6~页}
 
 
 
