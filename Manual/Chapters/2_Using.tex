@@ -328,7 +328,7 @@
 一篇规范的学术文章往往会包含大量的图、表、数据或公式等资料，并且会它们层次分明地安排在文章中以便在适当的时候进行引用。因此有序、分明、自动化地组织引用这些材料一方面能够满足学术文章的写作要求，另一方面也能够给作者带来方便。本模版使用了~cleveref\cite{Packages_cleveref}~，并且针对中文的使用习惯进行了定制化。因此不仅支持自动编号待引用内容、自动识别所引内容的类型（章、节、图、表、公式等），还可以自动分类组合多个引用内容。
 
 
-使用~\verb|cref|~进行交叉引用其实很简单。首先一定要确保被引用的内容被分配了一个标签（\verb|\label{<LabelName>}|，\verb|<LabelName>|为标签名，由用户自行确定），如\cref{fig_SCUlogo}代码第~5~行所示\footnote{一般使用中，在有题注~caption~时，为了避免交叉引用出现异常，需要将~label~置于~caption~之后}。
+使用~\verb|cref|~进行交叉引用其实很简单\cite{Journal_Leo}。首先一定要确保被引用的内容被分配了一个标签（\verb|\label{<LabelName>}|，\verb|<LabelName>|为标签名，由用户自行确定），如\cref{fig_SCUlogo}代码第~5~行所示\footnote{一般使用中，在有题注~caption~时，为了避免交叉引用出现异常，需要将~label~置于~caption~之后}。
 
 \begin{table}[ht]
 	\centering
@@ -349,6 +349,8 @@
 		\bottomrule
 	\end{tabular*}
 \end{table}
+
+
 
 
 \subsubsection{文献引用}
