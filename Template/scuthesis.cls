@@ -93,6 +93,8 @@
 \newcommand\ENGkeywords[1]{\def\@ENGkeywords{#1}}
 \newcommand\university[1]{\def\@university{#1}}
 \newcommand\ENGuniversity[1]{\def\@ENGuniversity{#1}}
+% 加入封面标题命令，支持封面标题的换行 20161124
+\newcommand\CoverTitle[1]{\def\@CoverTitle{#1}}
 
 % 设置标题深度为4
 \setcounter{secnumdepth}{4}
@@ -201,7 +203,7 @@
 				{
 					\zihao{-3}\kaishu
 					\begin{tabular}{cc}
-						{\makebox[1.5cm][s]{\textbf{\label@title}}}  & \fillinblank{12cm}{\textbf{\@title}} \\[0.7cm]
+						{\makebox[1.5cm][s]{\textbf{\label@title}}}  & \fillinblank{12cm}{\parbox[b]{12cm}{\centering\textbf{\@CoverTitle}}} \\[0.7cm] % 使用 parbox 支持换行
 						{\makebox[1.5cm][s]{\textbf{\label@author}}} & \fillinblank{4cm}{\textbf{\@author}}
 						{\makebox[2cm][s]{\textbf{\label@accomplishdate}}} \fillinblank{5.8cm}{\textbf{\@accomplishdate}}
 					\end{tabular}
