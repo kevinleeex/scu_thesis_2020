@@ -22,9 +22,10 @@
 \RequirePackage{graphicx}
 % 设置16K页面
 \RequirePackage{anysize}
-\papersize{26cm}{18.5cm}
-% 左边距 1.95cm，右边距 1.95cm，上边距 2.25cm，下边距 2.25cm，版心 215×145mm
-\marginsize{1.95cm}{1.95cm}{2.25cm}{2.25cm}
+\papersize{27cm}{19.5cm}
+% 左边距 1.95cm，右边距 1.95cm，上边距 1.25cm，下边距 1.25cm，版心 215×145mm
+\marginsize{1.95cm}{1.95cm}{1.25cm}{1.25cm}
+\setlength{\topskip}{-0.7cm}
 
 % 设定页眉、页脚样式。
 %\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
