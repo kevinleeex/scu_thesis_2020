@@ -8,7 +8,7 @@
 \def\label@supervisor{指导教师}
 \def\label@ENGsupervisor{Supervisor}
 \def\label@major{专业}
-\def\label@ENGmajor{Major}
+\def\label@ENGmajor{Subject}
 \def\label@direction{研究方向}
 \def\label@defensedate{授予学位日期}
 

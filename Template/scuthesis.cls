@@ -142,16 +142,19 @@
 	\def\thesisname{博士学位论文}
 	\def\CHSauthortype{研究生}
 	\def\ENGauthortype{Postgraduate}
+  \def\TypeAbbr{PhD Degree}
 	}{}
 \ifthenelse{\equal{\thesistype}{1}}{
 	\def\thesisname{硕士学位论文}
 	\def\CHSauthortype{研究生}
 	\def\ENGauthortype{Postgraduate}
+  \def\TypeAbbr{MSc Degree}
 	}{}
 \ifthenelse{\equal{\thesistype}{2}}{
 	\def\thesisname{学士学位论文}
 	\def\CHSauthortype{本科生}
 	\def\ENGauthortype{Undergraduate}
+  \def\TypeAbbr{Bachelor Degree}
 	}{}
 
 
@@ -284,12 +287,13 @@
 		\cleardoublepage
 		\ \vspace{0cm}\par
 		\begin{center}
-			\zihao{-2}{\@ENGtitle} \\[0.5cm]
+			\zihao{-2}{\@ENGtitle} \\[1.5em]
 			\zihao{-4}
-			{\textbf{{\label@ENGmajor}{: }}}{{\@ENGmajor}} \\[0.5cm]
-			{\textbf{{\ENGauthortype}{: }}}{{\@ENGauthor}}
+      {\textbf{Presented for \TypeAbbr}} \\[0.5em]
+			{\textbf{{\label@ENGmajor: \@ENGmajor}}} \\[0.5em]
+			{\textbf{{\ENGauthortype: \@ENGauthor}}}
 			\quad
-			{\textbf{{\label@ENGsupervisor}{: }}}{{\@ENGsupervisor}}
+			{\textbf{{\label@ENGsupervisor: \@ENGsupervisor}}}
 		\end{center}
 		\ \vspace{0cm}\par
 		%\ \\[-0.5cm]\setlength\parindent{2em}
