@@ -4,30 +4,42 @@
 % 修改日期：2020年1月17日
 
 % 选用scuthesis文档类，参数master为硕士论文，可选doctor和bachelor，分别对应博士和学士
-\documentclass[master]{./Template/scuthesis}
+\documentclass[professional,master]{./Template/scuthesis}
 %\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
 \begin{document}
 % 设置文档信息
+\unitid{10610}
+\STUnumber{xxxxxxxxxxxxxxx}
+\CoverTitle{论文标题} %封面标题
+\CoverSubTitle{论文副标题}
 \title{论文名称}
 \ENGtitle{Title of your work}
-\CoverTitle{论文标题} %封面标题
+\school{计算机学院}
+\ENGschool{Department of Computer Science}
 \author{XXX}
 \ENGauthor{Kevin T. Lee}
-\accomplishdate{2020年3月}
-\school{计算机学院}
 \supervisor{XXX\quad 教授}
-\ENGsupervisor{Prof. Leizhang}
+\ENGsupervisor{Prof. XXX}
+\degreeclass{XX硕士/工程硕士}
+\ENGdegreeclass{Master of XXX}
 \major{计算机技术}
 \ENGmajor{Computer technology}
+\defensedate{二〇一九年十二月}
+\grantdate{二〇一九年十二月}
+\accomplishdate{二〇一九年十二月}
+\statementdate{2019-12}
 \direction{XXX}
 \ENGdirection{Direction Name}
 \defensedate{答辩日期}
-\keywords{词向量，神经网络，机器学习，大数据，语义空间}
-\ENGkeywords{word vector, neural network, machine learning, big data, semantic space}
+\keywords{关键词1，关键词2，关键词3，关键词4，关键词5}
+\ENGkeywords{keyword1, keyword2, keyword3, keyword4, keyword5}
 
-% 自动制作标题
+% 自动制作封面
 \maketitle
 
+\makeinner
+
+% \makestatement
 % 设置论文正文前的页码、页眉等
 \frontmatter\pagenumbering{Roman}\pagestyle{fancy}\makechaptertitlecenter
 % 包含摘要

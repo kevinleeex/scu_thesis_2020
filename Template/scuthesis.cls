@@ -7,13 +7,14 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{../Template/scuthesis}[2020/01/17 v0.1]
 % 声明传入参数，定义对应的论文类别，分别对应博士、硕士和学士学位论文。这里由于tex对中文支持不够，因此不能在此定义论文名称。
+\def\approval{0}
+\def\colortitle{0}
 \DeclareOption{doctor}{\def\thesistype{0}}
 \DeclareOption{master}{\def\thesistype{1}}
-\DeclareOption{bachelor}{\def\thesistype{2}}
 \DeclareOption{approval}{\def\approval{1}}
-\DeclareOption{academic}}{\def\degreetype{0}}
-\DeclareOption{professional}}{\def\degreetype{1}}
 \DeclareOption{color}{\def\colortitle{1}}
+\DeclareOption{academic}{\def\degreetype{0}}
+\DeclareOption{professional}{\def\degreetype{1}}
 % 将文档类其他参数全部传递给 ctexbook 文档类。
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
@@ -27,6 +28,11 @@
 \RequirePackage{graphicx}
 % 此包用以避免目录自引用
 \usepackage[nottoc]{tocbibind}
+%设置字体
+\usepackage{xeCJK}
+\usepackage{fontspec} 
+\setCJKmonofont{SimSun}
+\setmainfont{Times New Roman}
 % 设置A4页面
 % \RequirePackage{anysize}
 % \papersize{29.7cm}{21cm}
@@ -39,25 +45,150 @@
 \geometry{left=2.5cm,right=2.5cm,top=2.75cm,bottom=2.5cm,head=0.3cm,headsep=0.25cm,foot=0.75cm}
 \setlength{\topskip}{0cm}
 
+% 这些命令用于设定各项文档信息的具体内容。
+% 加入封面标题命令，添加副标题，自行排版
+\newcommand\unitid[1]{\def\@unitid{#1}}
+\newcommand\STUnumber[1]{\def\@STUnumber{#1}}
+\newcommand\CoverTitle[1]{\def\@CoverTitle{#1}}
+\newcommand\CoverSubTitle[1]{\def\@CoverSubTitle{#1}}
+% \newcommand\title[1]{\def\@title{#1}}
+\newcommand\ENGtitle[1]{\def\@ENGtitle{#1}}
+\newcommand\school[1]{\def\@school{#1}}
+\newcommand\ENGschool[1]{\def\@ENGschool{#1}}
+% \newcommand\author[1]{\def\@author{#1}}
+\newcommand\ENGauthor[1]{\def\@ENGauthor{#1}}
+\newcommand\supervisor[1]{\def\@supervisor{#1}}
+\newcommand\ENGsupervisor[1]{\def\@ENGsupervisor{#1}}
+\newcommand\degreeclass[1]{\def\@degreeclass{#1}}
+\newcommand\ENGdegreeclass[1]{\def\@ENGdegreeclass{#1}}
+\newcommand\major[1]{\def\@major{#1}}
+\newcommand\ENGmajor[1]{\def\@ENGmajor{#1}}
+\newcommand\defensedate[1]{\def\@defensedate{#1}}
+\newcommand\grantdate[1]{\def\@grantdate{#1}}
+\newcommand\accomplishdate[1]{\def\@accomplishdate{#1}}
+\newcommand\statementdate[1]{\def\@statementdate{#1}}
+\newcommand\direction[1]{\def\@direction{#1}}
+\newcommand\ENGdirection[1]{\def\@ENGdirection{#1}}
+\newcommand\keywords[1]{\def\@keywords{#1}}
+\newcommand\ENGkeywords[1]{\def\@ENGkeywords{#1}}
+\newcommand\university[1]{\def\@university{#1}}
+\newcommand\ENGuniversity[1]{\def\@ENGuniversity{#1}}
+
 % 判断论文类别，定义不同论文名称
 \ifthenelse{\equal{\thesistype}{0}}{
-	\def\thesisname{博士学位论文}
+	\def\thesisname{博士研究生学位论文}
 	\def\CHSauthortype{研究生}
 	\def\ENGauthortype{Postgraduate}
-  \def\TypeAbbr{PhD Degree}
+  	\def\TypeAbbr{PhD Degree}
 	}{}
 \ifthenelse{\equal{\thesistype}{1}}{
-	\def\thesisname{硕士学位论文}
+	\def\thesisname{硕士研究生学位论文}
 	\def\CHSauthortype{研究生}
 	\def\ENGauthortype{Postgraduate}
-  \def\TypeAbbr{MSc Degree}
+  	\def\TypeAbbr{MSc Degree}
 	}{}
-\ifthenelse{\equal{\thesistype}{2}}{
-	\def\thesisname{本科学位论文}
-	\def\CHSauthortype{本科生}
-	\def\ENGauthortype{Undergraduate}
-  \def\TypeAbbr{Bachelor Degree}
+\ifthenelse{\equal{\degreetype}{0}}{
+	\def\proffieldname{学科专业}
+	\def\degreename{学术学位}
 	}{}
+\ifthenelse{\equal{\degreetype}{1}}{
+	\def\proffieldname{领域名称}
+	\def\degreename{专业学位}
+	}{}
+
+	%定义字体格式
+	\newcommand{\fontq}{
+		\zihao{-3}\heiti
+	}
+	\newcommand{\fonta}{
+		\zihao{3}\songti
+	}
+
+\newcommand{\makescucoverhead}
+{
+	\ifthenelse{\equal{\approval}{0}}{
+			\zihao{-4}\songti
+			\begin{tabular}{cl}
+				{\makebox[2.2cm][s]{\textbf{单位代码：}}}  & \hspace{-10pt}\textbf{\@unitid}\\
+				{\makebox[2.2cm][s]{\textbf{学号：}}}       & \hspace{-10pt}\textbf{\@STUnumber}
+			\end{tabular}
+		}{}
+	\ifthenelse{\equal{\approval}{1}}{
+			\zihao{-4}\songti
+			\begin{tabular}{cl}
+				{\makebox[2.2cm][s]{\textbf{单位代码：}}}  & \hspace{-10pt}\textbf{\@unitid}\\
+				{\makebox[2.2cm][s]{\textbf{送审编号：}}}       & \hspace{-10pt}\textbf{\@STUnumber}
+			\end{tabular}
+			
+		}{}
+	\\[30pt]
+}
+
+\newcommand{\makescucoverimage}
+{
+		\ifthenelse{\equal{\colortitle}{0}}{
+			\includegraphics[width=10cm]{./Template/Components/Images/SCU_TITLE_BW}
+		}{}
+	\ifthenelse{\equal{\colortitle}{1}}{
+			\includegraphics[width=8cm]{./Template/Components/Images/SCU_TITLE}
+		}{}
+	\\[0cm]
+	{\makebox[9cm][s]{\zihao{1}\heiti\textbf{\thesisname}}}
+	\\[18pt]
+	{\makebox[5cm][c]{\zihao{3}\songti\text{（}\degreename\text{）}}}
+	\\[47pt]
+}
+
+
+
+\newcommand{\makescucovertitle}
+{
+	\begin{tabular}{lc}
+		{\heiti\zihao{3}\makebox[1.25cm][s]{\textbf{题目：}}}  & \hspace{-10pt}\fillinblank{10.5cm}{\heiti\zihao{3}\textbf{\@CoverTitle}}
+		\\[25pt]
+		{\makebox[2cm][s]{}}       & \hspace{-10pt}\fillinblank{10.5cm}{\heiti\zihao{3}\textbf{\@CoverSubTitle}}
+	\end{tabular}
+	\\[45pt]
+}
+
+\newcommand{\makescucovercontent}
+{
+	%非送审版本
+	\ifthenelse{\equal{\approval}{0}}{
+		
+		\begin{tabular}{cc}
+			{\hspace{-0.7cm}\fontq\makebox[2.8cm][l]{培养单位：}}  & \hspace{-0.7cm}\fonta\fillinblank{8cm}{\@school}
+			\\[17pt]
+			{\hspace{-0.7cm}\fontq\makebox[2.8cm][l]{作者姓名：}}  & \hspace{-0.7cm}\fonta\fillinblank{8cm}{\@author}
+			\\[17pt]
+			{\hspace{-0.7cm}\fontq\makebox[2.8cm][l]{指导教师：}}       & \hspace{-0.7cm}\fonta\fillinblank{8cm}{\@supervisor}
+			\\[17pt]
+			{\hspace{-0.7cm}\fontq\makebox[2.8cm][l]{学位类别：}}   & \hspace{-0.7cm}\fonta\fillinblank{8cm}{\@degreeclass}
+			\\[17pt]
+			{\hspace{-0.7cm}\fontq\makebox[2.8cm][l]{\proffieldname ：}} & \hspace{-0.7cm}\fonta\fillinblank{8cm}{\@major}
+		\end{tabular}
+		\\[48pt]
+		\zihao{3}\songti
+		{\makebox[12cm][c]{\text{论文答辩时间：}\@defensedate}}
+		\\[12pt]
+		{\makebox[12cm][c]{\text{学位授予时间：}\@grantdate}}
+		}{}
+	%送审版本
+	\ifthenelse{\equal{\approval}{1}}{
+		\zihao{-3}\kaishu
+		\begin{tabular}{cl}
+			{\hspace{-0.7cm}\fontq\makebox[2.8cm][l]{学位类别：}}   & \hspace{-0.7cm}\fonta\fillinblank{8cm}{\@degreeclass}
+			\\[14pt]
+			{\hspace{-0.7cm}\fontq\makebox[2.8cm][]{\proffieldname ：}} & \hspace{-0.7cm}\fonta\fillinblank{8cm}{\@major}
+		\end{tabular}
+		\\[48pt]
+		\zihao{3}\songti
+		{\makebox[9cm][s]{\text{论文完成时间}}}
+		\\[12pt]
+		{\makebox[9cm][c]{\@accomplishdate}}
+		}{}
+}
+
 
 % 设定页眉、页脚样式。
 % \fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0.8pt}}
@@ -116,28 +247,6 @@
 \RequirePackage{float}
 % 三线表支持
 \RequirePackage{booktabs}
-% 这些命令用于设定各项文档信息的具体内容。
-\newcommand\ENGtitle[1]{\def\@ENGtitle{#1}}
-\newcommand\ENGauthor[1]{\def\@ENGauthor{#1}}
-\newcommand\defensedate[1]{\def\@defesedate{#1}}
-\newcommand\grantdate[1]{\def\@grantdate{#1}}
-\newcommand\school[1]{\def\@school{#1}}
-\newcommand\supervisor[1]{\def\@supervisor{#1}}
-\newcommand\ENGsupervisor[1]{\def\@ENGsupervisor{#1}}
-\newcommand\major[1]{\def\@major{#1}}
-\newcommand\ENGmajor[1]{\def\@ENGmajor{#1}}
-\newcommand\direction[1]{\def\@direction{#1}}
-\newcommand\ENGdirection[1]{\def\@ENGdirection{#1}}
-\newcommand\keywords[1]{\def\@keywords{#1}}
-\newcommand\ENGkeywords[1]{\def\@ENGkeywords{#1}}
-\newcommand\university[1]{\def\@university{#1}}
-\newcommand\ENGuniversity[1]{\def\@ENGuniversity{#1}}
-\newcommand\STUnumber[1]{\def\@STUnumber{#1}}
-\newcommand\degreeclass[1]{\def\@degreeclass{#1}}
-\newcommand\ENGdegreeclass[1]{\def\@ENGdegreeclass{#1}}
-
-% 加入封面标题命令，支持封面标题的换行 20161124
-\newcommand\CoverTitle[1]{\def\@CoverTitle{#1}}
 
 % 设置标题深度为4
 \setcounter{secnumdepth}{4}
@@ -193,7 +302,7 @@
 
 % 定义\fillinblank命令，用下划线填充指定的空间。
 \newcommand{\fillinblank}[2]{
-	\CJKunderline{\makebox[#1]{#2}}
+	\CJKunderline[thickness=0.8pt,depth=0.5em]{\makebox[#1]{#2}}
 }
 % 定义\putonbottom命令，将对象放到页面底部。
 \newcommand{\putonbottom}[1]{
@@ -227,47 +336,33 @@
 }
 
 % 设定标题页格式。
-\renewcommand\maketitle
-{
+\renewcommand\maketitle{
 	\cleardoublepage
 	\begin{titlepage}
+		\makescucoverhead
 		\begin{center}
 			% 校名和论文类别、“四川大学”字样
-			{
-				\ \\[-1cm]
-				\includegraphics[width=8cm]{./Template/Components/Images/SCU_TITLE}\\[1.5cm]
-					{\makebox[10.5cm][s]{\zihao{-0}\heiti\thesisname}}
-				}
-				\\[2cm]
-				% 论文标题，作者，完成日期
-				{
-					\zihao{-3}\kaishu
-					\begin{tabular}{cc}
-						{\makebox[1.5cm][s]{\textbf{题目}}}  & \fillinblank{12cm}{\parbox[b]{12cm}{\centering\textbf{\@CoverTitle}}} \\[0.7cm] % 使用 parbox 支持换行
-						{\makebox[1.5cm][s]{\textbf{作者}}} & \fillinblank{4cm}{\textbf{\@author}}
-						{\makebox[2cm][s]{\textbf{完成日期}}} \fillinblank{5.8cm}{\textbf{\@accomplishdate}}
-					\end{tabular}
-				}
-				\\[2.6cm]
-				% 培养单位，指导教师，专业等信息
-				{
-					\zihao{-3}\kaishu
-					\begin{tabular}{cc}
-						{\makebox[3.2cm][s]{\textbf{培养单位}}}  & \fillinblank{6.2cm}{\textbf{四\hspace{0.5em}川\hspace{0.5em}大\hspace{0.5em}学}}
-						\\[0.8cm]
-						{\makebox[3.2cm][s]{\textbf{指导教师}}}  & \fillinblank{6.2cm}{\textbf{\@supervisor}}
-						\\[0.8cm]
-						{\makebox[3.2cm][s]{\textbf{专业}}}       & \fillinblank{6.2cm}{\textbf{\@major}}
-						\\[0.8cm]
-						{\makebox[3.2cm][s]{\textbf{研究方向}}}   & \fillinblank{6.2cm}{\textbf{\@direction}}
-						\\[0.8cm]
-						{\makebox[3.2cm][s]{\textbf{授予学位日期}}} & \fillinblank{6.2cm}{\textbf{\@defensedate}}
-					\end{tabular}
-				}
+			\makescucoverimage
+			
+			%封面论文标题
+			\makescucovertitle
+
+			%封面主要内容
+			\makescucovercontent
+
 			\end{center}
 		\end{titlepage}
 		\thispagestyle{empty}
-	}
+}
+
+%设置英文内页
+\newcommand{\makeinner}{
+	\cleardoublepage
+	\begin{center}
+		\\[24pt]
+		\makebox{\rm\@ENGtitle}
+	\end{center}
+}
 
 	% 重定义autoref标签
 	%\renewcommand{\partautorefname}{\part}
