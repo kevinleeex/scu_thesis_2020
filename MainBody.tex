@@ -1,33 +1,35 @@
 % 文件名：Mainbody.tex
 % 文件描述：以 scuthesis 四川大学学位论文文档类为基础的 LaTeX 模版
-% 作者：LegendaryLeo
-% 修改日期：2016年6月3日
+% 作者：Kevin T. Lee [hello@lidengju.com]
+% 修改日期：2020年1月17日
 
 % 选用scuthesis文档类，参数master为硕士论文，可选doctor和bachelor，分别对应博士和学士
-\documentclass[master,UTF8,hyperref]{../Template/scuthesis}
+\documentclass[master,UTF8,hyperref,twoside,openright]{./Template/scuthesis}
 %\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
 \begin{document}
 % 设置文档信息
-\title{论文标题}
-\ENGtitle{The Dissertation Title}
+\title{论文名称}
+\ENGtitle{Title of your work}
 \CoverTitle{论文标题} %封面标题
-\author{作者}
-\ENGauthor{Author Name}
-\accomplishdate{论文完成日期}
-\school{学院名称}
-\supervisor{指导教师\quad教授/副教授}
-\ENGsupervisor{Prof. Supervisor}
-\major{专业名称}
-\ENGmajor{Major Name}
-\direction{方向名称}
+\author{XXX}
+\ENGauthor{Kevin T. Lee}
+\accomplishdate{2020年3月}
+\school{计算机学院}
+\supervisor{XXX\quad 教授}
+\ENGsupervisor{Prof. Leizhang}
+\major{计算机技术}
+\ENGmajor{Computer technology}
+\direction{XXX}
 \ENGdirection{Direction Name}
 \defensedate{答辩日期}
-\keywords{关键词1，关键词2，关键词3，关键词4，关键词5}
-\ENGkeywords{Keyword1, Keyword2, Keyword3, Keyword4, Keyword5}
-% 设置论文正文前的页码、页眉等
-\frontmatter\pagenumbering{Roman}\pagestyle{fancy}\makechaptertitlecenter
+\keywords{词向量，神经网络，机器学习，大数据，语义空间}
+\ENGkeywords{word vector, neural network, machine learning, big data, semantic space}
+
 % 自动制作标题
 \maketitle
+
+% 设置论文正文前的页码、页眉等
+\frontmatter\pagenumbering{Roman}\pagestyle{fancy}\makechaptertitlecenter
 % 包含摘要
 \include{Chapters/0_0_Abstract}
 % 包含缩略词表
@@ -37,16 +39,17 @@
 % 自动制作目录
 \maketoc
 % 设置论文正文部分的页码、页眉等
-\mainmatter\pagenumbering{arabic}\pagestyle{fancy}\makechaptertitleleft
+\mainmatter\pagenumbering{arabic}\pagestyle{fancy}\makechaptertitlecenter
 % 包含第一章、第二章等等
 \include{Chapters/Introduction}
-\include{Chapters/Chapter2}
+
 % 设置论文正文后的式样
 \backmatter\makechaptertitlecenter
 % 按国标自动制作参考文献
 \begin{reference}
 	% 参考文献数据文件为本目录下的sample.bib
-	\bibliographystyle{../Template/chinesebst}\bibliography{ReferenceBase}
+	\bibliographystyle{./Template/chinesebst}\bibliography{ReferenceBase}
+
 \end{reference}
 % 包含在读期间科研成果
 \include{Chapters/Achievements}

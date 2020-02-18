@@ -1,10 +1,11 @@
 % 文件名：scuthesis.cls
 % 文件描述：以 ctexbook 文档类为基础，定义四川大学学位论文文档类
 % 作者：LegendaryLeo
+% 修改人：Kevin T. Lee [hello@lidengju.com]
 % 参考：pkuthss-1.2beta
-% 修改日期：2016年6月2日
+% 修改日期：2020年1月17日
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{../Template/scuthesis}[2016/05/30 v0.1]
+\ProvidesClass{../Template/scuthesis}[2020/01/17 v0.1]
 % 声明传入参数，定义对应的论文类别，分别对应博士、硕士和学士学位论文。这里由于tex对中文支持不够，因此不能在此定义论文名称。
 \DeclareOption{doctor}{\def\thesistype{0}}
 \DeclareOption{master}{\def\thesistype{1}}
@@ -20,21 +21,52 @@
 \RequirePackage{ifthen}
 % 此宏包提供图形支持。
 \RequirePackage{graphicx}
-% 设置16K页面
-\RequirePackage{anysize}
-\papersize{27cm}{19.5cm}
-% 左边距 1.95cm，右边距 1.95cm，上边距 1.25cm，下边距 1.25cm，版心 215×145mm
-\marginsize{1.95cm}{1.95cm}{1.25cm}{1.25cm}
-\setlength{\topskip}{-0.7cm}
+% 此包用以避免目录自引用
+\usepackage[nottoc]{tocbibind}
+% 设置A4页面
+% \RequirePackage{anysize}
+% \papersize{29.7cm}{21cm}
+% % 左边距 2.5cm，右边距 2.5cm，上边距 2.75cm，下边距2.5cm
+% \marginsize{2.5cm}{2.5cm}{2.75cm}{2.5cm}
+\usepackage{geometry}
+\geometry{a4paper,papersize={21cm,29.7cm}}
+\geometry{left=2.5cm,right=2.5cm,top=2.75cm,bottom=2.5cm,head=0.3cm,headsep=0.25cm,foot=0.75cm}
+\setlength{\topskip}{0cm}
+
+% 判断论文类别，定义不同论文名称
+\ifthenelse{\equal{\thesistype}{0}}{
+	\def\thesisname{博士学位论文}
+	\def\CHSauthortype{研究生}
+	\def\ENGauthortype{Postgraduate}
+  \def\TypeAbbr{PhD Degree}
+	}{}
+\ifthenelse{\equal{\thesistype}{1}}{
+	\def\thesisname{硕士学位论文}
+	\def\CHSauthortype{研究生}
+	\def\ENGauthortype{Postgraduate}
+  \def\TypeAbbr{MSc Degree}
+	}{}
+\ifthenelse{\equal{\thesistype}{2}}{
+	\def\thesisname{本科学位论文}
+	\def\CHSauthortype{本科生}
+	\def\ENGauthortype{Undergraduate}
+  \def\TypeAbbr{Bachelor Degree}
+	}{}
 
 % 设定页眉、页脚样式。
-%\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
+% \fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0.8pt}}
 \fancypagestyle{plain}{\pagestyle{fancy}}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[RE]{\zihao{-5}\songti\@title}
-\fancyhead[RO]{\zihao{-5}\songti\@title}
-\fancyhead[LO,LE]{\zihao{-5}\songti\universityname\thesisname}
+\renewcommand{\headrulewidth}{0.8pt}
+\fancyhead[CE]{\zihao{-5}\songti
+   % The chapter title in even page
+   四川大学\thesisname}
+
+\renewcommand{\headrulewidth}{0.8pt}
+\fancyhead[CO]{\zihao{-5}\songti
+	% The chapter title in odd page
+	\leftmark}
 \fancyfoot[CO,CE]{\zihao{-5}\thepage}
 
 % 使用epstopdf宏包重定向eps输出路径，避免图片错误
@@ -94,6 +126,7 @@
 \newcommand\ENGkeywords[1]{\def\@ENGkeywords{#1}}
 \newcommand\university[1]{\def\@university{#1}}
 \newcommand\ENGuniversity[1]{\def\@ENGuniversity{#1}}
+\newcommand\
 % 加入封面标题命令，支持封面标题的换行 20161124
 \newcommand\CoverTitle[1]{\def\@CoverTitle{#1}}
 
@@ -102,9 +135,11 @@
 % CTEX设置各级标题对齐方式，字号，字体及前后段间距
 % “章节”标题，小三号黑体，左对齐，前后段间距为10pt
 \CTEXsetup[
-	format+={\zihao{-3}\rm\heiti\flushleft},
-	beforeskip={-1cm},
-	afterskip={10pt}
+	format+={\zihao{3}\rm\heiti\flushleft},
+	number={\arabic{chapter}},
+	numberformat={\bfseries},
+	beforeskip={0pt},
+	afterskip={18pt}
 ]{chapter}
 % “节”标题，四号黑体，左对齐，前后段间距为10pt
 \CTEXsetup[
@@ -137,25 +172,6 @@
 \newcommand{\makechaptertitlecenter}{\CTEXsetup[format+={\center}]{chapter}}
 % 定义\makechaptertitleleft命令，可使命令后章节标题居左
 \newcommand{\makechaptertitleleft}{\CTEXsetup[format+={\flushleft}]{chapter}}
-% 判断论文类别，定义不同论文名称
-\ifthenelse{\equal{\thesistype}{0}}{
-	\def\thesisname{博士学位论文}
-	\def\CHSauthortype{研究生}
-	\def\ENGauthortype{Postgraduate}
-  \def\TypeAbbr{PhD Degree}
-	}{}
-\ifthenelse{\equal{\thesistype}{1}}{
-	\def\thesisname{硕士学位论文}
-	\def\CHSauthortype{研究生}
-	\def\ENGauthortype{Postgraduate}
-  \def\TypeAbbr{MSc Degree}
-	}{}
-\ifthenelse{\equal{\thesistype}{2}}{
-	\def\thesisname{学士学位论文}
-	\def\CHSauthortype{本科生}
-	\def\ENGauthortype{Undergraduate}
-  \def\TypeAbbr{Bachelor Degree}
-	}{}
 
 
 % 定义\fillinblank命令，用下划线填充指定的空间。
@@ -172,21 +188,28 @@
 }
 
 % 定义目录标题格式，小三号黑体居中，段前后距10pt
-\renewcommand{\cfttoctitlefont}{\hfill\zihao{-3}\rm\heiti}
+\renewcommand\contentsname{目\ 录}
+\renewcommand{\cfttoctitlefont}{\hfill\zihao{3}\rm\heiti}
+\renewcommand{\cftchapfont}{\zihao{-4}\rm\heiti}
+\renewcommand{\cftsecfont}{\zihao{-4}\rm\songti}
 \renewcommand{\cftaftertoctitle}{\hfill}
-\renewcommand{\cftbeforetoctitleskip}{10pt}
+\renewcommand{\cftbeforetoctitleskip}{24pt}
 \renewcommand{\cftaftertoctitleskip}{10pt}
 % 定义引导线格式，为点，点距0.5，章节标题也使用引导线
 \renewcommand{\cftdot}{.}
 \renewcommand{\cftdotsep}{0.5}
 \renewcommand{\cftchapdotsep}{\cftdotsep}
 % 定义章节目录项前后距
-\setlength{\cftbeforechapskip}{0pt}
+\setlength{\cftbeforechapskip}{6pt}
 
 % 定义\maketoc命令，将自动生成符合要求的目录。
 \newcommand{\maketoc}{
-	\thispagestyle{empty}\cleardoublepage
-	\tableofcontents\pagenumbering{roman}
+	\cleardoublepage
+	% \chapter*{目\quad 录}
+	% \makeatletter
+	% \@starttoc{toc}
+	% \makeatother
+	\tableofcontents
 	\thispagestyle{fancy}
 }
 
@@ -199,7 +222,7 @@
 			% 校名和论文类别、“四川大学”字样
 			{
 				\ \\[-1cm]
-				\includegraphics[width=8cm]{../Template/Components/Images/SCU_TITLE}\\[1.5cm]
+				\includegraphics[width=8cm]{./Template/Components/Images/SCU_TITLE}\\[1.5cm]
 					{\makebox[10.5cm][s]{\zihao{-0}\heiti\thesisname}}
 				}
 				\\[2cm]
@@ -207,9 +230,9 @@
 				{
 					\zihao{-3}\kaishu
 					\begin{tabular}{cc}
-						{\makebox[1.5cm][s]{\textbf{\label@title}}}  & \fillinblank{12cm}{\parbox[b]{12cm}{\centering\textbf{\@CoverTitle}}} \\[0.7cm] % 使用 parbox 支持换行
-						{\makebox[1.5cm][s]{\textbf{\label@author}}} & \fillinblank{4cm}{\textbf{\@author}}
-						{\makebox[2cm][s]{\textbf{\label@accomplishdate}}} \fillinblank{5.8cm}{\textbf{\@accomplishdate}}
+						{\makebox[1.5cm][s]{\textbf{题目}}}  & \fillinblank{12cm}{\parbox[b]{12cm}{\centering\textbf{\@CoverTitle}}} \\[0.7cm] % 使用 parbox 支持换行
+						{\makebox[1.5cm][s]{\textbf{作者}}} & \fillinblank{4cm}{\textbf{\@author}}
+						{\makebox[2cm][s]{\textbf{完成日期}}} \fillinblank{5.8cm}{\textbf{\@accomplishdate}}
 					\end{tabular}
 				}
 				\\[2.6cm]
@@ -217,15 +240,15 @@
 				{
 					\zihao{-3}\kaishu
 					\begin{tabular}{cc}
-						{\makebox[3.2cm][s]{\textbf{\label@university}}}  & \fillinblank{6.2cm}{\textbf{\university}}
+						{\makebox[3.2cm][s]{\textbf{培养单位}}}  & \fillinblank{6.2cm}{\textbf{四\hspace{0.5em}川\hspace{0.5em}大\hspace{0.5em}学}}
 						\\[0.8cm]
-						{\makebox[3.2cm][s]{\textbf{\label@supervisor}}}  & \fillinblank{6.2cm}{\textbf{\@supervisor}}
+						{\makebox[3.2cm][s]{\textbf{指导教师}}}  & \fillinblank{6.2cm}{\textbf{\@supervisor}}
 						\\[0.8cm]
-						{\makebox[3.2cm][s]{\textbf{\label@major}}}       & \fillinblank{6.2cm}{\textbf{\@major}}
+						{\makebox[3.2cm][s]{\textbf{专业}}}       & \fillinblank{6.2cm}{\textbf{\@major}}
 						\\[0.8cm]
-						{\makebox[3.2cm][s]{\textbf{\label@direction}}}   & \fillinblank{6.2cm}{\textbf{\@direction}}
+						{\makebox[3.2cm][s]{\textbf{研究方向}}}   & \fillinblank{6.2cm}{\textbf{\@direction}}
 						\\[0.8cm]
-						{\makebox[3.2cm][s]{\textbf{\label@defensedate}}} & \fillinblank{6.2cm}{\textbf{\@defensedate}}
+						{\makebox[3.2cm][s]{\textbf{授予学位日期}}} & \fillinblank{6.2cm}{\textbf{\@defensedate}}
 					\end{tabular}
 				}
 			\end{center}
@@ -255,7 +278,7 @@
 		\begin{center}
 			\begin{tabular*}{\textwidth}{p{0.5\textwidth}p{0.5\textwidth}}
 				学位论文作者签名：& 导师签名：\\[1cm]
-				签字日期：\quad年\quad月\quad日 & 签字日期：\quad年\quad月\quad日
+				签字日期：\quad 年 \quad 月 \quad 日 & 签字日期：\quad 年 \quad 月 \quad 日
 			\end{tabular*}
 		\end{center}
 	}
@@ -268,10 +291,10 @@
 		\begin{center}
 			\zihao{-2}\songti{\@title} \\[0.5cm]
 			\zihao{-4}
-			{\heiti{{\label@major}{：}}}{\kaishu{\@major}} \\[0.5cm]
+			{\heiti{{专业}{：}}}{\kaishu{\@major}} \\[0.5cm]
 			{\heiti{{\CHSauthortype}{：}}}{\kaishu{\@author}}
 			\quad
-			{\heiti{{\label@supervisor}{：}}}{\kaishu{\@supervisor}}
+			{\heiti{{指导教师}{：}}}{\kaishu{\@supervisor}}
 		\end{center}
 		\ \vspace{0cm}\par
 		%\ \\[-0.5cm]
@@ -289,11 +312,11 @@
 		\begin{center}
 			\zihao{-2}{\@ENGtitle} \\[1.5em]
 			\zihao{-4}
-      {\textbf{Presented for \TypeAbbr}} \\[0.5em]
-			{\textbf{{\label@ENGmajor: \@ENGmajor}}} \\[0.5em]
+    %   {\textbf{Presented for \TypeAbbr}} \\[0.5em]
+			{\textbf{{Subject: \@ENGmajor}}} \\[0.5em]
 			{\textbf{{\ENGauthortype: \@ENGauthor}}}
 			\quad
-			{\textbf{{\label@ENGsupervisor: \@ENGsupervisor}}}
+			{\textbf{{Supervisor: \@ENGsupervisor}}}
 		\end{center}
 		\ \vspace{0cm}\par
 		%\ \\[-0.5cm]\setlength\parindent{2em}
@@ -393,5 +416,5 @@
 	\newcommand{\creflastconjunction}{,}
 	\newcommand{\crefrangeconjunction}{-}
 	% 加载配置文件
-	\AtEndOfClass{\input{../Template/scuthesis.def}}
+	\AtEndOfClass{\input{./Template/scuthesis.def}}
 	\endinput
