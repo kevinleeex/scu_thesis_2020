@@ -1,12 +1,102 @@
-# 四川大学学位论文LaTeX模版
+<div align="center"><img style="display:inline-block" width='150' src="./assets/icon.png"/><p>
+    <span style="font-size: 14px">Version: 2020.02</span><br>
+    <span>"2020年四川大学研究生学业论文LaTex模版"</span><br>
+    <span style="font-size: 12px;color= #95dafc">-- Modified by <a>Kevin T. Lee</a> --</span>
+    </p>
+   <a href="./License"><img alt="GPL" src="https://img.shields.io/badge/LICENSE%20-GPL-green.svg?longCache=true&style=for-the-badge"></a>
+        <a href="http://lidengju.com"><img alt="Code" src="https://img.shields.io/badge/Code%20with-Love-red.svg?longCache=true&style=for-the-badge"></a>
+    <a href="https://github.com/kevinleeex/scu_thesis_2020"><img alt="Version" src="https://img.shields.io/badge/Version-2020.2-blue.svg?longCache=true&style=for-the-badge"></a>
+</div>
 
-*Powered by pkuthss-1.2beta*
-
-*发布日期：2016年5月30日*
-
-作者本人是一名四川大学的学生，在学习科研活动中经常需要进行学术写作。在使用传统的字处理软件（如*Microsoft® Word*）时，由于其对数学等特殊需求的支持不够友好，因此往往会遇到各种各样的问题，无法高效地写作。作者偶然接触到了LaTeX排版系统，其强大的功能、优美的数学排版和便利的自动化工具等众多优点使人印象深刻，特别适合理工科学生学习和使用。经过了解，发现国际期刊论文主要使用LaTeX进行排版，且国内外许多高校均提供LaTeX的学位论文模版，而我校在这方面的发展还略显不足。在这样的动机驱使下，作者在利用自己较为初级的LaTeX知识，参考了北京大学同学的*pkuthss*模版和其他相关文献的基础上，开发了*scuthesis*这个适用于四川大学研究生（虽包含有本科选项，但封面未修改）使用的LaTeX学位论文模版。希望此模版能够给各位同学提供一个额外的选择，模版中若有瑕疵，还请各位同学批评指正，留言、新建一个*ISSUSE*或*FORK*一个新分支修改。
 
 
-本文主要对*scuthesis*文档模版的使用、功能和实现和进行了简要介绍和说明，并以自身为例进行演示。本模版在GitHub的链接为：https://github.com/cuiao/SCU_ThesisDissertation_LaTeXTemplate.
 
-![Manual Preview](https://github.com/cuiao/SCU_ThesisDissertation_LaTeXTemplate/blob/master/Manual/preview.PNG "Manual Preview")
+# 四川大学2020研究生学业论文LaTex模版
+
+根据学院给的Word模版2020版需求，并基于fork的旧版库样式，改写了模版。
+
+SCU graduate thesis latex template.
+
+## Features
+
+- [x] 🍞 通过配置项自动生成不同类型的论文格式
+- [x] 🍔 「像素级」复刻原Word模版
+
+## Options
+
+| 参数         | 说明                       |
+| ------------ | -------------------------- |
+| professional | 专业学位                   |
+| academic     | 学术学位                   |
+| master       | 硕士                       |
+| docter       | 博士                       |
+| approval     | 送审版本，不生成声明和致谢 |
+| color        | 红色川大logo，默认为黑色   |
+
+## Release Notes
+
+See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
+
+## Previews
+<img src="./assets/screenshot.png" alt="Screenshot" style="zoom:30%;" />
+
+## Getting Started
+
+### Prerequisites
+
+The following softwares you should installed before build the project.
+
+- TexLive
+- MacTex(on mac)
+- Visual Studio Code (optional) with LaTex workshop plugin
+
+### Installation
+
+Clone the project.
+
+```bash
+cd path-to-dir
+git clone https://github.com/kevinleeex/scu_thesis_2020.git
+code scu_thesis_2020
+```
+
+### Usage
+
+Open and edit the ```MainBody.tex```
+
+```shell
+% 设置文档属性
+% 参数说明
+% professional: 专业学位
+% academic: 学术学位
+% master: 硕士
+% doctor: 博士
+% approval: 送审版本，将不生成声明
+% color: 红色川大logo
+% 打开MainBody.tex根据需要填入
+\documentclass[professional,master]{./Template/scuthesis2020}
+```
+
+Use **xelatex** compile the LaTex file with the recipe of ```xe->bib->xe->xe``` .
+
+## Powered By
+
+- *pkuthss-1.2beta* 
+- [cuiao's template](https://github.com/cuiao/SCU_ThesisDissertation_LaTeXTemplate)
+
+I would like to extend my sincere gratitude to the authors and contributors of the open source libraries above.
+
+## Support me
+
+If this project helps you, you can support me to do better.  
+<a href="https://paypal.me/kevinleeex"><img alt="Coffee" src="https://img.shields.io/badge/PayPal_me_a-Coffee-7A501E.svg?longCache=true&style=for-the-badge"></a>
+
+Or click <a href="http://lidengju.com/donate">Donete me</a> with Wechat or Alipay
+
+And PR welcomed.
+
+## License
+
+Copyright © 2020 Modified by [Kevin T. Lee](http://lidengju.com). All rights reserved. 
+
+The project is licensed under the GPL license. See [LICENSE](./License/) for more details.

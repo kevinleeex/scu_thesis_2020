@@ -3,37 +3,43 @@
 % 作者：Kevin T. Lee [hello@lidengju.com]
 % 修改日期：2020年1月17日
 
-% 选用scuthesis文档类，参数master为硕士论文，可选doctor和bachelor，分别对应博士和学士
-\documentclass[professional,master]{./Template/scuthesis}
+% 设置文档属性
+% 参数说明
+% professional: 专业学位
+% academic: 学术学位
+% master: 硕士
+% doctor: 博士
+% approval: 送审版本，将不生成声明
+% color: 红色川大logo
+\documentclass[professional,master]{./Template/scuthesis2020}
 %\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
 \begin{document}
 % 设置文档信息
-\unitid{10610}
-\STUnumber{xxxxxxxxxxxxxxx}
+\unitid{10610} % 单位代码
+\STUnumber{xxxxxxxxxxxxxxx} % 学号
 \CoverTitle{论文标题} %封面标题
-\CoverSubTitle{论文副标题}
-\title{论文名称}
-\ENGtitle{Title of your work}
-\school{计算机学院}
-\ENGschool{Computer Science}
-\author{XXX}
-\ENGauthor{Kevin T. Lee}
-\supervisor{XXX\quad 教授}
-\ENGsupervisor{Prof. XXX}
-\degreeclass{XX硕士/工程硕士}
-\ENGdegreeclass{Master of XXX}
-\major{计算机技术}
-\ENGmajor{Computer technology}
-\hasmajor{1}
-\defensedate{二〇一九年十二月}
-\grantdate{二〇一九年十二月}
-\accomplishdate{二〇一九年十二月}
-\statementdate{2019-12}
+\CoverSubTitle{论文副标题} %可做封面副标题
+\title{论文名称} % 论文全称
+\ENGtitle{Title of graduate thesis……} %论文全称英文
+\school{计算机学院} % 培养单位
+\ENGschool{Computer Science} % 培养单位英文
+\author{XXX} % 作者姓名
+\ENGauthor{Kevin T. Lee} % 作者英文名
+\supervisor{XXX\quad 教授} % 指导教师
+\ENGsupervisor{Prof. XXX} % 指导教师英文
+\degreeclass{工程硕士} % 学位类别
+\ENGdegreeclass{Master of Engineering} % 学位类别英文
+\major{计算机技术} % 领域名称
+\ENGmajor{Computer Technology} % 领域名称英文
+\hasmajor{1} % 若有领域则为1，否则改为0
+\defensedate{二〇二〇年二月} % 论文答辩时间
+\grantdate{二〇二〇年二月} % 学位授予时间
+\accomplishdate{二〇二〇年二月} % 论文完成时间
+\statementdate{February, 2020} % 声明时间
 \direction{XXX}
 \ENGdirection{Direction Name}
-\defensedate{答辩日期}
-\keywords{关键词1，关键词2，关键词3，关键词4，关键词5}
-\ENGkeywords{keyword1, keyword2, keyword3, keyword4, keyword5}
+\keywords{研究生学位论文；写作指南；参考模板}
+\ENGkeywords{graduate thesis;writing guide;reference template}
 
 % 自动制作封面
 \maketitle
@@ -46,6 +52,7 @@
 \makefancyhdr
 % 包含摘要
 \include{Chapters/0_0_Abstract}
+\makefancyhdr
 % 包含缩略词表
 \include{Chapters/0_1_Abbreviations}
 % 包含符号表
@@ -56,21 +63,20 @@
 \mainmatter\pagenumbering{arabic}\pagestyle{fancy}\makechaptertitlecenter
 % 包含第一章、第二章等等
 \include{Chapters/Introduction}
+\include{Chapters/Structure}
+\include{Chapters/Writing}
+\include{Chapters/Printing}
+\include{Chapters/Conclusion}
 
 % 设置论文正文后的式样
 \backmatter\makechaptertitlecenter
 % 按国标自动制作参考文献
 \begin{reference}
-	% 参考文献数据文件为本目录下的sample.bib
-	\bibliographystyle{./Template/chinesebst}\bibliography{ReferenceBase}
-
+	% 参考文献数据文件为本目录下的ReferenceBase.bib
+	\bibliography{ReferenceBase}
 \end{reference}
 % 包含在读期间科研成果
 \include{Chapters/Achievements}
-% 包含论文原创性声明(请勿修改)
-\include{Chapters/OriginalStatement}
-% 包含论文版权授权书(请勿修改)
-\include{Chapters/CopyrightAuthorization}
 % 包含致谢
-\include{Chapters/Thanks}
+\makethanks
 \end{document}

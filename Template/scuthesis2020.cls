@@ -1,12 +1,12 @@
-% 文件名：scuthesis.cls
+% 文件名：scuthesis2020.cls
 % 文件描述：以 ctexbook 文档类为基础，定义四川大学学位论文文档类
 % 作者：LegendaryLeo
 % 修改人：Kevin T. Lee [hello@lidengju.com]
 % 参考：pkuthss-1.2beta
 % 修改日期：2020年1月17日
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{../Template/scuthesis}[2020/01/17 v0.1]
-% 声明传入参数，定义对应的论文类别，分别对应博士、硕士和学士学位论文。这里由于tex对中文支持不够，因此不能在此定义论文名称。
+\ProvidesClass{../Template/scuthesis2020}[2020/01/17 v0.1]
+
 \def\approval{0}
 \def\colortitle{0}
 \DeclareOption{doctor}{\def\thesistype{0}}
@@ -28,11 +28,23 @@
 \RequirePackage{graphicx}
 % 此包用以避免目录自引用
 \usepackage[nottoc]{tocbibind}
+% 颜色
+\usepackage{xcolor}
+% lipsum
+\usepackage{lipsum}
+% 此包用于双语图表标题
+\usepackage{bicaption}
+\captionsetup[figure][bi-first]{name=图,labelsep=quad,indention=10pt,position=top,labelfont=bf}
+\captionsetup[figure][bi-second]{name=Figure,labelsep=quad,indention=10pt,position=top,labelfont=bf}
+\captionsetup[table][bi-first]{name=表,labelsep=quad,indention=10pt,position=top,labelfont=bf}
+\captionsetup[table][bi-second]{name=Table,labelsep=quad,indention=10pt,position=top,labelfont=bf}
+
+% GBT7714引用格式
+\usepackage[super]{gbt7714}
 %设置字体
 \usepackage{xeCJK}
 \usepackage{fontspec} 
 \setCJKmonofont{SimSun}
-\xeCJKEditPunctStyle{quanjiao}{optimize-kerning=true}
 \setmainfont{Times New Roman}
 % 设置A4页面
 % \RequirePackage{anysize}
@@ -43,7 +55,7 @@
 %使用geometry调整边距
 \usepackage{geometry}
 \geometry{a4paper,papersize={21cm,29.7cm}}
-\geometry{left=2.5cm,right=2.5cm,top=2.75cm,bottom=2.5cm,head=0.3cm,headsep=0.25cm,foot=0.75cm}
+\geometry{left=2.5cm,right=2.5cm,top=2.75cm,bottom=2.5cm,head=0.3cm,headsep=0.25cm,foot=0.55cm}
 \setlength{\topskip}{0cm}
 
 % 这些命令用于设定各项文档信息的具体内容。
@@ -122,25 +134,24 @@
 			\end{tabular}
 			
 		}{}
-	\\[30pt]
+	\ \\[10pt]
 }
 
 \newcommand{\makescucoverimage}
 {
-		\ifthenelse{\equal{\colortitle}{0}}{
-			\includegraphics[width=10cm]{./Template/Components/Images/SCU_TITLE_BW}
-		}{}
+	\ifthenelse{\equal{\colortitle}{0}}{
+		\includegraphics[width=10cm]{./Template/Components/Images/SCU_TITLE_BW}
+		\ \\[0cm]
+	}{}
 	\ifthenelse{\equal{\colortitle}{1}}{
-			\includegraphics[width=8cm]{./Template/Components/Images/SCU_TITLE}
-		}{}
-	\\[0cm]
+		\includegraphics[width=10cm]{./Template/Components/Images/SCU_TITLE}
+		\ \\[0.5cm]
+	}{}
 	{\makebox[9cm][s]{\zihao{1}\heiti\textbf{\thesisname}}}
 	\\[18pt]
 	{\makebox[5cm][c]{\zihao{3}\songti\text{（}\degreename\text{）}}}
 	\\[47pt]
 }
-
-
 
 \newcommand{\makescucovertitle}
 {
@@ -170,26 +181,42 @@
 		\end{tabular}
 		\\[48pt]
 		\zihao{3}\songti
-		{\makebox[12cm][c]{\text{论文答辩时间：}\@defensedate}}
-		\\[12pt]
-		{\makebox[12cm][c]{\text{学位授予时间：}\@grantdate}}
+		\begin{tabular}{cc}
+			{\makebox[3cm][c]{\text{论文答辩时间：}}} & {\@defensedate} \\[0.4cm]
+			{\makebox[3cm][c]{\text{学位授予时间：}}} & {\@grantdate}
+		\end{tabular}
+		% {\makebox[13cm][c]{\text{论文答辩时间：}\@defensedate}}
+		% \\[12pt]
+		% {\makebox[13cm][c]{\text{学位授予时间：}\@grantdate}}
 		}{}
 	%送审版本
 	\ifthenelse{\equal{\approval}{1}}{
 		\zihao{-3}\kaishu
 		\begin{tabular}{cl}
 			{\hspace{-0.7cm}\fontq\makebox[2.8cm][l]{学位类别：}}   & \hspace{-0.7cm}\fonta\fillinblank{8cm}{\@degreeclass}
-			\\[14pt]
-			{\hspace{-0.7cm}\fontq\makebox[2.8cm][]{\proffieldname ：}} & \hspace{-0.7cm}\fonta\fillinblank{8cm}{\@major}
+			\\[17pt]
+			{\hspace{-0.7cm}\fontq\makebox[2.8cm][l]{\proffieldname ：}} & \hspace{-0.7cm}\fonta\fillinblank{8cm}{\@major}
 		\end{tabular}
-		\\[48pt]
+		\\[80pt]
 		\zihao{3}\songti
-		{\makebox[9cm][s]{\text{论文完成时间}}}
-		\\[12pt]
-		{\makebox[9cm][c]{\@accomplishdate}}
+		\begin{tabular}{c}
+			{\makebox[4cm][c]{\text{学位论文完成时间}}}\\[0.5cm]
+			{\makebox[4cm][c]{\text{\@accomplishdate}}}
+		\end{tabular}
 		}{}
 }
 
+\newcommand{\makekeywords}{
+	\vspace{1em}\par
+	\textbf{关键词：}\@keywords
+	\addcontentsline{toc}{chapter}{摘要}
+	}
+	
+\newcommand{\makeENGkeywords}{
+	\vspace{1em}\par
+	\textbf{Keywords：}\@ENGkeywords
+	\addcontentsline{toc}{chapter}{Abstract}
+}
 
 % 设定页眉、页脚样式。
 % \fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0.8pt}}
@@ -209,6 +236,22 @@
 	\fancyfoot[CO,CE]{\zihao{-5}\thepage}
 }
 
+\newcommand{\makefancyhf}[1]{
+	\fancypagestyle{plain}{\pagestyle{fancy}}
+	\pagestyle{fancy}
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0.8pt}
+	\fancyhead[CE]{\zihao{-5}\songti
+	   % The chapter title for even page
+	   四川大学\thesisname}
+	
+	\renewcommand{\headrulewidth}{0.8pt}
+	\fancyhead[CO]{\zihao{-5}\songti
+		% The chapter title for odd page
+		#1}
+	\fancyfoot[CO,CE]{\zihao{-5}\thepage}
+}
+
 % 使用epstopdf宏包重定向eps输出路径，避免图片错误
 \RequirePackage[outdir=./]{epstopdf}
 
@@ -220,14 +263,14 @@
 % 目录中显示目录项和参考文献项
 \RequirePackage{tocbibind}
 % 使用caption2宏包修改题注样式
-\RequirePackage{caption2}
+% \RequirePackage{caption2}
 % 修改题注样式
 \renewcommand{\captionfont}{\zihao{5}\rm\heiti}
-\renewcommand{\captionlabeldelim}{~}
+% \renewcommand{\captionlabeldelim}{~}
 % 使用natbib宏包修改参考文献行距和参考标记样式
 %               上标	方括号	逗号分隔	自动排序分类
-\RequirePackage[super,square,comma,sort&compress]{natbib}
-\setlength{\bibsep}{0.5ex}
+% \RequirePackage[super,square,comma,sort&compress]{natbib}
+% \setlength{\bibsep}{0.5ex}
 % 定义 \incite 命令，用于如“文献[1]”这样的引用
 \newcommand*{\incite}{}
 \DeclareRobustCommand*{\incite}[1]{
@@ -380,6 +423,14 @@
 		\newpage
 		\thispagestyle{empty}
 	}{}
+	\ \\
+}
+
+\newcommand{\makethanks}{
+	\ifthenelse{\equal{\approval}{0}}{
+		\include{Chapters/Thanks}
+	}{}
+	\ \\
 }
 
 	% 重定义autoref标签
@@ -442,33 +493,42 @@
 	% 定义中文摘要环境
 	\newenvironment{CHSabstract}
 	{
-		\cleardoublepage
+		\phantomsection
+		\addcontentsline{toc}{chapter}{摘要}
+		\makefancyhf{摘要}
 		\ \vspace{0cm}\par
 		\begin{center}
-			\textbf{摘要}
+			\zihao{3}\heiti\textbf{摘\ 要}
 		\end{center}
-		\ \vspace{0cm}\par
+		\ \vspace{-0.5cm}\par
+		\zihao{-4}
 		%\ \\[-0.5cm]
 	}
 	{
 		\vspace{1em}\par
-		\noindent\textbf{关键词：}\@keywords
-		%\putonbottom{\textbf{关键词：}\@keywords}
+		\textbf{关键词：}\@keywords
+		\cleardoublepage
+		% \putonbottom{\hspace{1.8em}\textbf{关键词：}\@keywords}
 	}
 	% 定义英文摘要环境
 	\newenvironment{ENGabstract}
 	{
-		\cleardoublepage
+		\phantomsection
+		\addcontentsline{toc}{chapter}{Abstract}
+		\makefancyhf{Abstract}
 		\ \vspace{0cm}\par
 		\begin{center}
-			\textbf{Abstract}
+			\zihao{3}\rm\textbf{Abstract}
 		\end{center}
-		\ \vspace{0cm}\par
-		%\ \\[-0.5cm]\setlength\parindent{2em}
+		\ \vspace{-0.5cm}\par
+		\zihao{-4}
+		% \ \\[-0.5cm]\setlength\parindent{2em}
 	}
 	{
 		\vspace{1em}\par
-		\noindent\textbf{Keywords:} \@ENGkeywords%\putonbottom{\textbf{Keywords:} \@ENGkeywords}
+		\textbf{Keywords:} \@ENGkeywords
+		\cleardoublepage
+		% \putonbottom{\hspace{1.8em}\textbf{Keywords:} \@ENGkeywords}
 	}
 	% 定义参考文献环境
 	\newenvironment{reference}
