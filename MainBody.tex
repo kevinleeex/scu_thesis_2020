@@ -15,7 +15,7 @@
 \title{论文名称}
 \ENGtitle{Title of your work}
 \school{计算机学院}
-\ENGschool{Department of Computer Science}
+\ENGschool{Computer Science}
 \author{XXX}
 \ENGauthor{Kevin T. Lee}
 \supervisor{XXX\quad 教授}
@@ -24,6 +24,7 @@
 \ENGdegreeclass{Master of XXX}
 \major{计算机技术}
 \ENGmajor{Computer technology}
+\hasmajor{1}
 \defensedate{二〇一九年十二月}
 \grantdate{二〇一九年十二月}
 \accomplishdate{二〇一九年十二月}
@@ -37,11 +38,12 @@
 % 自动制作封面
 \maketitle
 
-\makeinner
+\makestatement
 
 % \makestatement
 % 设置论文正文前的页码、页眉等
 \frontmatter\pagenumbering{Roman}\pagestyle{fancy}\makechaptertitlecenter
+\makefancyhdr
 % 包含摘要
 \include{Chapters/0_0_Abstract}
 % 包含缩略词表

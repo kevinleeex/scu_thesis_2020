@@ -32,6 +32,7 @@
 \usepackage{xeCJK}
 \usepackage{fontspec} 
 \setCJKmonofont{SimSun}
+\xeCJKEditPunctStyle{quanjiao}{optimize-kerning=true}
 \setmainfont{Times New Roman}
 % 设置A4页面
 % \RequirePackage{anysize}
@@ -63,6 +64,7 @@
 \newcommand\ENGdegreeclass[1]{\def\@ENGdegreeclass{#1}}
 \newcommand\major[1]{\def\@major{#1}}
 \newcommand\ENGmajor[1]{\def\@ENGmajor{#1}}
+\newcommand\hasmajor[1]{\def\@hasmajor{#1}}
 \newcommand\defensedate[1]{\def\@defensedate{#1}}
 \newcommand\grantdate[1]{\def\@grantdate{#1}}
 \newcommand\accomplishdate[1]{\def\@accomplishdate{#1}}
@@ -103,7 +105,6 @@
 	\newcommand{\fonta}{
 		\zihao{3}\songti
 	}
-
 \newcommand{\makescucoverhead}
 {
 	\ifthenelse{\equal{\approval}{0}}{
@@ -192,19 +193,21 @@
 
 % 设定页眉、页脚样式。
 % \fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0.8pt}}
-\fancypagestyle{plain}{\pagestyle{fancy}}
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0.8pt}
-\fancyhead[CE]{\zihao{-5}\songti
-   % The chapter title for even page
-   四川大学\thesisname}
-
-\renewcommand{\headrulewidth}{0.8pt}
-\fancyhead[CO]{\zihao{-5}\songti
-	% The chapter title for odd page
-	\leftmark}
-\fancyfoot[CO,CE]{\zihao{-5}\thepage}
+\newcommand{\makefancyhdr}{
+	\fancypagestyle{plain}{\pagestyle{fancy}}
+	\pagestyle{fancy}
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0.8pt}
+	\fancyhead[CE]{\zihao{-5}\songti
+	   % The chapter title for even page
+	   四川大学\thesisname}
+	
+	\renewcommand{\headrulewidth}{0.8pt}
+	\fancyhead[CO]{\zihao{-5}\songti
+		% The chapter title for odd page
+		\leftmark}
+	\fancyfoot[CO,CE]{\zihao{-5}\thepage}
+}
 
 % 使用epstopdf宏包重定向eps输出路径，避免图片错误
 \RequirePackage[outdir=./]{epstopdf}
@@ -335,7 +338,7 @@
 	\thispagestyle{fancy}
 }
 
-% 设定标题页格式。
+% 设定封面页格式。
 \renewcommand\maketitle{
 	\cleardoublepage
 	\begin{titlepage}
@@ -356,12 +359,27 @@
 }
 
 %设置英文内页
-\newcommand{\makeinner}{
-	\cleardoublepage
-	\begin{center}
-		\\[24pt]
-		\makebox{\rm\@ENGtitle}
-	\end{center}
+\newcommand{\makestatement}{
+	\ifthenelse{\equal{\approval}{0}}{
+		\begin{ENGinner}
+		\end{ENGinner}
+		\thispagestyle{empty}
+		\newpage
+		\thispagestyle{empty}
+		{
+			\makechaptertitlecenter
+			\setlength{\baselineskip}{20pt}
+			\chapter*{声\ 明}
+		本人声明所呈交的学位论文是本人在导师指导下（或联合培养导师组合作指导下）进行的研究工作及取得的研究成果。据我所知，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得四川大学或其他教育机构的学位或证书而使用过的材料。与我一同工作的同志对本研究所做的任何贡献均已在论文中作了明确的说明并表示谢意。
+
+		本学位论文成果是本人在四川大学读书期间在导师指导下（或联合培养导师组合作指导下）取得的，论文成果归四川大学所有（或联合培养单位共有），特此声明。
+		\vspace{4cm}
+		\autograph
+		}
+		\thispagestyle{empty}
+		\newpage
+		\thispagestyle{empty}
+	}{}
 }
 
 	% 重定义autoref标签
@@ -385,11 +403,41 @@
 	\newcommand{\autograph}{
 		\begin{center}
 			\begin{tabular*}{\textwidth}{p{0.5\textwidth}p{0.5\textwidth}}
-				学位论文作者签名：& 导师签名：\\[1cm]
-				签字日期：\quad 年 \quad 月 \quad 日 & 签字日期：\quad 年 \quad 月 \quad 日
+				\hspace{1.6em}学位论文作者签名：& 导师签名：\\[1cm]
+				\hspace{1.6em}签字日期：\quad 年 \quad 月 \quad 日 & 签字日期：\quad 年 \quad 月 \quad 日
 			\end{tabular*}
 		\end{center}
 	}
+
+	\newenvironment{ENGinner}
+	{
+		\cleardoublepage
+		\renewcommand{\baselinestretch}{1.5}
+
+		\begin{center}
+			\ \\[12pt]
+			\zihao{3}\rm
+			\makebox[12cm][c]{
+				\textbf{\@ENGtitle}
+			}
+			\\[5cm]
+		\textbf{A dissertation submitted to Sichuan University} \\
+		\textbf{in partial fulfillment of the requirements} \\
+		\textbf{for the degree of } \\[14pt]
+		\textbf{\@ENGdegreeclass} \\
+		\ifthenelse{\equal{\@hasmajor}{1}}{
+			\textbf{in \@ENGmajor}
+		}
+		\ \\[29pt]
+		\textbf{By} \\
+		\textbf{\@ENGauthor}\\
+		\textbf{Supervisor: \@ENGsupervisor}\\[3.4cm]
+		\textbf{\@ENGschool, Sichuan University, Chengdu, China}\\[0.8cm]
+		\textbf{\@statementdate}
+		\end{center}
+		\ \vspace{0cm}\par
+	}{}
+
 
 	% 定义中文摘要环境
 	\newenvironment{CHSabstract}
@@ -397,12 +445,7 @@
 		\cleardoublepage
 		\ \vspace{0cm}\par
 		\begin{center}
-			\zihao{-2}\songti{\@title} \\[0.5cm]
-			\zihao{-4}
-			{\heiti{{专业}{：}}}{\kaishu{\@major}} \\[0.5cm]
-			{\heiti{{\CHSauthortype}{：}}}{\kaishu{\@author}}
-			\quad
-			{\heiti{{指导教师}{：}}}{\kaishu{\@supervisor}}
+			\textbf{摘要}
 		\end{center}
 		\ \vspace{0cm}\par
 		%\ \\[-0.5cm]
@@ -418,13 +461,7 @@
 		\cleardoublepage
 		\ \vspace{0cm}\par
 		\begin{center}
-			\zihao{-2}{\@ENGtitle} \\[1.5em]
-			\zihao{-4}
-    %   {\textbf{Presented for \TypeAbbr}} \\[0.5em]
-			{\textbf{{Subject: \@ENGmajor}}} \\[0.5em]
-			{\textbf{{\ENGauthortype: \@ENGauthor}}}
-			\quad
-			{\textbf{{Supervisor: \@ENGsupervisor}}}
+			\textbf{Abstract}
 		\end{center}
 		\ \vspace{0cm}\par
 		%\ \\[-0.5cm]\setlength\parindent{2em}
@@ -443,6 +480,7 @@
 
 	% 设置文档默认行距为20pt
 	\setlength{\baselineskip}{20pt}
+	% \renewcommand{\baselineskip}{20pt}
 	% 加载cleveref宏，支持智能化引用
 	\RequirePackage{cleveref}
 	\crefformat{chapter}{第~#2#1#3~章}
