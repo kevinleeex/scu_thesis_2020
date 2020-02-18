@@ -11,6 +11,8 @@
 \DeclareOption{master}{\def\thesistype{1}}
 \DeclareOption{bachelor}{\def\thesistype{2}}
 \DeclareOption{approval}{\def\approval{1}}
+\DeclareOption{academic}}{\def\degreetype{0}}
+\DeclareOption{professional}}{\def\degreetype{1}}
 \DeclareOption{color}{\def\colortitle{1}}
 % 将文档类其他参数全部传递给 ctexbook 文档类。
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
@@ -117,7 +119,8 @@
 % 这些命令用于设定各项文档信息的具体内容。
 \newcommand\ENGtitle[1]{\def\@ENGtitle{#1}}
 \newcommand\ENGauthor[1]{\def\@ENGauthor{#1}}
-\newcommand\accomplishdate[1]{\def\@accomplishdate{#1}}
+\newcommand\defensedate[1]{\def\@defesedate{#1}}
+\newcommand\grantdate[1]{\def\@grantdate{#1}}
 \newcommand\school[1]{\def\@school{#1}}
 \newcommand\supervisor[1]{\def\@supervisor{#1}}
 \newcommand\ENGsupervisor[1]{\def\@ENGsupervisor{#1}}
@@ -125,12 +128,13 @@
 \newcommand\ENGmajor[1]{\def\@ENGmajor{#1}}
 \newcommand\direction[1]{\def\@direction{#1}}
 \newcommand\ENGdirection[1]{\def\@ENGdirection{#1}}
-\newcommand\defensedate[1]{\def\@defensedate{#1}}
 \newcommand\keywords[1]{\def\@keywords{#1}}
 \newcommand\ENGkeywords[1]{\def\@ENGkeywords{#1}}
 \newcommand\university[1]{\def\@university{#1}}
 \newcommand\ENGuniversity[1]{\def\@ENGuniversity{#1}}
 \newcommand\STUnumber[1]{\def\@STUnumber{#1}}
+\newcommand\degreeclass[1]{\def\@degreeclass{#1}}
+\newcommand\ENGdegreeclass[1]{\def\@ENGdegreeclass{#1}}
 
 % 加入封面标题命令，支持封面标题的换行 20161124
 \newcommand\CoverTitle[1]{\def\@CoverTitle{#1}}
