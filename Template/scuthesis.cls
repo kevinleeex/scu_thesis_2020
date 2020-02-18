@@ -10,13 +10,15 @@
 \DeclareOption{doctor}{\def\thesistype{0}}
 \DeclareOption{master}{\def\thesistype{1}}
 \DeclareOption{bachelor}{\def\thesistype{2}}
+\DeclareOption{approval}{\def\approval{1}}
+\DeclareOption{color}{\def\colortitle{1}}
 % 将文档类其他参数全部传递给 ctexbook 文档类。
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
 % 此文档类以 ctexbook 为基础，设定页面尺寸为 A4，默认字号为小四号。
 % CJKfntef 宏包提供了 \maketitle 中用到的 \CJKunderline 命令。
 % fancyhdr 宏包提供了方便使用的命令用于设置页眉、页脚。
-\LoadClass[fntef, a4paper, fancyhdr, cs4size]{ctexbook}
+\LoadClass[fntef, a4paper, fancyhdr, cs4size,UTF8,hyperref,twoside,openright]{ctexbook}
 % 加入判断支持
 \RequirePackage{ifthen}
 % 此宏包提供图形支持。
@@ -28,6 +30,8 @@
 % \papersize{29.7cm}{21cm}
 % % 左边距 2.5cm，右边距 2.5cm，上边距 2.75cm，下边距2.5cm
 % \marginsize{2.5cm}{2.5cm}{2.75cm}{2.5cm}
+
+%使用geometry调整边距
 \usepackage{geometry}
 \geometry{a4paper,papersize={21cm,29.7cm}}
 \geometry{left=2.5cm,right=2.5cm,top=2.75cm,bottom=2.5cm,head=0.3cm,headsep=0.25cm,foot=0.75cm}
@@ -60,12 +64,12 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.8pt}
 \fancyhead[CE]{\zihao{-5}\songti
-   % The chapter title in even page
+   % The chapter title for even page
    四川大学\thesisname}
 
 \renewcommand{\headrulewidth}{0.8pt}
 \fancyhead[CO]{\zihao{-5}\songti
-	% The chapter title in odd page
+	% The chapter title for odd page
 	\leftmark}
 \fancyfoot[CO,CE]{\zihao{-5}\thepage}
 
@@ -126,7 +130,8 @@
 \newcommand\ENGkeywords[1]{\def\@ENGkeywords{#1}}
 \newcommand\university[1]{\def\@university{#1}}
 \newcommand\ENGuniversity[1]{\def\@ENGuniversity{#1}}
-\newcommand\
+\newcommand\STUnumber[1]{\def\@STUnumber{#1}}
+
 % 加入封面标题命令，支持封面标题的换行 20161124
 \newcommand\CoverTitle[1]{\def\@CoverTitle{#1}}
 
@@ -138,24 +143,32 @@
 	format+={\zihao{3}\rm\heiti\flushleft},
 	number={\arabic{chapter}},
 	numberformat={\bfseries},
+	% 设置序号和各级标题之间为一个空格，这里范例和写作说明不一致
+	aftername={\ \ },
 	beforeskip={0pt},
 	afterskip={18pt}
 ]{chapter}
 % “节”标题，四号黑体，左对齐，前后段间距为10pt
 \CTEXsetup[
 	format+={\zihao{4}\rm\heiti\flushleft},
+	% 设置序号和各级标题之间为两个空格，这里范例和写作说明不一致
+	aftername={\ \ },
 	beforeskip={10pt},
 	afterskip={10pt}
 ]{section}
 % “小节”标题，小四号黑体，左对齐，前后段间距为10pt
 \CTEXsetup[
 	format+={\zihao{-4}\rm\heiti\flushleft},
+	% 设置序号和各级标题之间为一个空格，这里范例和写作说明不一致
+	aftername={\ \ },
 	beforeskip={10pt},
 	afterskip={10pt}
 ]{subsection}
 % “次小节”标题，小四号楷体，左对齐，前后段间距为10pt
 \CTEXsetup[
 	format+={\zihao{-4}\rm\kaishu\flushleft},
+	% 设置序号和各级标题之间为一个空格，这里范例和写作说明不一致
+	aftername={\ \ },
 	beforeskip={10pt},
 	afterskip={10pt}
 ]{subsubsection}
@@ -205,10 +218,6 @@
 % 定义\maketoc命令，将自动生成符合要求的目录。
 \newcommand{\maketoc}{
 	\cleardoublepage
-	% \chapter*{目\quad 录}
-	% \makeatletter
-	% \@starttoc{toc}
-	% \makeatother
 	\tableofcontents
 	\thispagestyle{fancy}
 }
