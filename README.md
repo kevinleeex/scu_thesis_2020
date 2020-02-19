@@ -99,7 +99,7 @@ Open and edit the ```MainBody.tex```
 % doctor: 博士
 % approval: 送审版本，将不生成声明
 % color: 红色川大logo
-% center: 居中显示公式，右对齐需要去掉center参数并在公式前加\hfill
+% eqcenter: 居中显示公式，右对齐需要去掉center参数并在公式前加\hfill
 % 打开MainBody.tex根据需要填入
 \documentclass[professional,master]{./Template/scuthesis2020}
 ```
