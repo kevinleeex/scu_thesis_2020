@@ -24,7 +24,8 @@ SCU graduate thesis latex template.
 - 页眉说明为**五号**字，范例为**小五**，修改为小五。
 - 一些标题描述间隔一个汉字符，范例为一个空格符，修改为空格符。
 - 封面页校名标题没有居中，修改为居中。
-- 描述中公式居中，范例为右对齐，修改为居中。
+- 描述中公式右对齐，范例为右对齐，修改为~~居中~~**右对齐**。
+- 描述中图和表题注都为宋体加粗，范例为
 - 没有保留封面等内容的说明内容。
 - 部分内容由于排版软件的关系有些微差别。
 
@@ -51,6 +52,8 @@ SCU graduate thesis latex template.
 
 See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
+- [2020-02-19] 将Template作为子模块方便样式的后续更新。 
+
 ## Previews
 <img src="./assets/screenshot.png" alt="Screenshot" style="zoom:30%;" />
 
@@ -75,8 +78,12 @@ Clone the project.
 ```bash
 cd path-to-dir
 git clone https://github.com/kevinleeex/scu_thesis_2020.git
+cd scu_thesis_2020
+git submodule init
 code scu_thesis_2020
 ```
+
+**后续通过git submodule update --remote 更新样式子模块到最新版本。**
 
 ### Usage
 
