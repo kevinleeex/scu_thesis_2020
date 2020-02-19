@@ -34,7 +34,8 @@ SCU graduate thesis latex template.
 
 - [x] 🍞 通过配置项自动生成不同类型的论文格式
 - [x] 🍔 「像素级」复刻原Word模版
-- [x] :beer:  通过\incite 来进行行内引用。
+- [x] :beer:  通过```\incite``` 来进行行内引用
+- [x] :apple: bicaption图片双语题注示例
 ## Options
 
 | 参数         | 说明                       |
@@ -52,6 +53,10 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 ## Previews
 <img src="./assets/screenshot.png" alt="Screenshot" style="zoom:30%;" />
+
+图片引用示例：
+
+![image-20200219150627160](assets/includegraphics.png)
 
 ## Getting Started
 
