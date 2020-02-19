@@ -5,7 +5,7 @@
 % 参考：pkuthss-1.2beta
 % 修改日期：2020年1月17日
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{../Template/scuthesis2020}[2020/01/17 v0.1]
+\ProvidesClass{./Template/scuthesis2020}[2020/01/17 v0.1]
 
 \def\approval{0}
 \def\colortitle{0}
