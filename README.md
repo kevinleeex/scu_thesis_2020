@@ -108,7 +108,6 @@ Use **xelatex** compile the LaTex file with the recipe of ```xe->bib->xe->xe``` 
 
 ## Powered By
 
-- *pkuthss-1.2beta* 
 - [cuiao's template](https://github.com/cuiao/SCU_ThesisDissertation_LaTeXTemplate)
 
 I would like to extend my sincere gratitude to the authors and contributors of the open source libraries above.
