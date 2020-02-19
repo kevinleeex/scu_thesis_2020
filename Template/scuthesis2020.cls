@@ -468,10 +468,8 @@
 		\begin{center}
 			\ \\[12pt]
 			\zihao{3}\rm
-			\makebox[12cm][c]{
-				\textbf{\@ENGtitle}
-			}
-			\\[5cm]
+			{\parbox[c]{15.8cm}{\centering\textbf{\@ENGtitle}}}
+			\\[4cm]
 		\textbf{A dissertation submitted to Sichuan University} \\
 		\textbf{in partial fulfillment of the requirements} \\
 		\textbf{for the degree of } \\[14pt]
