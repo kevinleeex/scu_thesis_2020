@@ -34,10 +34,10 @@
 \usepackage{lipsum}
 % 此包用于双语图表标题
 \usepackage{bicaption}
-\captionsetup[figure][bi-first]{name=图,labelsep=quad,indention=10pt,position=top,labelfont=bf}
-\captionsetup[figure][bi-second]{name=Figure,labelsep=quad,indention=10pt,position=top,labelfont=bf}
-\captionsetup[table][bi-first]{name=表,labelsep=quad,indention=10pt,position=top,labelfont=bf}
-\captionsetup[table][bi-second]{name=Table,labelsep=quad,indention=10pt,position=top,labelfont=bf}
+\captionsetup[figure][bi-first]{name=图,labelsep=quad,labelfont=bf}
+\captionsetup[figure][bi-second]{name=Figure,labelsep=quad,labelfont=bf}
+\captionsetup[table][bi-first]{name=表,labelsep=quad,labelfont=bf}
+\captionsetup[table][bi-second]{name=Table,labelsep=quad,labelfont=bf}
 
 % GBT7714引用格式
 \usepackage[super]{gbt7714}
@@ -277,7 +277,7 @@
   \begingroup
     % \romannumeral-`\x
     \setcitestyle{numbers}
-    \hspace{-1em}文献~\cite{#1}\hspace{-0.3em}
+    \hspace{-1em}~\cite{#1}\hspace{-0.3em}
   \endgroup
 }
 
