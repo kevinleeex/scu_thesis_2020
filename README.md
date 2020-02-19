@@ -47,7 +47,7 @@ SCU graduate thesis latex template.
 | docter       | 博士                                                 |
 | approval     | 送审版本，不生成声明和致谢                           |
 | color        | 红色川大logo，默认为黑色                             |
-| eqcenter       | 使公式居中，去掉并在公式前添加\hfill可以使公式右对齐 |
+| eqright       | 使公式右对齐，在公式前添加\hfill |
 
 ## Release Notes
 
@@ -99,7 +99,7 @@ Open and edit the ```MainBody.tex```
 % doctor: 博士
 % approval: 送审版本，将不生成声明
 % color: 红色川大logo
-% eqcenter: 居中显示公式，右对齐需要去掉eqcenter参数并在公式前加\hfill
+% eqright: 公式右对齐，需要在公式前加\hfill，仅支持单行公式
 % 打开MainBody.tex根据需要填入
 \documentclass[professional,master]{./Template/scuthesis2020}
 ```
