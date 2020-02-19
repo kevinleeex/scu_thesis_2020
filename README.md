@@ -24,7 +24,7 @@ SCU graduate thesis latex template.
 - 页眉说明为**五号**字，范例为**小五**，修改为小五。
 - 一些标题描述间隔一个汉字符，范例为一个空格符，修改为空格符。
 - 封面页校名标题没有居中，修改为居中。
-- 描述中公式右对齐，范例为右对齐，修改为~~居中~~**右对齐**。
+- 描述中公式右对齐，范例为右对齐，添加右对齐功能，默认居中。
 - 描述中图和表题注都为宋体加粗，范例为
 - 没有保留封面等内容的说明内容。
 - 部分内容由于排版软件的关系有些微差别。
@@ -39,14 +39,15 @@ SCU graduate thesis latex template.
 - [x] :apple: bicaption图片双语题注示例
 ## Options
 
-| 参数         | 说明                       |
-| ------------ | -------------------------- |
-| professional | 专业学位                   |
-| academic     | 学术学位                   |
-| master       | 硕士                       |
-| docter       | 博士                       |
-| approval     | 送审版本，不生成声明和致谢 |
-| color        | 红色川大logo，默认为黑色   |
+| 参数         | 说明                                                 |
+| ------------ | ---------------------------------------------------- |
+| professional | 专业学位                                             |
+| academic     | 学术学位                                             |
+| master       | 硕士                                                 |
+| docter       | 博士                                                 |
+| approval     | 送审版本，不生成声明和致谢                           |
+| color        | 红色川大logo，默认为黑色                             |
+| center       | 使公式居中，去掉并在公式前添加\hfill可以使公式右对齐 |
 
 ## Release Notes
 
@@ -83,9 +84,9 @@ git submodule init
 code scu_thesis_2020
 ```
 
-**后续通过git submodule update --remote 更新样式子模块到最新版本。**
+**后续通过```git submodule update --remote```命令 更新样式子模块到最新版本。**
 
-### Usage
+### Usages
 
 Open and edit the ```MainBody.tex```
 
