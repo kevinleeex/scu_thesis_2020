@@ -106,7 +106,7 @@ If this project helps you, you can support me to do better.
 
 Or click <a href="http://lidengju.com/donate">Donete me</a> with Wechat or Alipay
 
-And Star/ISSUE/PR are welcomed.
+And Star/ISSUE/PR are welcome.
 
 ## License
 
