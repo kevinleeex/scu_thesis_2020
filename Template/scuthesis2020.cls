@@ -312,24 +312,24 @@
 	format+={\zihao{4}\rm\heiti\flushleft},
 	% 设置序号和各级标题之间为两个空格，这里范例和写作说明不一致
 	aftername={\ \ },
-	beforeskip={10pt},
-	afterskip={10pt}
+	beforeskip={24pt},
+	afterskip={6pt}
 ]{section}
 % “小节”标题，小四号黑体，左对齐，前后段间距为10pt
 \CTEXsetup[
 	format+={\zihao{-4}\rm\heiti\flushleft},
 	% 设置序号和各级标题之间为一个空格，这里范例和写作说明不一致
 	aftername={\ \ },
-	beforeskip={10pt},
-	afterskip={10pt}
+	beforeskip={12pt},
+	afterskip={6pt}
 ]{subsection}
 % “次小节”标题，小四号楷体，左对齐，前后段间距为10pt
 \CTEXsetup[
 	format+={\zihao{-4}\rm\kaishu\flushleft},
 	% 设置序号和各级标题之间为一个空格，这里范例和写作说明不一致
 	aftername={\ \ },
-	beforeskip={10pt},
-	afterskip={10pt}
+	beforeskip={12pt},
+	afterskip={6pt}
 ]{subsubsection}
 % “段”标题，小四号楷体，左对齐，前后段间距为0pt
 \renewcommand{\theparagraph}{(\arabic{paragraph})}
