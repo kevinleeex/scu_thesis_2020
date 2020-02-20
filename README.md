@@ -31,9 +31,7 @@ SCU graduate thesis latex template.
 
 > 如您发现更多问题请您提交ISSUES，或PR。
 >
-> 考虑之前的fork的项目与原项目差异已较大，且不易被搜索到，所以将项目独立出来。
->
-> 原[fork](https://github.com/kevinleeex/scu_thesis_2020_deprecated)的项目将不再更新。
+> 考虑之前的fork的项目与原项目差异已较大，且不易被需要的人搜索到，所以将项目独立出来。
 
 ## Features
 
