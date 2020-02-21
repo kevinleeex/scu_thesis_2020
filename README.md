@@ -50,7 +50,6 @@ SCU graduate thesis latex template.
 | docter       | 博士                                                 |
 | approval     | 送审版本，不生成声明和致谢                           |
 | color        | 红色川大logo，默认为黑色                             |
-| eqright       | 使公式右对齐，在公式前添加\hfill |
 
 ## Release Notes
 
