@@ -44,13 +44,10 @@
 
 % 自动制作封面
 \maketitle
-
+% 自动制作中英文声明
 \makestatement
-
-% \makestatement
 % 设置论文正文前的页码、页眉等
-\frontmatter\pagenumbering{Roman}\pagestyle{fancy}\makechaptertitlecenter
-\makefancyhdr
+\frontmatter\pagenumbering{Roman}\pagestyle{fancy}
 % 包含摘要
 \include{Chapters/0_0_Abstract}
 \makefancyhdr
@@ -61,7 +58,7 @@
 % 包含符号表
 \include{Chapters/0_2_Symbols}
 % 设置论文正文部分的页码、页眉等
-\mainmatter\pagenumbering{arabic}\pagestyle{fancy}\makechaptertitlecenter
+\mainmatter\pagenumbering{arabic}\pagestyle{fancy}
 % 包含第一章、第二章等等
 \include{Chapters/Introduction}
 \include{Chapters/Structure}
