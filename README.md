@@ -108,7 +108,6 @@ Open and edit the ```MainBody.tex```
 % doctor: 博士
 % approval: 送审版本，将不生成声明
 % color: 红色川大logo
-% eqright: 公式右对齐，需要在公式前加\hfill，仅支持单行公式
 % 打开MainBody.tex根据需要填入
 \documentclass[professional,master]{./Template/scuthesis2020}
 ```
