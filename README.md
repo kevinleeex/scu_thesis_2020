@@ -41,9 +41,10 @@ SCU graduate thesis latex template.
 
 - [x] 🍞 通过配置项自动生成不同类型的论文格式，你专注内容就好
 - [x] 🍔 「像素级」复刻原Word模版
-- [x] :beer:  通过```\incite``` 来进行行内引用
-- [x] :apple: ```\bicaption```图片双语题注示例
-- [x] :pear: ```\cdash```公式说明的破折号
+- [x] 🧀  通过```\incite``` 来进行行内引用
+- [x] 🍟 ```\bicaption```图片双语题注示例
+- [x] 🍕 ```\cdash```公式说明的破折号
+- [x] 🌮 ```\cref```智能参考
 
 ## Options
 
