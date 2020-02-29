@@ -45,6 +45,7 @@ SCU graduate thesis latex template.
 - [x] 🍟 ```\bicaption```图片双语题注示例
 - [x] 🍕 ```\cdash```公式说明的破折号
 - [x] 🌮 ```\cref```智能参考
+- [x] 
 
 ## Options
 
@@ -71,6 +72,10 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 图片引用示例：
 
 ![image-20200219175911398](assets/image-20200219175911398.png)
+
+三线表示例：
+
+![image-20200229151458667](assets/image-20200229151458667.png)
 
 ## Getting Started
 

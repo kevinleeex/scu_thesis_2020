@@ -44,16 +44,21 @@
 \begin{table}[htp]
     \bicaption{表标题}{Title}
     \centering
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-    文献类型  & 标志代码 & 文献类型 & 标志代码 \\ \hline
-    普通图书  & M    & 会议录  & C    \\ \hline
-    汇编    & G    & 报纸   & N    \\ \hline
-    期刊    & J    & 学位论文 & D    \\ \hline
-    报告    & R    & 标准   & S    \\ \hline
-    专利    & P    & 数据库  & DB   \\ \hline
-    计算机程序 & CP   & 电子公告 & EB   \\ \hline
-    \end{tabular}
+    % 调整表格，修改数字即可
+    % \resizebox{\textwidth}{12mm}{ % 表格过宽
+    \setlength{\tabcolsep}{1cm}{ %表格过窄
+    \begin{tabular}{cccc}
+    \toprule
+    文献类型  & 标志代码 & 文献类型 & 标志代码 \\
+    \midrule
+    普通图书  & M    & 会议录  & C    \\
+    汇编    & G    & 报纸   & N    \\ 
+    期刊    & J    & 学位论文 & D    \\
+    报告    & R    & 标准   & S    \\
+    专利    & P    & 数据库  & DB   \\
+    计算机程序 & CP   & 电子公告 & EB   \\
+    \bottomrule
+    \end{tabular}}
     \label{tab:demo}    
 \end{table}
 \section{表达式（公式）}
