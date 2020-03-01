@@ -60,7 +60,8 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
 - [2020-02-20] 发布稳定版。[scu_thesis_2020_02_20](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.02.20/scu_thesis_2020_02_20.zip)点击下载。
-- [2020-02-22] 发布稳定版优化。[scu_thesis_2020_02_22](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.02.20/scu_thesis_2020_02_22.zip)点击下载。
+- [2020-02-22] 发布稳定版优化。[scu_thesis_2020_02_22](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.02.22/scu_thesis_2020_02_22.zip)点击下载。
+- 
 
 ## Previews
 <img src="./assets/screenshot.png" alt="Screenshot" style="zoom:30%;" />
