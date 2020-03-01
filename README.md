@@ -61,7 +61,7 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
 - [2020-03-01] 发布稳定版优化。[scu_thesis_2020_03_01](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.03.01/scu_thesis_2020_03_01.zip)点击下载。
 ## Previews
-![image-20200301231009189](assets/image-20200301231009189.png)
+![image-20200301231859134](assets/image-20200301231859134.png)
 
 图片引用示例：
 
@@ -110,6 +110,10 @@ Open and edit the ```MainBody.tex```
 % color: 红色川大logo
 % 打开MainBody.tex根据需要填入
 \documentclass[professional,master]{./Template/scuthesis2020}
+
+% 在./Chapter/ 文件夹中写作，在MainBody.tex中包含
+% 在./ReferenceDocument/ 文件夹中，存放用于参考的文献
+% 在./ReferenceBase.bib 文件中存放bibTex引用
 ```
 
 Use **xelatex** compile the LaTex file with the recipe of ```xe->bib->xe->xe``` .
