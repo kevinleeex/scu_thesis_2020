@@ -69,7 +69,7 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 三线表示例：
 
-![image-20200229151458667](assets/image-20200229151458667.png)
+![image-20200301232947151](assets/image-20200301232947151.png)
 
 ## Getting Started
 
