@@ -16,6 +16,8 @@
 
 SCU graduate thesis latex template.
 
+> 独立的模版样式文件，[scu_thesis_template](https://github.com/kevinleeex/scu_thesis_template)，可用于替换```./Template```目录用于更新样式。
+
 ## :warning:NOTICE
 
 现在发现几处给出范例与描述不一致，已根据理解修改，如下：
