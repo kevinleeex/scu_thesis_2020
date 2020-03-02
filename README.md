@@ -59,7 +59,7 @@ SCU graduate thesis latex template.
 See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
-- [2020-03-01] 发布稳定版优化。[scu_thesis_2020_03_01](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.03.01/scu_thesis_2020_03_01.zip)点击下载。
+- [2020-03-02] 修复了一些错误。[scu_thesis_2020_03_02](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.03.02/scu_thesis_2020_03_02.zip)点击下载。
 ## Previews
 ![image-20200301232656767](assets/image-20200301232656767.png)
 
