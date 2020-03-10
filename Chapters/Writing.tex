@@ -74,6 +74,41 @@ q=k_dH^x
 
 （此处，“式中：”改为顶格输出）
 
+\section{算法（伪代码）}
+本节介绍了一个伪代码示例，如\cref{alg:alg1}所示。
+\begin{algorithm}
+	\caption{Calculate $y = x^n$} 
+	\label{alg:alg1}
+	\begin{algorithmic}
+		% 输入
+		\REQUIRE $n \geq 0 \vee x \neq 0$ 
+		% 输出
+		\ENSURE $y = x^n$ 
+		
+		% 初始化
+		\STATE $y \leftarrow 1$ 
+		
+		% 逻辑
+		\IF{$n < 0$} 
+			\STATE $X \leftarrow 1 / x$ 
+			\STATE $N \leftarrow -n$ 
+		\ELSE 
+			\STATE $X \leftarrow x$ 
+			\STATE $N \leftarrow n$
+		\ENDIF
+		
+		\WHILE{$N \neq 0$} 
+			\IF{$N$ is even} 
+				\STATE $X \leftarrow X \times X$ 
+				\STATE $N \leftarrow N / 2$ 
+			\ELSIF{$N$ is odd}
+				\STATE $y \leftarrow y \times X$ 
+				\STATE $N \leftarrow N - 1$ 
+			\ENDIF 
+		\ENDWHILE
+	\end{algorithmic}
+\end{algorithm}
+
 \section{参考文献}
 参照GB/T 7714—2015《信息与文献 参考文献著录规则》执行。
 \section{附录}
