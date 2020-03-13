@@ -1,12 +1,12 @@
 <div align="center"><img style="display:inline-block" width='150' src="./assets/icon.png"/><p>
-    <span style="font-size: 14px">Version: 2020.03.02</span><br>
+    <span style="font-size: 14px">Version: 2020.03.13</span><br>
     <span>"2020年四川大学研究生学业论文LaTex模版"</span><br>
     <span style="font-size: 12px;color= #95dafc">-- Modified by <a>Kevin T. Lee</a> --</span>
     </p>
    <a href="./License"><img alt="GPL" src="https://img.shields.io/badge/LICENSE%20-GPL-green.svg?longCache=true&style=for-the-badge"></a>
         <a href="http://lidengju.com"><img alt="Code" src="https://img.shields.io/badge/Code%20with-Love-red.svg?longCache=true&style=for-the-badge"></a>
    <a href="http://lidengju.com"><img alt="Code" src="https://img.shields.io/badge/%E6%AD%A6%E6%B1%89%0A-%E5%8A%A0%E6%B2%B9-red.svg?longCache=true&style=for-the-badge"></a>
-    <a href="https://github.com/kevinleeex/scu_thesis_2020"><img alt="Version" src="https://img.shields.io/badge/Version-2020.03.02-blue.svg?longCache=true&style=for-the-badge"></a>
+    <a href="https://github.com/kevinleeex/scu_thesis_2020"><img alt="Version" src="https://img.shields.io/badge/Version-2020.03.13-blue.svg?longCache=true&style=for-the-badge"></a>
 </div>
 
 
@@ -44,6 +44,7 @@ SCU graduate thesis latex template.
 - [x] 🍟 ```\bicaption```图片双语题注示例
 - [x] 🍕 ```\cdash```公式说明的破折号
 - [x] 🌮 ```\cref```智能参考
+- [x] 🥘 ```\tabincell```多行单元格
 
 ## Options
 
@@ -61,7 +62,7 @@ SCU graduate thesis latex template.
 See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
-- [2020-03-02] **推荐**[scu_thesis_2020_03_02](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.03.02/scu_thesis_2020_03_02.zip)点击下载。
+- [2020-03-13] **推荐**[scu_thesis_2020_03_13](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.03.13/scu_thesis_2020_03_13.zip)点击下载。
 ## Previews
 ![image-20200301232656767](assets/image-20200301232656767.png)
 
