@@ -25,7 +25,7 @@ SCU graduate thesis latex template.
 - 页眉说明为五号字，范例为小五，修改为**小五**。
 - 一些标题描述间隔一个汉字符，范例为一个空格符，修改为**一个汉字符**。
 - 封面页校名标题没有居中，修改为**居中**。
-- 描述中公式居中，范例为右对齐，添加右对齐功能，默认**居中**。
+- 描述中公式居中，范例为右对齐，修改为**居中**。
 - 描述中图和表题注都为宋体加粗，范例的表为黑体，修改为**宋体加粗**
 - 没有保留封面等内容的说明内容。
 - 部分内容由于排版软件的关系有些微差别。
@@ -48,14 +48,15 @@ SCU graduate thesis latex template.
 
 ## Options
 
-| 参数         | 说明                                                 |
-| ------------ | ---------------------------------------------------- |
-| professional | 专业学位                                             |
-| academic     | 学术学位                                             |
-| master       | 硕士                                                 |
-| docter       | 博士                                                 |
-| approval     | 送审版本，不生成声明和致谢                           |
-| color        | 红色川大logo，默认为黑色                             |
+| 参数         | 说明                       |
+| ------------ | -------------------------- |
+| professional | 专业学位                   |
+| academic     | 学术学位                   |
+| master       | 硕士                       |
+| docter       | 博士                       |
+| approval     | 送审版本，不生成声明和致谢 |
+| secret       | 保密论文，将显示密级       |
+| color        | 红色川大logo，默认为黑色   |
 
 ## Release Notes
 
@@ -63,8 +64,14 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
 - [2020-03-13] **推荐**[scu_thesis_2020_03_13](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.03.13/scu_thesis_2020_03_13.zip)点击下载。
+  - [x] 增加伪代码示例
+  - [x] 增加密级 
+
 ## Previews
-![image-20200301232656767](assets/image-20200301232656767.png)
+
+封面示例：
+
+![image-20200301232656767](assets/cover.png)
 
 双语图片标题示例：
 
@@ -73,6 +80,10 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 三线表示例：
 
 ![image-20200301232947151](assets/image-20200301232947151.png)
+
+伪代码示例：
+
+![image-20200314002037213](assets/image-20200314002037213.png)
 
 ## Getting Started
 
@@ -110,6 +121,7 @@ Open and edit the ```MainBody.tex```
 % master: 硕士
 % doctor: 博士
 % approval: 送审版本，将不生成声明
+% secret: 保密论文，将显示密级
 % color: 红色川大logo
 % 打开MainBody.tex根据需要填入
 \documentclass[professional,master]{./Template/scuthesis2020}
