@@ -1,12 +1,12 @@
 <div align="center"><img style="display:inline-block" width='150' src="./assets/icon.png"/><p>
-    <span style="font-size: 14px">Version: 2020.03.13</span><br>
+    <span style="font-size: 14px">Version: 2020.03.16</span><br>
     <span>"2020年四川大学研究生学业论文LaTex模版"</span><br>
     <span style="font-size: 12px;color= #95dafc">-- Modified by <a>Kevin T. Lee</a> --</span>
     </p>
    <a href="./License"><img alt="GPL" src="https://img.shields.io/badge/LICENSE%20-GPL-green.svg?longCache=true&style=for-the-badge"></a>
         <a href="http://lidengju.com"><img alt="Code" src="https://img.shields.io/badge/Code%20with-Love-red.svg?longCache=true&style=for-the-badge"></a>
    <a href="http://lidengju.com"><img alt="Code" src="https://img.shields.io/badge/%E6%AD%A6%E6%B1%89%0A-%E5%8A%A0%E6%B2%B9-red.svg?longCache=true&style=for-the-badge"></a>
-    <a href="https://github.com/kevinleeex/scu_thesis_2020"><img alt="Version" src="https://img.shields.io/badge/Version-2020.03.13-blue.svg?longCache=true&style=for-the-badge"></a>
+    <a href="https://github.com/kevinleeex/scu_thesis_2020"><img alt="Version" src="https://img.shields.io/badge/Version-2020.03.16-blue.svg?longCache=true&style=for-the-badge"></a>
 </div>
 
 
@@ -33,8 +33,6 @@ SCU graduate thesis latex template.
 > 如您发现更多问题请您提交ISSUES，或PR。
 >
 > **免责声明：本项目开源用于格式参考，本模版的作者和贡献者不承担任何人使用该模版所引发的任何问题(如格式审查等)。**
->
-> 考虑之前的fork的项目与原项目差异已较大，且不易被需要的人搜索到，所以将项目独立出来。
 
 ## Features
 
