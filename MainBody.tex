@@ -1,7 +1,7 @@
 % 文件名：Mainbody.tex
 % 文件描述：以 scuthesis 四川大学学位论文文档类为基础的 LaTeX 模版
 % 作者：Kevin T. Lee [hello@lidengju.com]
-% 修改日期：2020年3月13日
+% 修改日期：2020年3月16日
  
 % 设置文档属性
 % 参数说明
@@ -12,7 +12,8 @@
 % approval: 送审版本，将不生成声明
 % secret: 保密论文，将显示密级
 % color: 红色川大logo
-\documentclass[professional,master]{./Template/scuthesis2020}
+% kfont=<⟨none|adobe|fandol|founder|mac|macnew|macold|ubuntu|windows|windowsnew|windowsold|...⟩>，不填写则根据系统自动配置，mac推荐填入kfont=mac，用以解决字重问题
+\documentclass[professional,master,kfont=]{./Template/scuthesis2020}
 \begin{document}
 % 设置文档信息
 \unitid{10610} % 单位代码
@@ -53,6 +54,8 @@
 \include{Chapters/0_0_Abstract}
 % 自动制作目录
 \maketoc
+% 自动制作图表目录
+\makefigtablist
 % 包含缩略词表
 \include{Chapters/0_1_Abbreviations}
 % 包含符号表
@@ -60,11 +63,11 @@
 % 设置论文正文部分的页码、页眉等
 \mainmatter\pagenumbering{arabic}\pagestyle{fancy}
 % 包含第一章、第二章等等
-\include{Chapters/Introduction}
-\include{Chapters/Structure}
-\include{Chapters/Writing}
-\include{Chapters/Printing}
-\include{Chapters/Conclusion}
+\include{Chapters/1_Introduction}
+\include{Chapters/2_Structure}
+\include{Chapters/3_Writing}
+\include{Chapters/4_Printing}
+\include{Chapters/5_Conclusion}
 
 % 设置论文正文后的式样
 \backmatter

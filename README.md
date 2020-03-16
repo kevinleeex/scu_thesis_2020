@@ -45,6 +45,7 @@ SCU graduate thesis latex template.
 - [x] 🍕 ```\cdash```公式说明的破折号
 - [x] 🌮 ```\cref```智能参考
 - [x] 🥘 ```\tabincell```多行单元格
+- [x] 🍗 ```\makefigtablist```添加图表目录
 
 ## Options
 
@@ -57,33 +58,24 @@ SCU graduate thesis latex template.
 | approval     | 送审版本，不生成声明和致谢 |
 | secret       | 保密论文，将显示密级       |
 | color        | 红色川大logo，默认为黑色   |
+|kfont=        | 字体库，可根据操作系统填写，Mac OS X推荐填入kfont=mac以解决字重问题|
 
 ## Release Notes
 
 See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
-- [2020-03-13] **推荐**[scu_thesis_2020_03_13](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.03.13/scu_thesis_2020_03_13.zip)点击下载。
-  - [x] 增加伪代码示例
-  - [x] 增加密级 
+- [2020-03-16] **推荐**[scu_thesis_2020_03_16](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.03.16/scu_thesis_2020_03_16.zip)点击下载。
+  - [x] 修复一些字体设置错误
+  - [x] 消灭了一堆编译警告
+  - [x] 增加针对系统的字体库设置
+  - [x] 增加图表目录为可选设置
 
 ## Previews
 
 封面示例：
-
 ![image-20200301232656767](assets/cover.png)
 
-双语图片标题示例：
-
-![image-20200301232622548](assets/image-20200301232622548.png)
-
-三线表示例：
-
-![image-20200301232947151](assets/image-20200301232947151.png)
-
-伪代码示例：
-
-![image-20200314002037213](assets/image-20200314002037213.png)
 
 ## Getting Started
 
@@ -123,10 +115,14 @@ Open and edit the ```MainBody.tex```
 % approval: 送审版本，将不生成声明
 % secret: 保密论文，将显示密级
 % color: 红色川大logo
+% kfont=<⟨none|adobe|fandol|founder|mac|macnew|macold|ubuntu|windows|windowsnew|windowsold|...⟩>，不填写为根据系统自动配置，mac推荐填入kfont=mac，用以解决字重问题
 % 打开MainBody.tex根据需要填入
-\documentclass[professional,master]{./Template/scuthesis2020}
+\documentclass[professional,master,kfont=]{./Template/scuthesis2020}
 
 % 在./Chapter/ 文件夹中写作，在MainBody.tex中包含
+% 在./Chapter/0_0_Abstract.tex 中撰写摘要
+% 在./Chapter/Achievements.tex 中撰写学术成果
+% 在./Chapter/Thanks.tex 中撰写致谢
 % 在./ReferenceDocument/ 文件夹中，存放用于参考的文献
 % 在./ReferenceBase.bib 文件中存放bibTex引用
 ```
