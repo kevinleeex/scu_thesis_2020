@@ -94,7 +94,7 @@ cd path-to-dir
 git clone https://github.com/kevinleeex/scu_thesis_2020.git
 cd scu_thesis_2020
 git submodule init
-code scu_thesis_2020
+git submodule update --remote
 ```
 
 **后续通过```git submodule update --remote```命令 更新样式子模块到最新版本。**
