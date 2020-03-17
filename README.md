@@ -113,7 +113,8 @@ Open and edit the ```MainBody.tex```
 % approval: 送审版本，将不生成声明
 % secret: 保密论文，将显示密级
 % color: 红色川大logo
-% kfont=<⟨none|adobe|fandol|founder|mac|macnew|macold|ubuntu|windows|windowsnew|windowsold|...⟩>，不填写为根据系统自动配置，mac推荐填入kfont=mac，用以解决字重问题
+% kfont=<⟨none|adobe|fandol|founder|mac|macnew|macold|ubuntu|windows|windowsnew|windowsold|...⟩>，
+% 不填写为根据系统自动配置，mac推荐填入kfont=mac，用以解决字重问题
 % 打开MainBody.tex根据需要填入
 \documentclass[professional,master,kfont=]{./Template/scuthesis2020}
 
