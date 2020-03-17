@@ -126,7 +126,7 @@ Open and edit the ```MainBody.tex```
 % 在./ReferenceBase.bib 文件中存放bibTex引用
 ```
 
-Use **xelatex** compile the LaTex file with the recipe of ```xe->bib->xe->xe``` .
+Use **xelatex** compile the LaTex file with the recipe of ```xeLatex->bibTex->xeLatex->xeLatex``` .
 
 ## Powered By
 
