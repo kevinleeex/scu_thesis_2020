@@ -79,7 +79,7 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 ### Prerequisites
 
-The following softwares you should installed before build the project.
+The following softwares should be installed before building the project.
 
 - TexLive
 - MacTex(on mac)
