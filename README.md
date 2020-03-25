@@ -98,7 +98,7 @@ git submodule init
 git submodule update --remote
 ```
 
-**后续通过```git submodule update --remote```命令 更新样式子模块到最新版本。**
+**后续通过```git submodule update --remote```命令 更新样式子模块到最新版本，失败请加上```-f```参数**
 
 ### Usages
 
