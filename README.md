@@ -80,7 +80,7 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 ### Prerequisites
 
-The following softwares should be installed before building the project.
+在你构建项目之前，需要先安装以下的软件。
 
 - TexLive
 - MacTex(on mac)
@@ -88,7 +88,7 @@ The following softwares should be installed before building the project.
 
 ### Installation
 
-Clone the project.
+克隆项目。
 
 ```bash
 cd path-to-dir
@@ -102,7 +102,7 @@ git submodule update --remote
 
 ### Usages
 
-Open and edit the ```MainBody.tex```
+打开并编辑 ```MainBody.tex```
 
 ```shell
 % 设置文档属性
@@ -127,7 +127,16 @@ Open and edit the ```MainBody.tex```
 % 在./ReferenceBase.bib 文件中存放bibTex引用
 ```
 
-Use **xelatex** compile the LaTex file with the recipe of ```xeLatex->bibTex->xeLatex->xeLatex``` .
+使用 **xelatex** 编译 LaTex 文件，执行```xeLatex->bibTex->xeLatex->xeLatex``` 方案.
+
+### Tips
+
+- 通过**Detexify**软件，可以通过手写来识别符号，给出相应的Latex符号标记。
+- 通过**Mathpix Snipping Tool**软件，可以通过截屏公式，来生成相应的Latex公式代码。
+- 通过**pandoc**命令行程序，可以将Tex文件生成其他格式文件，如```docx```，可以用于查重等。
+  ```bash
+  pandoc -s MainBody.tex -o MainBody.docx --bibliography=ReferenceBase.bib
+  ```
 
 ## Powered By
 
