@@ -66,7 +66,7 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
 - [2020-03-26] **推荐**[scu_thesis_2020_03_26](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.03.26/scu_thesis_2020_03_26.zip)点击下载。
   - [x] 修复了一些错误
-  - [x] 将中文声明独立出来，请添加Statement.tex文件并注意修改
+  - [x] 将中文声明独立出来，不能仅更新样式文件，请注意添加修改```./Chapters/Statement.tex```!
 
 ## Previews
 
