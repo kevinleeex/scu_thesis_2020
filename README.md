@@ -118,6 +118,7 @@ git submodule update --remote
 \documentclass[professional,master,kfont=]{./Template/scuthesis2020}
 
 % 在./Chapters/ 文件夹中写作，在MainBody.tex中包含
+% 在./Chapters/Statement.tex 中撰写中文声明
 % 在./Chapters/0_0_Abstract.tex 中撰写摘要
 % 在./Chapters/Achievements.tex 中撰写学术成果
 % 在./Chapters/Thanks.tex 中撰写致谢
