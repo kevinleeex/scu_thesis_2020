@@ -157,4 +157,4 @@ git submodule update --remote
 
 Copyright © 2020 Modified by [Kevin T. Lee](http://lidengju.com). 版权所有。
 
-项目基于GPL开源协议. 查看 [LICENSE](./License/) 获取详细内容。
+项目基于GPL开源协议，查看 [LICENSE](./License/) 获取详细内容。
