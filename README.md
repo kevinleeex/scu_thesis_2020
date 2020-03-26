@@ -142,19 +142,19 @@ git submodule update --remote
 
 - [cuiao's template](https://github.com/cuiao/SCU_ThesisDissertation_LaTeXTemplate)
 
-I would like to extend my sincere gratitude to the authors and contributors of the open source libraries above.
+向以上项目表示感谢。
 
 ## Support me
 
-If this project helps you, you can support me to do better.  
+如果这个项目帮助到了您，您可以支持我做得更好。  
 <a href="https://paypal.me/kevinleeex"><img alt="Coffee" src="https://img.shields.io/badge/PayPal_me_a-Coffee-7A501E.svg?longCache=true&style=for-the-badge"></a>
 
-Or click <a href="http://lidengju.com/donate">Donete me</a> with Wechat or Alipay
+或者点击<a href="http://lidengju.com/donate">打赏我</a> 通过支付宝或微信打赏。 
 
-And Star/ISSUE/PR are welcome.
+欢迎Star/ISSUE/PR。
 
 ## License
 
-Copyright © 2020 Modified by [Kevin T. Lee](http://lidengju.com). All rights reserved. 
+Copyright © 2020 Modified by [Kevin T. Lee](http://lidengju.com). 版权所有。
 
-The project is licensed under the GPL license. See [LICENSE](./License/) for more details.
+项目基于GPL开源协议. 查看 [LICENSE](./License/) 获取详细内容。
