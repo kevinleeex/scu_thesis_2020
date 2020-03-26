@@ -119,10 +119,10 @@ Open and edit the ```MainBody.tex```
 % 打开MainBody.tex根据需要填入
 \documentclass[professional,master,kfont=]{./Template/scuthesis2020}
 
-% 在./Chapter/ 文件夹中写作，在MainBody.tex中包含
-% 在./Chapter/0_0_Abstract.tex 中撰写摘要
-% 在./Chapter/Achievements.tex 中撰写学术成果
-% 在./Chapter/Thanks.tex 中撰写致谢
+% 在./Chapters/ 文件夹中写作，在MainBody.tex中包含
+% 在./Chapters/0_0_Abstract.tex 中撰写摘要
+% 在./Chapters/Achievements.tex 中撰写学术成果
+% 在./Chapters/Thanks.tex 中撰写致谢
 % 在./ReferenceDocument/ 文件夹中，存放用于参考的文献
 % 在./ReferenceBase.bib 文件中存放bibTex引用
 ```
