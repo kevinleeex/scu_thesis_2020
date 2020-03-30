@@ -67,8 +67,8 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 - [2020-03-30] **推荐**[scu_thesis_2020_03_30](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.03.30/scu_thesis_2020_03_30.zip)点击下载。
   - [x] 修复了一些错误
   - [x] 将中文声明独立出来。若单独更新样式文件，还需要下载```./Chapters/Statement.tex```文件到本地对应目录，不需修改主文件
-  - [x] 改写子图格式，以更好支持跨页子图编号
-  - [x] 通过```\ContinuedFloat```命令使得连续编号
+  - [x] 增加一种子图写作格式
+  - [x] 通过```\ContinuedFloat```命令使得子图跨页连续编号
   - [x] 修改表格示例的字号
 
 ## Previews
