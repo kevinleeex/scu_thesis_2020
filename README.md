@@ -146,6 +146,15 @@ git submodule update --remote
 
 向以上项目表示感谢。
 
+## Support me
+
+如果这个项目帮助到了您，您可以支持我做得更好。  
+<a href="https://paypal.me/kevinleeex"><img alt="Coffee" src="https://img.shields.io/badge/PayPal_me_a-Coffee-7A501E.svg?longCache=true&style=for-the-badge"></a>
+
+或者点击<a href="http://lidengju.com/donate">打赏我</a> 通过支付宝或微信打赏。 
+
+欢迎Star/ISSUE/PR。
+
 ## License
 
 Copyright © 2020 Modified by [Kevin T. Lee](http://lidengju.com). 版权所有。
