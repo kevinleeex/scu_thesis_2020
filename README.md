@@ -18,11 +18,14 @@ SCU graduate thesis latex template.
 
 > 独立的模版样式文件，[scu_thesis_template](https://github.com/kevinleeex/scu_thesis_template)，可用于替换```./Template```目录用于更新样式。
 
-**国内网速不好可使用**Gitee**镜像:-** 
+**国内网速不好可使用**Gitee**镜像:**
+
 - [scu_thesis_2020](https://gitee.com/kevinleeex/scu_thesis_2020)
 - [scu_thesis_template](https://gitee.com/kevinleeex/scu_thesis_template)
+
 克隆后修改```.gitmodules```文件内容如下：
-```xml
+
+```
 [submodule "Template"]
     path = Template
     url = https://gitee.com/kevinleeex/scu_thesis_template.git
