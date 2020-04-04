@@ -77,7 +77,7 @@ SCU graduate thesis latex template.
 See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
-- [2020-04-03] **推荐**[scu_thesis_2020_04_03](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.04.03/scu_thesis_2020_04_03.zip)点击下载。
+- [2020-04-03] **推荐**[scu_thesis_2020_04_03](./releases/download/v2020.04.03/scu_thesis_2020_04_03.zip)点击下载。
   - [x] 修复了小节和次小节标题序号字体错误
   - [x] 修复了中文图题的字体错误
 
