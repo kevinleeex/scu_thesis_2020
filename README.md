@@ -1,11 +1,11 @@
 <div align="center"><img style="display:inline-block" width='150' src="./assets/icon.png"/><p>
-    <span style="font-size: 14px">Version: 2020.05.13</span><br>
+    <span style="font-size: 14px">Version: 2020.05.27</span><br>
     <span>"2020年四川大学研究生学业论文LaTex模版"</span><br>
     <span style="font-size: 12px;color= #95dafc">-- Modified by <a>Kevin T. Lee</a> --</span>
     </p>
    <a href="./License"><img alt="GPL" src="https://img.shields.io/badge/LICENSE%20-GPL-green.svg?longCache=true&style=for-the-badge"></a>
         <a href="http://lidengju.com"><img alt="Code" src="https://img.shields.io/badge/Code%20with-Love-red.svg?longCache=true&style=for-the-badge"></a>
-    <a href="https://github.com/kevinleeex/scu_thesis_2020"><img alt="Version" src="https://img.shields.io/badge/Version-2020.05.13-blue.svg?longCache=true&style=for-the-badge"></a>
+    <a href="https://github.com/kevinleeex/scu_thesis_2020"><img alt="Version" src="https://img.shields.io/badge/Version-2020.05.27-blue.svg?longCache=true&style=for-the-badge"></a>
 </div>
 
 
@@ -77,8 +77,8 @@ SCU graduate thesis latex template.
 See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
-- [2020-04-06] **推荐**[scu_thesis_2020_04_06](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.04.06/scu_thesis_2020_04_06.zip)点击下载。
-  - [x] 修复了已知的所有错误
+- [2020-05-27] **推荐**[scu_thesis_2020_05_27](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.05.27/scu_thesis_2020_05_27.zip)点击下载。
+  - [x] 修复GB/T 7714-2015相关库版本更新问题，更新模板时请将Template文件夹中的```gbt7714```开头的文件复制到与```MainBody.tex```的同级目录中。
 
 ## Previews
 
