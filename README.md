@@ -92,7 +92,7 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 在你构建项目之前，需要先安装以下的软件。
 
-- TexLive
+- TexLive (2019)
 - MacTex(on mac)
 - Visual Studio Code (optional) with LaTex workshop plugin
 
