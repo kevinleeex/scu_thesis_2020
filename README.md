@@ -1,11 +1,11 @@
 <div align="center"><img style="display:inline-block" width='150' src="./assets/icon.png"/><p>
-    <span style="font-size: 14px">Version: 2020.05.27</span><br>
+    <span style="font-size: 14px">Version: 2020.06.01</span><br>
     <span>"2020年四川大学研究生学业论文LaTex模版"</span><br>
     <span style="font-size: 12px;color= #95dafc">-- Modified by <a>Kevin T. Lee</a> --</span>
     </p>
    <a href="./License"><img alt="GPL" src="https://img.shields.io/badge/LICENSE%20-GPL-green.svg?longCache=true&style=for-the-badge"></a>
         <a href="http://lidengju.com"><img alt="Code" src="https://img.shields.io/badge/Code%20with-Love-red.svg?longCache=true&style=for-the-badge"></a>
-    <a href="https://github.com/kevinleeex/scu_thesis_2020"><img alt="Version" src="https://img.shields.io/badge/Version-2020.05.27-blue.svg?longCache=true&style=for-the-badge"></a>
+    <a href="https://github.com/kevinleeex/scu_thesis_2020"><img alt="Version" src="https://img.shields.io/badge/Version-2020.06.01-blue.svg?longCache=true&style=for-the-badge"></a>
 </div>
 
 
@@ -77,8 +77,9 @@ SCU graduate thesis latex template.
 See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
-- [2020-05-27] **推荐**[scu_thesis_2020_05_27](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.05.27/scu_thesis_2020_05_27.zip)点击下载。
-  - [x] 修复GB/T 7714-2015相关库版本更新问题，更新模板时请将Template文件夹中的```gbt7714```开头的文件复制到与```MainBody.tex```的同级目录中。
+- [2020-06-01] **推荐**[scu_thesis_2020_06_01](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.06.01/scu_thesis_2020_06_01.zip)点击下载。
+  - [x] 【增加】Makefile和批处理命令支持。
+  - [x] 【修复】图表目录引用顺序问题。
 
 ## Previews
 
@@ -139,6 +140,29 @@ git submodule update --remote
 ```
 
 使用 **xelatex** 编译 LaTex 文件，执行```xeLatex->bibTex->xeLatex->xeLatex``` 方案.
+
+#### Linux 与 macOS 用户
+
+推荐使用本模版提供的 ```Makefile``` 进行编译，可以使用如下几条可用的命令：
+
+```shell
+make all                      # 执行清理、编译pdf、清理过程
+make pdf                      # 编译生成 MainBody.pdf
+make clean                    # 删除编译所产生的辅助文件
+make cleanall                 # 删除 MainBody.pdf 和所有辅助文件
+make wordcount                # 论文字数统计
+```
+
+#### Windows 用户
+
+对于 Windows 用户，模版提供了编译脚本```Compile.bat```。可以双击直接编译，也可以在命令提示符窗口中使用脚本提供的额外功能：
+
+```shell
+.\Compile.bat thesis          # 编译生成 MainBody.pdf
+.\Compile.bat clean           # 删除编译所产生的辅助文件
+.\Compile.bat cleanall        # 删除 MainBody.pdf 和所有辅助文件
+.\Compile.bat wordcount       # 论文字数统计
+```
 
 ### Tips
 
