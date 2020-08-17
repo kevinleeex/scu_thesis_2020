@@ -11,7 +11,9 @@
 
 # 四川大学2020研究生学业论文LaTex模版
 
-根据学院给的2020版《研究生学位论文规范写作指南》Word模版需求([导出PDF](./Reference%20Document/1-3%20《研究生学位论文规范写作指南》.pdf))，并基于fork的旧版库样式，改写了模版。
+根据学院给的2020版《研究生学位论文规范写作指南》Word模版需求([导出PDF](./Reference%20Document/1-3%20《研究生学位论文规范写作指南》.pdf))，制作的LaTex模版。
+
+使用该模版的多篇论文经受了2020年硕士论文评审的考验，请放心食用。
 
 SCU graduate thesis latex template.
 
