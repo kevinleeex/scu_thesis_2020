@@ -17,7 +17,7 @@ SCU graduate thesis latex template.
 
 使用该模版的多篇论文经受了2020年硕士论文评审的考验，请放心食用！
 
-**该模板已到稳定版本，可直接下载使用[scu_thesis_2020_06_01](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2020.06.01/scu_thesis_2020_06_01.zip)中的最新模板。**
+**该模板已到稳定版本，可直接下载使用[scu_thesis_2021_04_11](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2021.04.11/scu_thesis_2021_04_11.zip)中的最新模板。**
 
 > 独立的模版样式文件，[scu_thesis_template](https://github.com/kevinleeex/scu_thesis_template)，可用于替换```./Template```目录用于更新样式。
 
