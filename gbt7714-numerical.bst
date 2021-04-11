@@ -57,7 +57,7 @@ FUNCTION {load.config}
   #0 'abbreviate.journal :=
   #0 'italic.journal :=
   #0 'bold.journal.volume :=
-  #1 'show.missing.address.publisher :=
+  #0 'show.missing.address.publisher :=
   #0 'space.before.pages :=
   #0 'only.start.page :=
   #1 'show.url :=

@@ -79,6 +79,7 @@ See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
 - [2021-04-11] **推荐**[scu_thesis_2020_06_01](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2021.04.11/scu_thesis_2021_04_11.zip)点击下载。
   - [x] 【修改】图表标题设置为small（与规范一致）。
+  - [x] 【修改】文献引用默认移除“出版地不详”或[s.l.]展示。
 
 ## Previews
 
