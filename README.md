@@ -15,7 +15,7 @@ SCU graduate thesis latex template.
 
 根据学院给的2020版《研究生学位论文规范写作指南》Word模版需求([参见PDF](./Reference%20Document/1-3%20《研究生学位论文规范写作指南》.pdf))，制作的LaTex模版。
 
-使用该模版的多篇论文经受了2020年硕士论文评审的考验，请放心食用！
+使用该模版的多篇论文经受了2020/21年硕、博士论文评审的考验，请放心食用！
 
 **该模板已到稳定版本，可直接下载使用[scu_thesis_2021_04_11](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2021.04.11/scu_thesis_2021_04_11.zip)中的最新模板。**
 
@@ -81,7 +81,7 @@ SCU graduate thesis latex template.
 See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
-- [2021-04-11] **推荐**[scu_thesis_2020_06_01](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2021.04.11/scu_thesis_2021_04_11.zip)点击下载。
+- [2021-04-11] **推荐**[scu_thesis_2021_04_11](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2021.04.11/scu_thesis_2021_04_11.zip)点击下载。
   - [x] 【修改】图表标题设置为small（与规范一致）。
   - [x] 【修改】文献引用默认移除“出版地不详”或[s.l.]展示。
 
