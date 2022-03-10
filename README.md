@@ -19,7 +19,9 @@ SCU graduate thesis latex template.
 
 **该模板已到稳定版本，可直接下载使用[scu_thesis_2022_03_03](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2022.03.03/scu_thesis_2022_03_03.zip)中的最新模板。**
 
-> 独立的模版样式文件，[scu_thesis_template](https://github.com/kevinleeex/scu_thesis_template)，可用于替换```./Template```目录用于更新样式。
+- **如果你习惯在Overleaf中写作，可以参考[相关链接](#overleaf用户)。**
+
+- 独立的模版样式文件，[scu_thesis_template](https://github.com/kevinleeex/scu_thesis_template)，可用于替换```./Template```目录用于更新样式。
 
 **国内网速不好可使用**Gitee**镜像:**
 
@@ -168,6 +170,10 @@ make wordcount                # 论文字数统计
 .\Compile.bat wordcount       # 论文字数统计
 ```
 
+#### Overleaf用户
+
+可以通过[在线查看](https://www.overleaf.com/read/mdcwrzbkmcjb)来进行预览，也可以下载后作为自己的Overleaf项目，注意设置编译器为**xeLatex**，已经对高版本Tex Live进行兼容！
+
 ### Tips
 
 - 通过**Detexify**软件，可以通过手写来识别符号，给出相应的Latex符号标记。
@@ -185,12 +191,9 @@ make wordcount                # 论文字数统计
 
 ## Support me
 
-如果这个项目帮助到了您，您可以支持我做得更好。  
-<a href="https://paypal.me/kevinleeex"><img alt="Coffee" src="https://img.shields.io/badge/PayPal_me_a-Coffee-7A501E.svg?longCache=true&style=for-the-badge"></a>
+如果您喜欢这个项目可以点个Star，或提出Issue或通过PR提交有用的新特性，也欢迎推荐给其他人使用，这对我和项目都是很大的激励。
 
-或者点击<a href="http://lidengju.com/donate">打赏我</a> 通过支付宝或微信打赏。 
-
-欢迎Star/ISSUE/PR。
+或者点击<a href="http://lidengju.com/donate">打赏我</a> 通过支付宝或微信请我喝杯奶茶。 
 
 ## License
 
