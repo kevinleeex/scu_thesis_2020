@@ -1,11 +1,11 @@
 <div align="center"><img style="display:inline-block" width='150' src="./assets/icon.png"/><p>
-    <span style="font-size: 14px">Version: 2021.11.27</span><br>
+    <span style="font-size: 14px">Version: 2022.03.03</span><br>
     <span>"2020年四川大学研究生学业论文LaTex模版"</span><br>
     <span style="font-size: 12px;color= #95dafc">-- Modified by <a>Kevin T. Lee</a> --</span>
     </p>
    <a href="./License"><img alt="GPL" src="https://img.shields.io/badge/LICENSE%20-GPL-green.svg?longCache=true&style=for-the-badge"></a>
         <a href="http://lidengju.com"><img alt="Code" src="https://img.shields.io/badge/Code%20with-Love-red.svg?longCache=true&style=for-the-badge"></a>
-    <a href="https://github.com/kevinleeex/scu_thesis_2020"><img alt="Version" src="https://img.shields.io/badge/Version-2021.11.27-blue.svg?longCache=true&style=for-the-badge"></a>
+    <a href="https://github.com/kevinleeex/scu_thesis_2020"><img alt="Version" src="https://img.shields.io/badge/Version-2022.03.03-blue.svg?longCache=true&style=for-the-badge"></a>
 </div>
 
 
@@ -17,7 +17,7 @@ SCU graduate thesis latex template.
 
 使用该模版的多篇论文经受了2020/21年硕、博士论文评审的考验，请放心食用！
 
-**该模板已到稳定版本，可直接下载使用[scu_thesis_2021_11_27](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2021.11.27/scu_thesis_2021_11_27.zip)中的最新模板。**
+**该模板已到稳定版本，可直接下载使用[scu_thesis_2022_03_03](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2022.03.03/scu_thesis_2022_03_03.zip)中的最新模板。**
 
 > 独立的模版样式文件，[scu_thesis_template](https://github.com/kevinleeex/scu_thesis_template)，可用于替换```./Template```目录用于更新样式。
 
@@ -81,8 +81,9 @@ SCU graduate thesis latex template.
 See [Releases](https://github.com/kevinleeex/scu_thesis_2020/releases)
 
 - [2020-02-19] 将Template作为[子模块](https://github.com/kevinleeex/scu_thesis_template)方便样式的后续更新。 
-- [2021-11-27] **推荐**[scu_thesis_2021_11_27](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2021.11.27/scu_thesis_2021_11_27.zip)点击下载。
-  - [x] 【更新】增强对2019以上Tex Live中CTEX的兼容性。
+- [2021-11-27] 增强对2019以上Tex Live中CTEX的兼容性。
+- [2022-03-03] **推荐**[scu_thesis_2022_03_03](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2022.03.03/scu_thesis_2022_03_03.zip)点击下载。
+  - 增加了`\incite`命令的说明配置，可以进行带说明的行内引用了
 
 ## Previews
 
