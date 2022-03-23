@@ -132,9 +132,9 @@ git submodule update --remote
 % secret: 保密论文，将显示密级
 % color: 红色川大logo
 % kfont=<⟨none|adobe|fandol|founder|mac|macnew|macold|ubuntu|windows|windowsnew|windowsold|...⟩>，
-% 不填写为根据系统自动配置，mac推荐填入kfont=mac，用以解决字重问题
+% 不填写则默认fandol
 % 打开MainBody.tex根据需要填入
-\documentclass[professional,master,kfont=]{./Template/scuthesis2020}
+\documentclass[professional,master]{./Template/scuthesis2020}
 
 % 在./Chapters/ 文件夹中写作，在MainBody.tex中包含
 % 在./Chapters/Statement.tex 中撰写中文声明
