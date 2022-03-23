@@ -18,6 +18,7 @@ SCU graduate thesis latex template.
 使用该模版的多篇论文经受了2020/21年硕、博士论文评审的考验，请放心食用！
 
 **注意：已知Mac下可能会产生中文加粗文字复制乱码问题，请及时更新模板样式文件，并移除文档参数的kfont=，或直接使用2022_03_23版本**
+
 **该模板已到稳定版本，可直接下载使用[scu_thesis_2022_03_23](https://github.com/kevinleeex/scu_thesis_2020/releases/download/v2022.03.23/scu_thesis_2022_03_23.zip)中的最新模板。**
 
 - **如果你习惯在Overleaf中写作，可以参考[相关链接](#overleaf用户)。**
