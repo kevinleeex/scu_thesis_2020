@@ -78,7 +78,7 @@ SCU graduate thesis latex template.
 | approval     | 送审版本，不生成声明和致谢 |
 | secret       | 保密论文，将显示密级       |
 | color        | 红色川大logo，默认为黑色   |
-|kfont=        | 字体库，可根据操作系统填写，Mac OS X推荐填入kfont=mac以解决字重问题|
+|kfont=        | 字体库，可根据操作系统填写，默认fandol|
 
 ## Release Notes
 
